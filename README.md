@@ -14,7 +14,9 @@ This repository showcases my hands-on QA projects created while transitioning fr
 - Test Plans
 - Automation Testing (Playwright)
 
-## Structure file
+## Structure File
+
+```text
 QA-Portfolio
 │
 ├── README.md
@@ -44,6 +46,7 @@ QA-Portfolio
     ├── Playwright
     ├── README.md
     └── package.json
+```
 
 ## Purpose
 
