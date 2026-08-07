@@ -14,6 +14,40 @@ This repository showcases my hands-on QA projects created while transitioning fr
 - Test Plans
 - Automation Testing (Playwright)
 
+## Structure File
+
+```text
+QA-Portfolio
+│
+├── README.md
+│
+├── 01-Manual-Testing
+│   ├── Test Scenario
+│   ├── Test Cases
+│   ├── Bug Reports
+│   └── Screenshots
+│
+├── 02-SQL
+│   ├── Basic Queries.sql
+│   ├── Join.sql
+│   └── README.md
+│
+├── 03-API-Testing
+│   ├── Postman Collection
+│   ├── Environment
+│   └── README.md
+│
+├── 04-Test-Plan
+│   ├── Test Plan.md
+│   ├── Regression Checklist.xlsx
+│   └── README.md
+│
+└── 05-Automation
+    ├── Playwright
+    ├── README.md
+    └── package.json
+```
+
 ## Purpose
 
 This portfolio demonstrates my knowledge of software testing, problem-solving approach, and practical QA skills. Each project reflects my learning journey and hands-on experience with industry-standard QA tools and practices.
