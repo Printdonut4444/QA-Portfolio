@@ -1,6 +1,6 @@
 # Phuricha Wichitjomthong
 **Software Quality Engineer**  
-| [benneilson0226@gmail.com](mailto:benneilson0226@gmail.com) | Vancouver, BC  
+| [phuricha2944@gmail.com](mailto:phuricha2944@gmail.com) | Vancouver, BC  
 [LinkedIn](https://www.linkedin.com/in/benjaminhayesneilson/) | [Website](http://b-n.me)
 
 ## Professional Summary

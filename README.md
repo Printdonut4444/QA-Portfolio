@@ -4,8 +4,8 @@ Welcome to my QA Portfolio.
 
 This repository showcases my hands-on QA projects created while transitioning from Software Developer to Software QA Engineer. It demonstrates my practical skills in software testing through real-world practice and personal projects.
 
-## Contents
-
+## Table of Contents
+- [Resume](#resume)
 - Manual Testing
 - Test Scenarios & Test Cases
 - Bug Reports
@@ -13,6 +13,12 @@ This repository showcases my hands-on QA projects created while transitioning fr
 - API Testing (Postman)
 - Test Plans
 - Automation Testing (Playwright)
+
+## Resume
+
+You can find my resume in this repository, providing a detailed overview of my work history, skills, and experience.
+
+[View My Resume](./Resume.md) 
 
 ## Structure File
 
