@@ -91,6 +91,7 @@ Courses and training I have completed as part of my QA learning journey.
 ---
 
 ## TECH SKILLS
+**[View My Resume](./02-Skills)**
 
 ### Software Testing
 
