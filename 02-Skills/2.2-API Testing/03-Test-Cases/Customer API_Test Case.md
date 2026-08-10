@@ -68,6 +68,9 @@ No request body.
 - Returned records contain the expected customer fields.
 - Data matches the records stored in Business Central.
 
+<img width="1533" height="999" alt="image" src="https://github.com/user-attachments/assets/bdf93c37-e012-49f9-8119-4fd881e51104" />
+
+
 ---
 
 ## GET-002 — Get Customer by No.
