@@ -67,10 +67,10 @@ Before executing the test cases:
 
 ### Test Execution Evidence
 
-A valid customer creation request was sent using Postman.
-<img width="1664" height="692" alt="image" src="https://github.com/user-attachments/assets/5e89c8a1-0a4a-45b1-a02b-6539924f84f0" />
-<img width="1117" height="895" alt="image" src="https://github.com/user-attachments/assets/aa3fec00-e4fb-4607-8af1-3b72e6a78fdf" />
-<img width="1652" height="558" alt="image" src="https://github.com/user-attachments/assets/0b9ad3de-e028-49f1-ae53-09c62b96e2a8" />
+A GET request was sent using Postman to retrieve the customer data.
+<img width="1074" height="902" alt="image" src="https://github.com/user-attachments/assets/43ad447c-565c-4f61-8f2b-898fea4cd5ee" />
+
+
 
 ---
 
@@ -149,8 +149,15 @@ A valid customer creation request was sent using Postman.
 - API accepts the request.
 - A successful creation response is returned.
 - The response contains the created customer.
-- Customer `C00001` exists in Business Central.
+- Customer `CUST101` exists in Business Central.
 - Customer data matches the submitted request.
+
+### Test Execution Evidence
+
+A valid customer creation request was sent using Postman.
+<img width="1664" height="692" alt="image" src="https://github.com/user-attachments/assets/5e89c8a1-0a4a-45b1-a02b-6539924f84f0" />
+<img width="1117" height="895" alt="image" src="https://github.com/user-attachments/assets/aa3fec00-e4fb-4607-8af1-3b72e6a78fdf" />
+<img width="1652" height="558" alt="image" src="https://github.com/user-attachments/assets/0b9ad3de-e028-49f1-ae53-09c62b96e2a8" />
 
 ---
 
