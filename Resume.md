@@ -4,9 +4,9 @@
 
 📍 Thailand
 📧 [Email](mailto:phuricha2944@gmail.com)
-📱 [Phone]
+📱 [Phone] (+66)93-651-8304
 🔗 GitHub: [GitHub URL](https://github.com/Printdonut4444)
-🔗 LinkedIn: [LinkedIn URL]
+🔗 LinkedIn: [LinkedIn URL](https://www.linkedin.com/in/ภูริชา-วิชิตจอมทอง-378934325 )
 🔗 QA Portfolio: [Portfolio URL](https://github.com/Printdonut4444/QA-Portfolio)
 
 ---
@@ -99,9 +99,9 @@ Currently transitioning into a **Software QA / Software Tester** role, with a fo
 | **Database**           | SQL Server, SQL                                                                                                      |
 | **Programming**        | AL, JavaScript                                                                                                       |
 | **Microsoft Dynamics** | Dynamics 365 Business Central, AL Extension                                                                          |
-| **Version Control**    | Git, GitHub, GitHub Projects                                                                                         |
+| **Version Control**    | Git, GitHub                                                                                         |
 | **Development Tools**  | VS Code                                                                                                              |
-| **Project Management** | ClickUp                                                                                                              |
+| **Project Management** | ClickUp,GitHub Projects                                                                                                              |
 | **Payment Technology** | EDC, QR Payment, Payment API Integration                                                                             |
 | **Communication**      | Binary/Text Protocol, Network, TCP/IP                                                                                |
 
