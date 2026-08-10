@@ -23,7 +23,6 @@ A collection of hands-on QA projects demonstrating my practical testing skills.
 Practice creating test plans, regression checklists, and other QA documentation.
 
 [Project1 : E_Commerce](../01-Projects/1.1-E_Commerce)
-[Project2 : E_Commerce](../01-Projects/1.1-E_Commerce) //เอาออก
 
 **[View Projects →](./01-Projects)**
 
@@ -35,7 +34,7 @@ Skills for QA Testing/QA Engineer/Tester
 * **SQL**
 ...
 
-* **[API Testing}(./02-Skills/2.2-API Testing)** 
+* **API Testing** 
 
 REST API testing and validation using Postman, including request/response validation and HTTP status code verification.
 
