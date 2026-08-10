@@ -18,23 +18,36 @@ This portfolio showcases my practical QA work, including manual testing, test ca
 
 A collection of hands-on QA projects demonstrating my practical testing skills.
 
-* **Manual Testing**
-
-Practical exercises covering test scenarios, test cases, bug reporting, and functional testing.
-
-* **API Testing**
-
-REST API testing and validation using Postman, including request/response validation and HTTP status code verification.
-
 * **Test Planning**
 
 Practice creating test plans, regression checklists, and other QA documentation.
+
+[Project1 : E_Commerce](../01-Projects/1.1-E_Commerce)
+[Project2 : E_Commerce](../01-Projects/1.1-E_Commerce) //เอาออก
+
+**[View Projects →](./01-Projects)**
+
+---
+
+## SKILLS
+Skills for QA Testing/QA Engineer/Tester
+
+* **SQL**
+...
+
+* **[API Testing}(./02-Skills/2.2-API Testing)** 
+
+REST API testing and validation using Postman, including request/response validation and HTTP status code verification.
+
+* **Manual Testing**
+
+Practical exercises covering test scenarios, test cases, bug reporting, and functional testing.
 
 * **Test Automation**
 
 Automation testing practice with a focus on building maintainable automated tests.
 
-**[View Projects →](./01-Projects)**
+**[View Skills →](./02-Skills)**
 
 ---
 
@@ -53,105 +66,3 @@ Courses and training I have completed as part of my QA learning journey.
 > Course details, certificates, and learning outcomes are documented in the repository.
 
 **[View Courses →](./02-Skills/Courses)**
-
----
-
-## TOOLS
-
-### Testing Tools
-
-* Postman
-* Playwright
-* Chrome DevTools
-
-### Development & Version Control
-
-* Git
-* GitHub
-* VS Code
-
-### Database
-
-* SQL Server
-
-### Project Management
-
-* ClickUp
-* GitHub Project
-* Jira
-
----
-
-## TECH SKILLS
-**[View Tech Skills →](./02-Skills)**
-
-### Software Testing
-
-* Functional Testing
-* Integration Testing
-* Regression Testing
-* End-to-End Testing
-* Exploratory Testing
-* UI Testing
-* Defect Reproduction
-* Bug Verification
-* Troubleshooting
-
-### API & Database
-
-* REST API
-* HTTP
-* JSON
-* API Request / Response Validation
-* SQL
-* SQL Server
-
-### Test Automation
-
-* Playwright
-* TypeScript
-* Page Object Model (POM)
-* Assertions
-* Test Fixtures
-
-### Software Development
- 
-* Git
-* Debugging
-* Understanding of Frontend / Backend Architecture
-
-### Programming
-
-* AL
-* python
-* java
-* HTML
-* JavaScript
-
-### Microsoft Dynamics
-
-* Microsoft Dynamics 365 Business Central
-* AL Extension
-
-### Payment & Integration
-
-* QR Payment
-* Payment API Integration
-* EDC Payment
-* Binary / Text Protocol
-
-
----
-
-## SOFT SKILLS
-
-* Analytical Thinking
-* Problem Solving
-* Attention to Detail
-* Communication
-* Teamwork
-* Collaboration
-* Critical Thinking
-* Continuous Learning
-* Time Management
-* Adaptability
