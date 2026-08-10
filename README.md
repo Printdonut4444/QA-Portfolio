@@ -20,28 +20,19 @@ A collection of hands-on QA projects demonstrating my practical testing skills.
 
 * **Manual Testing**
 
-  * Test Scenarios
-  * Test Cases
-  * Bug Reports
-  * Exploratory Testing
+Practical exercises covering test scenarios, test cases, bug reporting, and functional testing.
 
 * **API Testing**
 
-  * REST API Testing
-  * Postman Collections
-  * API Validation
+REST API testing and validation using Postman, including request/response validation and HTTP status code verification.
 
 * **Test Planning**
 
-  * Test Plan
-  * Test Strategy
-  * Regression Checklist
+Practice creating test plans, regression checklists, and other QA documentation.
 
 * **Test Automation**
 
-  * Playwright
-  * Automated Test Cases
-  * Page Object Model
+Automation testing practice with a focus on building maintainable automated tests.
 
 **[View Projects →](./01-Projects)**
 
@@ -81,12 +72,13 @@ Courses and training I have completed as part of my QA learning journey.
 
 ### Database
 
-* MySQL
+* SQL Server
 
 ### Project Management
 
+* ClickUp
+* GitHub Project
 * Jira
-* Confluence
 
 ---
 
@@ -95,24 +87,24 @@ Courses and training I have completed as part of my QA learning journey.
 
 ### Software Testing
 
-* Manual Testing
 * Functional Testing
+* Integration Testing
 * Regression Testing
-* Smoke Testing
+* End-to-End Testing
 * Exploratory Testing
-* Test Case Design
-* Test Scenario Design
-* Bug Reporting
-* Test Planning
+* UI Testing
+* Defect Reproduction
+* Bug Verification
+* Troubleshooting
 
 ### API & Database
 
 * REST API
-* HTTP Methods
-* HTTP Status Codes
+* HTTP
 * JSON
+* API Request / Response Validation
 * SQL
-* Database Testing
+* SQL Server
 
 ### Test Automation
 
@@ -123,12 +115,31 @@ Courses and training I have completed as part of my QA learning journey.
 * Test Fixtures
 
 ### Software Development
-
-* JavaScript / TypeScript
+ 
 * Git
 * Debugging
-* Basic Web Technologies
 * Understanding of Frontend / Backend Architecture
+
+### Programming
+
+* AL
+* python
+* java
+* HTML
+* JavaScript
+
+### Microsoft Dynamics
+
+* Microsoft Dynamics 365 Business Central
+* AL Extension
+
+### Payment & Integration
+
+* QR Payment
+* Payment API Integration
+* EDC Payment
+* Binary / Text Protocol
+
 
 ---
 
