@@ -45,6 +45,5 @@ Each test case contains:
 
 ## Related Sections
 
-* [Business Central API](../01-Business-Central-API/README.md)
+* [Business Central API](../01-Business-Central-API)
 * [API Collection](../02-API-Collection/)
-* [Screenshots](../04-Screenshots/)

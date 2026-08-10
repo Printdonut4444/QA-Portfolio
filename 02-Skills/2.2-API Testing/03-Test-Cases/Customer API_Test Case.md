@@ -43,30 +43,20 @@ Before executing the test cases:
 
 ## GET-001 — Get All Customers
 
-**Objective**
-
-Verify that the API can retrieve the list of customers.
-
-**Method**
-
-`GET`
-
-**Endpoint**
-
-```text
-/customers
-```
-
-**Test Data**
-
-No request body.
-
-**Expected Result**
-
-- API returns a successful response.
-- Response contains the customer collection.
-- Returned records contain the expected customer fields.
-- Data matches the records stored in Business Central.
+| Field                    | Details                                                                                                                                             |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | GET-001                                                                                                                                             |
+| **Test Objective**       | Verify that the API returns a list of all customers successfully.                                                                                   |
+| **Preconditions**        | API service is available and customer data exists in the system.                                                                                    |
+| **HTTP Method**          | `GET`                                                                                                                                               |
+| **Endpoint**             | `/api/v1/customers`                                                                                                                                 |
+| **Headers**              | `Content-Type: application/json`                                                                                                                    |
+| **Test Data**            | N/A                                                                                                                                                 |
+| **Test Steps**           | 1. Send a `GET` request to the customers endpoint.<br>2. Send the request without any query parameters.<br>3. Verify the response.                  |
+| **Expected Status Code** | `200 OK`                                                                                                                                            |
+| **Expected Result**      | API returns a successful response containing a list of customers. Each customer object contains the expected fields and the response is valid JSON. |
+| **Actual Result**        | API returned `200 OK` and a list of customer records in valid JSON format.                                                                          |
+| **Test Status**          | `PASS`                                                                                                                                              |
 
 <img width="1533" height="999" alt="image" src="https://github.com/user-attachments/assets/bdf93c37-e012-49f9-8119-4fd881e51104" />
 
