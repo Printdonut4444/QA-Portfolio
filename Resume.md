@@ -1,4 +1,5 @@
-# [YOUR NAME]
+# [Phurich Wichitjomthong]
+**ภูริชา วิชิตจอมทอง**
 
 **Software QA Engineer | Software Tester | Developer → QA**
 
