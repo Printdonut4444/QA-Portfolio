@@ -44,6 +44,6 @@ Each test case contains:
 | **Total** |     **17** |
 
 ## Related Sections
-
+* [Customer API_Test Cases](../03-Test-Cases/Customer%20API_Test%20Case.md)
 * [Business Central API](../01-Business-Central-API)
 * [API Collection](../02-API-Collection/)
