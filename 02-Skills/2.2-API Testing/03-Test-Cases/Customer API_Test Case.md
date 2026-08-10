@@ -58,6 +58,13 @@ Before executing the test cases:
 | **Actual Result**        | API returned `200 OK` and a list of customer records in valid JSON format.                                                                          |
 | **Test Status**          | `PASS`                                                                                                                                              |
 
+**Expected Result**
+
+- API returns a successful response.
+- Response contains the customer collection.
+- Returned records contain the expected customer fields.
+- Data matches the records stored in Business Central.
+
 <img width="1533" height="999" alt="image" src="https://github.com/user-attachments/assets/bdf93c37-e012-49f9-8119-4fd881e51104" />
 
 
@@ -65,29 +72,20 @@ Before executing the test cases:
 
 ## GET-002 — Get Customer by No.
 
-**Objective**
-
-Verify that a specific customer can be retrieved using a valid customer identifier.
-
-**Method**
-
-`GET`
-
-**Endpoint**
-
-```text
-/customers({id})
-```
-
-**Test Data**
-
-Use an existing customer.
-
-Example:
-
-```text
-Customer No.: C00001
-```
+| Field                    | Details                                                                                                                                                                           |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | GET-002                                                                                                                                                                           |
+| **Test Objective**       | Verify that a specific customer can be retrieved using a valid customer identifier.                                                                                               |
+| **Preconditions**        | API service is available and the specified customer exists in the system.                                                                                                         |
+| **HTTP Method**          | `GET`                                                                                                                                                                             |
+| **Endpoint**             | `/customers({id})`                                                                                                                                                                |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                  |
+| **Test Data**            | `TD-001`                                                                                                                                                                          |
+| **Test Steps**           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a valid customer identifier.<br>3. Send the request.<br>4. Verify the response.                                   |
+| **Expected Status Code** | `200 OK`                                                                                                                                                                          |
+| **Expected Result**      | API returns the requested customer successfully. The returned customer number matches the requested identifier and the customer data matches the data stored in Business Central. |
+| **Actual Result**        | TBD                                                                                                                                                                               |
+| **Test Status**          | `Not Executed`                                                                                                                                                                    |
 
 **Expected Result**
 
@@ -100,29 +98,20 @@ Customer No.: C00001
 
 ## GET-003 — Get Non-existing Customer
 
-**Objective**
-
-Verify the API behavior when requesting a customer that does not exist.
-
-**Method**
-
-`GET`
-
-**Endpoint**
-
-```text
-/customers({id})
-```
-
-**Test Data**
-
-Use a non-existing customer identifier.
-
-Example:
-
-```text
-Customer No.: C99999
-```
+| Field                    | Details                                                                                                                                                |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Test Case ID**         | GET-003                                                                                                                                                |
+| **Test Objective**       | Verify that the API handles a request for a customer that does not exist.                                                                              |
+| **Preconditions**        | API service is available.                                                                                                                              |
+| **HTTP Method**          | `GET`                                                                                                                                                  |
+| **Endpoint**             | `/customers({id})`                                                                                                                                     |
+| **Headers**              | `Content-Type: application/json`                                                                                                                       |
+| **Test Data**            | `TD-002`                                                                                                                                               |
+| **Test Steps**           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a non-existing customer identifier.<br>3. Send the request.<br>4. Verify the response. |
+| **Expected Status Code** | `4xx`                                                                                                                                                  |
+| **Expected Result**      | API returns an appropriate error response and does not return an existing customer record.                                                             |
+| **Actual Result**        | TBD                                                                                                                                                    |
+| **Test Status**          | `Not Executed`                                                                                                                                         |
 
 **Expected Result**
 
@@ -136,39 +125,20 @@ Customer No.: C99999
 
 ## POST-001 — Create Customer with Valid Data
 
-**Objective**
-
-Verify that a customer can be successfully created using valid data.
-
-**Method**
-
-`POST`
-
-**Endpoint**
-
-```text
-/customers
-```
-
-**Test Data**
-
-```json
-{
-  "no": "C00001",
-  "name": "Donut Technology Co., Ltd.",
-  "email": "contact@donut-tech.com",
-  "phoneNo": "0812345678",
-  "address": "123 Sukhumvit Road",
-  "city": "Bangkok",
-  "country": "TH",
-  "postalCode": "10110",
-  "customerType": "Company",
-  "status": "Active",
-  "creditLimit": 100000,
-  "currencyCode": "THB",
-  "marketingConsent": true
-}
-```
+| Field                    | Details                                                                                                                                                                                                             |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-001                                                                                                                                                                                                            |
+| **Test Objective**       | Verify that a customer can be successfully created using valid data.                                                                                                                                                |
+| **Preconditions**        | API service is available and the customer number does not already exist.                                                                                                                                            |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                              |
+| **Endpoint**             | `/customers`                                                                                                                                                                                                        |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                    |
+| **Test Data**            | `TD-003`                                                                                                                                                                                                            |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide valid customer data in the request body.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify the created customer in Business Central. |
+| **Expected Status Code** | `201 Created`*                                                                                                                                                                                                      |
+| **Expected Result**      | API accepts the request and creates a new customer. The response contains the created customer and the stored data matches the submitted data.                                                                      |
+| **Actual Result**        | TBD                                                                                                                                                                                                                 |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                                      |
 
 **Expected Result**
 
@@ -182,29 +152,20 @@ Verify that a customer can be successfully created using valid data.
 
 ## POST-002 — Create Customer with Minimum Data
 
-**Objective**
-
-Verify API behavior when only the minimum required customer data is provided.
-
-**Method**
-
-`POST`
-
-**Endpoint**
-
-```text
-/customers
-```
-
-**Test Data**
-
-```json
-{
-  "no": "C00002",
-  "name": "John Smith",
-  "email": "john.smith@example.com"
-}
-```
+| Field                    | Details                                                                                                                                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-002                                                                                                                                                                                                |
+| **Test Objective**       | Verify API behavior when only the minimum required customer data is provided.                                                                                                                           |
+| **Preconditions**        | API service is available and the provided customer number does not already exist.                                                                                                                       |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                  |
+| **Endpoint**             | `/customers`                                                                                                                                                                                            |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                        |
+| **Test Data**            | `TD-002`                                                                                                                                                                                                |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide only the minimum required customer data.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify the created customer record.  |
+| **Expected Status Code** | `2xx` if accepted; otherwise an appropriate validation error                                                                                                                                            |
+| **Expected Result**      | Request is accepted if the provided fields satisfy the configured Business Central requirements. A customer record is created, and optional fields use their configured default values or remain empty. |
+| **Actual Result**        | TBD                                                                                                                                                                                                     |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                          |
 
 **Expected Result**
 
@@ -218,30 +179,20 @@ Verify API behavior when only the minimum required customer data is provided.
 
 ## POST-003 — Missing Required Customer No.
 
-**Objective**
-
-Verify that the API handles a request without the customer number correctly.
-
-**Method**
-
-`POST`
-
-**Endpoint**
-
-```text
-/customers
-```
-
-**Test Data**
-
-```json
-{
-  "name": "Missing Number Customer",
-  "email": "missing.no@example.com",
-  "customerType": "Individual",
-  "status": "Active"
-}
-```
+| Field                    | Details                                                                                                                                                                                                                  |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Test Case ID**         | POST-003                                                                                                                                                                                                                 |
+| **Test Objective**       | Verify that the API handles a request without the customer number correctly.                                                                                                                                             |
+| **Preconditions**        | API service is available and `No.` is configured as a required field.                                                                                                                                                    |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                                   |
+| **Endpoint**             | `/customers`                                                                                                                                                                                                             |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                         |
+| **Test Data**            | `TD-003`                                                                                                                                                                                                                 |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Omit the customer number from the request body.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that no incomplete customer record was created. |
+| **Expected Status Code** | `4xx`                                                                                                                                                                                                                    |
+| **Expected Result**      | Request is rejected if `No.` is required. No incomplete customer record is created, and an appropriate validation error is returned.                                                                                     |
+| **Actual Result**        | TBD                                                                                                                                                                                                                      |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                                           |
 
 **Expected Result**
 
@@ -255,35 +206,20 @@ Verify that the API handles a request without the customer number correctly.
 
 ## POST-004 — Duplicate Customer No.
 
-**Objective**
-
-Verify that the API prevents duplicate customer numbers.
-
-**Precondition**
-
-Customer `C00001` already exists.
-
-**Method**
-
-`POST`
-
-**Endpoint**
-
-```text
-/customers
-```
-
-**Test Data**
-
-```json
-{
-  "no": "C00001",
-  "name": "Duplicate Customer",
-  "email": "duplicate@example.com",
-  "customerType": "Company",
-  "status": "Active"
-}
-```
+| Field                    | Details                                                                                                                                                                                                                 |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-004                                                                                                                                                                                                                |
+| **Test Objective**       | Verify that the API prevents duplicate customer numbers.                                                                                                                                                                |
+| **Preconditions**        | Customer `C00001` already exists in the system.                                                                                                                                                                         |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                                  |
+| **Endpoint**             | `/customers`                                                                                                                                                                                                            |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                        |
+| **Test Data**            | `TD-004`                                                                                                                                                                                                                |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide the existing customer number `C00001`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that the existing customer was not overwritten. |
+| **Expected Status Code** | `4xx`                                                                                                                                                                                                                   |
+| **Expected Result**      | Request is rejected. Existing customer `C00001` is not overwritten, and an appropriate duplicate-key or validation error is returned.                                                                                   |
+| **Actual Result**        | TBD                                                                                                                                                                                                                     |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                                          |
 
 **Expected Result**
 
@@ -295,31 +231,20 @@ Customer `C00001` already exists.
 
 ## POST-005 — Invalid Customer Type
 
-**Objective**
-
-Verify that the API rejects a customer type that is not defined by the API.
-
-**Method**
-
-`POST`
-
-**Endpoint**
-
-```text
-/customers
-```
-
-**Test Data**
-
-```json
-{
-  "no": "C00003",
-  "name": "Invalid Type Customer",
-  "email": "invalid.type@example.com",
-  "customerType": "Unknown",
-  "status": "Active"
-}
-```
+| Field                    | Details                                                                                                                                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-005                                                                                                                                                                                                |
+| **Test Objective**       | Verify that the API rejects a customer type that is not defined by the API.                                                                                                                             |
+| **Preconditions**        | API service is available and the customer type field has defined valid values.                                                                                                                          |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                  |
+| **Endpoint**             | `/customers`                                                                                                                                                                                            |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                        |
+| **Test Data**            | `TD-005`                                                                                                                                                                                                |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide an unsupported customer type, `Unknown`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that no customer was created. |
+| **Expected Status Code** | `4xx`                                                                                                                                                                                                   |
+| **Expected Result**      | Request is rejected, the customer is not created, and an appropriate validation error is returned.                                                                                                      |
+| **Actual Result**        | TBD                                                                                                                                                                                                     |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                          |
 
 **Expected Result**
 
@@ -331,31 +256,20 @@ Verify that the API rejects a customer type that is not defined by the API.
 
 ## POST-006 — Invalid Status
 
-**Objective**
-
-Verify that the API rejects an unsupported customer status.
-
-**Method**
-
-`POST`
-
-**Endpoint**
-
-```text
-/customers
-```
-
-**Test Data**
-
-```json
-{
-  "no": "C00004",
-  "name": "Invalid Status Customer",
-  "email": "invalid.status@example.com",
-  "customerType": "Company",
-  "status": "Pending"
-}
-```
+| Field                    | Details                                                                                                                                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Test Case ID**         | POST-006                                                                                                                                                                                         |
+| **Test Objective**       | Verify that the API rejects an unsupported customer status.                                                                                                                                      |
+| **Preconditions**        | API service is available and the status field has defined valid values.                                                                                                                          |
+| **HTTP Method**          | `POST`                                                                                                                                                                                           |
+| **Endpoint**             | `/customers`                                                                                                                                                                                     |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                 |
+| **Test Data**            | `TD-006`                                                                                                                                                                                         |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide an unsupported status, `Pending`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that no customer was created. |
+| **Expected Status Code** | `4xx`                                                                                                                                                                                            |
+| **Expected Result**      | Request is rejected, the customer is not created, and an appropriate validation error is returned.                                                                                               |
+| **Actual Result**        | TBD                                                                                                                                                                                              |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                   |
 
 **Expected Result**
 
@@ -367,33 +281,20 @@ Verify that the API rejects an unsupported customer status.
 
 ## POST-007 — Invalid JSON Data Type
 
-**Objective**
-
-Verify that the API rejects values with an incorrect JSON data type.
-
-**Method**
-
-`POST`
-
-**Endpoint**
-
-```text
-/customers
-```
-
-**Test Data**
-
-```json
-{
-  "no": "C00005",
-  "name": "Wrong Data Type",
-  "email": "wrong.type@example.com",
-  "customerType": "Company",
-  "status": "Active",
-  "creditLimit": "100000",
-  "marketingConsent": "yes"
-}
-```
+| Field                    | Details                                                                                                                                                                                                                                             |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-007                                                                                                                                                                                                                                            |
+| **Test Objective**       | Verify that the API rejects values with an incorrect JSON data type.                                                                                                                                                                                |
+| **Preconditions**        | API service is available and the API enforces the expected data types for each field.                                                                                                                                                               |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                                                              |
+| **Endpoint**             | `/customers`                                                                                                                                                                                                                                        |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                                                    |
+| **Test Data**            | `TD-007`                                                                                                                                                                                                                                            |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide a string value for `creditLimit` instead of a number.<br>3. Provide a string value for `marketingConsent` instead of a Boolean.<br>4. Send the request.<br>5. Verify the response. |
+| **Expected Status Code** | `4xx`                                                                                                                                                                                                                                               |
+| **Expected Result**      | Request is rejected. `creditLimit` does not accept a string when a numeric value is expected, and `marketingConsent` does not accept a string when a Boolean value is expected. No invalid customer record is created.                              |
+| **Actual Result**        | TBD                                                                                                                                                                                                                                                 |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                                                                      |
 
 **Expected Result**
 
@@ -406,33 +307,20 @@ Verify that the API rejects values with an incorrect JSON data type.
 
 ## POST-008 — Negative Credit Limit
 
-**Objective**
-
-Verify the behavior when a negative credit limit is submitted.
-
-**Method**
-
-`POST`
-
-**Endpoint**
-
-```text
-/customers
-```
-
-**Test Data**
-
-```json
-{
-  "no": "C00006",
-  "name": "Negative Credit Customer",
-  "email": "negative.credit@example.com",
-  "customerType": "Company",
-  "status": "Active",
-  "creditLimit": -1000,
-  "currencyCode": "THB"
-}
-```
+| Field                    | Details                                                                                                                                                                                                     |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-008                                                                                                                                                                                                    |
+| **Test Objective**       | Verify the API behavior when a negative credit limit is submitted.                                                                                                                                          |
+| **Preconditions**        | API service is available.                                                                                                                                                                                   |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                      |
+| **Endpoint**             | `/customers`                                                                                                                                                                                                |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                            |
+| **Test Data**            | `TD-008`                                                                                                                                                                                                    |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide a negative value for `creditLimit`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify whether a customer record was created. |
+| **Expected Status Code** | `4xx` if the business rule requires `creditLimit >= 0`                                                                                                                                                      |
+| **Expected Result**      | Request is rejected if the business rule requires `creditLimit >= 0`. No invalid customer record is created.                                                                                                |
+| **Actual Result**        | TBD                                                                                                                                                                                                         |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                              |
 
 **Expected Result**
 
@@ -447,27 +335,20 @@ Verify the behavior when a negative credit limit is submitted.
 
 ## PATCH-001 — Update Customer Name
 
-**Objective**
-
-Verify that an existing customer's name can be updated.
-
-**Method**
-
-`PATCH`
-
-**Endpoint**
-
-```text
-/customers({id})
-```
-
-**Test Data**
-
-```json
-{
-  "name": "Donut Technology Updated"
-}
-```
+| Field                    | Details                                                                                                                                                                                            |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | PATCH-001                                                                                                                                                                                          |
+| **Test Objective**       | Verify that an existing customer's name can be updated.                                                                                                                                            |
+| **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                        |
+| **HTTP Method**          | `PATCH`                                                                                                                                                                                            |
+| **Endpoint**             | `/customers({id})`                                                                                                                                                                                 |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                   |
+| **Test Data**            | `TD-009`                                                                                                                                                                                           |
+| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide a new customer name.<br>3. Send the request.<br>4. Verify the response.<br>5. Retrieve the customer and verify the updated name. |
+| **Expected Status Code** | `2xx`                                                                                                                                                                                              |
+| **Expected Result**      | API accepts the request. Customer name is updated, other customer fields remain unchanged, and Business Central displays the updated value.                                                        |
+| **Actual Result**        | TBD                                                                                                                                                                                                |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                     |
 
 **Expected Result**
 
@@ -480,29 +361,20 @@ Verify that an existing customer's name can be updated.
 
 ## PATCH-002 — Update Multiple Customer Fields
 
-**Objective**
-
-Verify that multiple customer fields can be updated in one request.
-
-**Method**
-
-`PATCH`
-
-**Endpoint**
-
-```text
-/customers({id})
-```
-
-**Test Data**
-
-```json
-{
-  "name": "Donut Technology Updated",
-  "phoneNo": "0899999999",
-  "city": "Nonthaburi"
-}
-```
+| Field                    | Details                                                                                                                                                                                                   |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | PATCH-002                                                                                                                                                                                                 |
+| **Test Objective**       | Verify that multiple customer fields can be updated in a single request.                                                                                                                                  |
+| **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                               |
+| **HTTP Method**          | `PATCH`                                                                                                                                                                                                   |
+| **Endpoint**             | `/customers({id})`                                                                                                                                                                                        |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                          |
+| **Test Data**            | `TD-010`                                                                                                                                                                                                  |
+| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide new values for name, phone number, and city.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify the updated customer data. |
+| **Expected Status Code** | `2xx`                                                                                                                                                                                                     |
+| **Expected Result**      | API accepts the request. All specified fields are updated, while fields not included in the request remain unchanged. Updated data matches Business Central.                                              |
+| **Actual Result**        | TBD                                                                                                                                                                                                       |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                            |
 
 **Expected Result**
 
@@ -515,35 +387,20 @@ Verify that multiple customer fields can be updated in one request.
 
 ## PATCH-003 — Update Non-existing Customer
 
-**Objective**
-
-Verify the API behavior when attempting to update a customer that does not exist.
-
-**Method**
-
-`PATCH`
-
-**Endpoint**
-
-```text
-/customers({id})
-```
-
-**Test Data**
-
-Use a non-existing customer identifier.
-
-```text
-Customer No.: C99999
-```
-
-**Request Body**
-
-```json
-{
-  "name": "Non-existing Customer"
-}
-```
+| Field                    | Details                                                                                                                                                                                            |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | PATCH-003                                                                                                                                                                                          |
+| **Test Objective**       | Verify the API behavior when attempting to update a customer that does not exist.                                                                                                                  |
+| **Preconditions**        | API service is available and customer `C99999` does not exist.                                                                                                                                     |
+| **HTTP Method**          | `PATCH`                                                                                                                                                                                            |
+| **Endpoint**             | `/customers({id})`                                                                                                                                                                                 |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                   |
+| **Test Data**            | `TD-011`                                                                                                                                                                                           |
+| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide the non-existing customer identifier `C99999`.<br>3. Provide an update value.<br>4. Send the request.<br>5. Verify the response. |
+| **Expected Status Code** | `4xx`                                                                                                                                                                                              |
+| **Expected Result**      | Request is rejected. No new customer is created, and an appropriate error response is returned.                                                                                                    |
+| **Actual Result**        | TBD                                                                                                                                                                                                |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                     |
 
 **Expected Result**
 
@@ -555,27 +412,20 @@ Customer No.: C99999
 
 ## PATCH-004 — Update Customer with Invalid Status
 
-**Objective**
-
-Verify that an existing customer cannot be updated with an unsupported status.
-
-**Method**
-
-`PATCH`
-
-**Endpoint**
-
-```text
-/customers({id})
-```
-
-**Test Data**
-
-```json
-{
-  "status": "Pending"
-}
-```
+| Field                    | Details                                                                                                                                                                                                                |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | PATCH-004                                                                                                                                                                                                              |
+| **Test Objective**       | Verify that an existing customer cannot be updated with an unsupported status.                                                                                                                                         |
+| **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                                            |
+| **HTTP Method**          | `PATCH`                                                                                                                                                                                                                |
+| **Endpoint**             | `/customers({id})`                                                                                                                                                                                                     |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                       |
+| **Test Data**            | `TD-012`                                                                                                                                                                                                               |
+| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide the unsupported status `Pending`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that the existing customer data remains unchanged. |
+| **Expected Status Code** | `4xx`                                                                                                                                                                                                                  |
+| **Expected Result**      | Request is rejected. Existing customer data remains unchanged, and an appropriate validation error is returned.                                                                                                        |
+| **Actual Result**        | TBD                                                                                                                                                                                                                    |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                                         |
 
 **Expected Result**
 
@@ -589,27 +439,20 @@ Verify that an existing customer cannot be updated with an unsupported status.
 
 ## DELETE-001 — Delete Existing Customer
 
-**Objective**
-
-Verify that an existing customer can be deleted.
-
-**Method**
-
-`DELETE`
-
-**Endpoint**
-
-```text
-/customers({id})
-```
-
-**Test Data**
-
-Use an existing test customer.
-
-```text
-Customer No.: C00006
-```
+| Field                    | Details                                                                                                                                                                                                                                                             |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | DELETE-001                                                                                                                                                                                                                                                          |
+| **Test Objective**       | Verify that an existing customer can be deleted.                                                                                                                                                                                                                    |
+| **Preconditions**        | API service is available and the test customer exists.                                                                                                                                                                                                              |
+| **HTTP Method**          | `DELETE`                                                                                                                                                                                                                                                            |
+| **Endpoint**             | `/customers({id})`                                                                                                                                                                                                                                                  |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                                                                    |
+| **Test Data**            | `TD-013`                                                                                                                                                                                                                                                            |
+| **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the existing customer identifier.<br>3. Send the request.<br>4. Verify the response.<br>5. Send a `GET` request for the deleted customer.<br>6. Verify that the customer is no longer available. |
+| **Expected Status Code** | `2xx`                                                                                                                                                                                                                                                               |
+| **Expected Result**      | API accepts the delete request. Customer is removed from the Customer API table, and a subsequent `GET` request does not return the deleted customer.                                                                                                               |
+| **Actual Result**        | TBD                                                                                                                                                                                                                                                                 |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                                                                                      |
 
 **Expected Result**
 
@@ -621,25 +464,20 @@ Customer No.: C00006
 
 ## DELETE-002 — Delete Non-existing Customer
 
-**Objective**
-
-Verify the API behavior when attempting to delete a customer that does not exist.
-
-**Method**
-
-`DELETE`
-
-**Endpoint**
-
-```text
-/customers({id})
-```
-
-**Test Data**
-
-```text
-Customer No.: C99999
-```
+| Field                    | Details                                                                                                                                                                                                                            |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | DELETE-002                                                                                                                                                                                                                         |
+| **Test Objective**       | Verify the API behavior when attempting to delete a customer that does not exist.                                                                                                                                                  |
+| **Preconditions**        | API service is available and customer `C99999` does not exist.                                                                                                                                                                     |
+| **HTTP Method**          | `DELETE`                                                                                                                                                                                                                           |
+| **Endpoint**             | `/customers({id})`                                                                                                                                                                                                                 |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                                   |
+| **Test Data**            | `TD-014`                                                                                                                                                                                                                           |
+| **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the non-existing customer identifier `C99999`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that existing customer records remain unchanged. |
+| **Expected Status Code** | `4xx`                                                                                                                                                                                                                              |
+| **Expected Result**      | Request does not delete any record. An appropriate error response is returned, and existing customer records remain unchanged.                                                                                                     |
+| **Actual Result**        | TBD                                                                                                                                                                                                                                |
+| **Test Status**          | `Not Executed`                                                                                                                                                                                                                     |
 
 **Expected Result**
 
@@ -671,33 +509,6 @@ Customer No.: C99999
 | Data Validation | Enum and JSON data types |
 | Required Field Testing | Missing customer information |
 | CRUD Testing | Create, Read, Update, Delete |
-
----
-
-# Execution Result
-
-The `Actual Result`, `Status`, and evidence will be recorded after executing the test cases against the Business Central API.
-
-Example execution record:
-
-| Test Case ID | Actual Result | Status | Evidence |
-|---|---|---|---|
-| GET-001 | TBD | Not Executed | - |
-| GET-002 | TBD | Not Executed | - |
-| POST-001 | TBD | Not Executed | - |
-| POST-002 | TBD | Not Executed | - |
-| POST-003 | TBD | Not Executed | - |
-| POST-004 | TBD | Not Executed | - |
-| POST-005 | TBD | Not Executed | - |
-| POST-006 | TBD | Not Executed | - |
-| POST-007 | TBD | Not Executed | - |
-| POST-008 | TBD | Not Executed | - |
-| PATCH-001 | TBD | Not Executed | - |
-| PATCH-002 | TBD | Not Executed | - |
-| PATCH-003 | TBD | Not Executed | - |
-| PATCH-004 | TBD | Not Executed | - |
-| DELETE-001 | TBD | Not Executed | - |
-| DELETE-002 | TBD | Not Executed | - |
 
 ---
 
