@@ -22,7 +22,7 @@ A collection of hands-on QA projects demonstrating my practical testing skills.
 
 Practice creating test plans, regression checklists, and other QA documentation.
 
-[Project1 : E_Commerce](../01-Projects/1.1-E_Commerce)
+[Project1 : E_Commerce](./01-Projects/1.1-E_Commerce)
 
 **[View Projects →](./01-Projects)**
 
@@ -63,5 +63,7 @@ Courses and training I have completed as part of my QA learning journey.
 * Agile / Scrum
 
 > Course details, certificates, and learning outcomes are documented in the repository.
+
+[QA Basic](https://app.futureskill.co/api/certificate?courseId=711&userId=322587)
 
 **[View Courses →](./02-Skills/Courses)**
