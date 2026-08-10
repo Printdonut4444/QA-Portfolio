@@ -2,58 +2,144 @@
 
 Welcome to my QA Portfolio.
 
-This repository showcases my hands-on QA projects created while transitioning from Software Developer to Software QA Engineer. It demonstrates my practical skills in software testing through real-world practice and personal projects.
+## ABOUT ME
 
-## Table of Contents
-- [Resume](#resume)
-- Manual Testing
-- Test Scenarios & Test Cases
-- Bug Reports
-- SQL Practice
-- API Testing (Postman)
-- Test Plans
-- Automation Testing (Playwright)
+I am a Software Developer transitioning into a Software QA Engineer role.
 
-## Resume
+With a background in software development, I have experience with programming, debugging, APIs, databases, and understanding application architecture. I am now focusing on developing my skills in software testing and quality assurance.
 
-You can find my resume in this repository, providing a detailed overview of my work history, skills, and experience.
+This portfolio showcases my practical QA work, including manual testing, test case design, bug reporting, SQL, API testing, test planning, and test automation.
 
-[View My Resume](./Resume.md) 
+**[View My Resume](./Resume.md)**
 
-## Structure File
+---
 
-```text
-QA-Portfolio
-│
-├── README.md
-│
-├── 01-Manual-Testing
-│   ├── Test Scenario
-│   ├── Test Cases
-│   ├── Bug Reports
-│   └── Screenshots
-│
-├── 02-SQL
-│   ├── Basic Queries.sql
-│   ├── Join.sql
-│   └── README.md
-│
-├── 03-API-Testing
-│   ├── Postman Collection
-│   ├── Environment
-│   └── README.md
-│
-├── 04-Test-Plan
-│   ├── Test Plan.md
-│   ├── Regression Checklist.xlsx
-│   └── README.md
-│
-└── 05-Automation
-    ├── Playwright
-    ├── README.md
-    └── package.json
-```
+## PROJECTS
 
-## Purpose
+A collection of hands-on QA projects demonstrating my practical testing skills.
 
-This portfolio demonstrates my knowledge of software testing, problem-solving approach, and practical QA skills. Each project reflects my learning journey and hands-on experience with industry-standard QA tools and practices.
+* **Manual Testing**
+
+  * Test Scenarios
+  * Test Cases
+  * Bug Reports
+  * Exploratory Testing
+
+* **API Testing**
+
+  * REST API Testing
+  * Postman Collections
+  * API Validation
+
+* **Test Planning**
+
+  * Test Plan
+  * Test Strategy
+  * Regression Checklist
+
+* **Test Automation**
+
+  * Playwright
+  * Automated Test Cases
+  * Page Object Model
+
+**[View Projects →](./01-Projects)**
+
+---
+
+## COURSES
+
+Courses and training I have completed as part of my QA learning journey.
+
+* Software Testing / QA
+* Manual Testing
+* API Testing
+* SQL
+* Test Automation
+* Playwright
+* Agile / Scrum
+
+> Course details, certificates, and learning outcomes are documented in the repository.
+
+**[View Courses →](./02-Skills/Courses)**
+
+---
+
+## TOOLS
+
+### Testing Tools
+
+* Postman
+* Playwright
+* Chrome DevTools
+
+### Development & Version Control
+
+* Git
+* GitHub
+* VS Code
+
+### Database
+
+* MySQL
+
+### Project Management
+
+* Jira
+* Confluence
+
+---
+
+## TECH SKILLS
+
+### Software Testing
+
+* Manual Testing
+* Functional Testing
+* Regression Testing
+* Smoke Testing
+* Exploratory Testing
+* Test Case Design
+* Test Scenario Design
+* Bug Reporting
+* Test Planning
+
+### API & Database
+
+* REST API
+* HTTP Methods
+* HTTP Status Codes
+* JSON
+* SQL
+* Database Testing
+
+### Test Automation
+
+* Playwright
+* TypeScript
+* Page Object Model (POM)
+* Assertions
+* Test Fixtures
+
+### Software Development
+
+* JavaScript / TypeScript
+* Git
+* Debugging
+* Basic Web Technologies
+* Understanding of Frontend / Backend Architecture
+
+---
+
+## SOFT SKILLS
+
+* Analytical Thinking
+* Problem Solving
+* Attention to Detail
+* Communication
+* Teamwork
+* Collaboration
+* Critical Thinking
+* Continuous Learning
+* Time Management
+* Adaptability
