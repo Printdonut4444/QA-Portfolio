@@ -1,71 +1,191 @@
-# Phuricha Wichitjomthong
-**Software Quality Engineer**  
-| [phuricha2944@gmail.com](mailto:phuricha2944@gmail.com) | Vancouver, BC  
-[LinkedIn](https://www.linkedin.com/in/benjaminhayesneilson/) | [Website](http://b-n.me)
+# [YOUR NAME]
 
-## Professional Summary
-Accomplished QA professional with 10+ years of experience. Proven track record in developing robust test strategies, automating processes, and collaborating effectively with cross-functional teams to elevate product quality.
+**Software QA Engineer | Software Tester | Developer → QA**
 
-## Skills & Tools
+📍 Thailand
+📧 [Email](mailto:phuricha2944@gmail.com)
+📱 [Phone]
+🔗 GitHub: [GitHub URL](https://github.com/Printdonut4444)
+🔗 LinkedIn: [LinkedIn URL]
+🔗 QA Portfolio: [Portfolio URL](https://github.com/Printdonut4444/QA-Portfolio)
 
-- **Cloud and Infrastructure**: Kubernetes, GCP, Docker, OpenShift
-- **Programming**: Java, HTML, CSS, JavaScript (including JSON, XML), React
-- **Databases**: MySQL, Toad, Redis
-- **Search / Data Analysis**: Elastic Search
-- **Automation**: Cypress, Playwright, Selenium, JUnit, Maven, Nightwatch.js, New Relic, Dynatrace
-- **Mobile**: Appium, Saucelabs
-- **API**: Postman
-- **ML**: PyTorch
-- **CI**: Jenkins, GitHub Actions
-- **VC**: GitHub
-- **IDE**: Visual Studio Code
-- **AI**: Generative AI
-- **Networking**: TCP/IP, RESTful APIs, HTTP/HTTPS
-- **CLI**: bash, vim
-- **Tracking/Test Planning**: Jira, Confluence, Test Rail
-- **Methodologies**: Agile, Scrum, Kanban
+---
 
-## Work Experience
+## PROFESSIONAL SUMMARY
 
-### Sr. Quality Engineer, Home and Business Solutions
-**Telus Digital** - Vancouver, BC  
-*2019 - Present*
+Software Developer with hands-on experience in **Microsoft Dynamics 365 Business Central**, payment integration, REST APIs, databases, and system troubleshooting. Experienced in developing and testing POS features, EDC and QR payment integrations, and validating end-to-end payment flows.
 
-- Developed, implemented, and maintained automation frameworks for end-to-end quality assurance, resulting in an impressive 80% increase in testing efficiency and accuracy.
-- Led end-to-end testing for Telus Moves, an application designed to automate the process of transferring customers' services from one location to another. Building and ensuring the quality of this application led to a significant increase in self-serve customer migrations by 30%, streamlining the process and enhancing overall customer experience.
-- Solely guided all end-to-end testing for Optik TV 4.0, a large-scale revamp of Telus’ TV platform. Delivered a high-quality product that impressed stakeholders and drove substantial customer acquisition growth.
-- Managed test data accounts, verified orders/accounts using backend systems, and independently utilized microservices to create, test, and maintain test data. This initiative resulted in substantial cost savings and increased efficiency by eliminating the need to rely on external teams for data management, saving the company thousands of dollars.
-- **Leadership and Engagement**: Active member of Telus Eagles, supporting Indigenous, Inuit, and Métis Peoples. Promoted cultural awareness and fostered an inclusive work environment. As a Métis member, led initiatives including mentorship for Indigenous and Métis peoples, enhancing professional development and cultural exchange.
+Strong hands-on testing mindset with experience performing **functional testing, API validation, regression testing, defect reproduction, log analysis, and troubleshooting** before delivering completed work to consultants.
 
-### QA Engineer, Digital Advertising SAAS
-**Adacado Inc.** - Vancouver, BC  
-*2016 – 2018*
+Currently transitioning into a **Software QA / Software Tester** role, with a focus on Manual Testing and growing skills in Test Automation.
 
-- Optimized targeted display ads through rigorous testing of ad tags and tracking events. Achieved significant improvements, including increased click-through rates and decreased bounce rates. Enhanced tracking accuracy, resulting in more precise attribution of conversions and better-informed marketing decisions.
-- Boosted workflow efficiency by automating tasks in proprietary ad management software using Selenium. Developed robust automation scripts, reducing manual effort and errors. Resulted in increased productivity and more focus on strategic tasks while ensuring consistent and accurate execution of ad campaigns.
-- Employed Elasticsearch to swiftly search through extensive datasets, leveraging Kubernetes to retrieve container logs for streamlined monitoring and troubleshooting. Additionally, utilized MySQL and Toad for comprehensive data testing, ensuring database integrity and precise data retrieval.
+---
 
-### QA Specialist, Petra's Planet Virtual World
-**Drama Forum Trans-media** - Vancouver, BC  
-*2013 – 2016*
+## WORK EXPERIENCE
 
-- Led initiatives as the sole QA on the team, managing and performing rigorous end-to-end testing, including automation and load testing, to ensure high game quality. These efforts received positive feedback from both users and stakeholders. Additionally, conducted mobile app testing on iOS and Android platforms, as well as desktop applications.
-- Coordinated demos, monitored community feedback to enhance quality, and developed comprehensive test plans and test cases, maintaining clear communication with technical leads and managers to enhance product quality, functionality, and user experience.
+### Avision Co., Ltd.
 
-### QA Analyst, Global Web Publishing
-**Electronic Arts** - Vancouver, BC  
-*2011 – 2013*
+**Developer Expert Junior**
+**Nov 2024 – Present**
 
-- Led comprehensive testing initiatives for EA title websites, forums, and account settings, overseeing functional, black-box, user acceptance, regression, and automation testing processes. Achieved a substantial reduction in defect rate, significantly improving testing effectiveness and ensuring high-quality releases.
-- Orchestrated seamless integration and deployment, ensuring functionality across multiple platforms and devices, including mobile applications.
-- Progressed from junior QA analyst to sole lead tester for the high-profile Battlefield 4 release, recognized for expertise in test planning, feedback, and defect identification.
+* Develop and maintain applications using **Microsoft Dynamics 365 Business Central** and **AL**.
+* Develop and modify **Reports, Pages, Tables, and Codeunits** based on business requirements.
+* Develop POS functionality, including payment-related workflows, data handling, and communication between system components.
+* Implement and maintain **EDC and QR Payment integrations**, including communication with banking systems through APIs.
+* Work with **REST APIs, HTTP, JSON, and binary/text-based communication protocols** for payment integration.
+* Analyze payment data flow and troubleshoot communication between **POS, APIs, banking services, and EDC devices**.
+* Perform functional testing of developed features before submitting work to consultants for further validation.
+* Validate **API requests and responses** using Postman and verify data exchanged between systems.
+* Perform end-to-end testing of payment flows using actual POS and EDC environments.
+* Reproduce and investigate issues reported by users or encountered during testing.
+* Analyze errors and logs to identify potential causes of application and integration issues.
+* Perform regression testing after fixing defects to ensure existing functionality remains stable.
+* Set up and configure hardware and software environments for new store deployments.
+* Install and configure POS-related equipment and applications to prepare systems for production use.
+* Use **Git/GitHub** for source control and project collaboration.
 
-## Projects
+---
 
-- **[AI QA Test Buddy](https://github.com/bennhub/ai-qa-test-buddy)**: A tool leveraging Gemini AI Model to assist in creating test cases.
-- **[Machine Learning Clustering and Recommendation System](https://github.com/bennhub/Machine-Learning-Projects)**
+## QA & TESTING EXPERIENCE
 
-## Education
+### Manual Testing
 
-- **Camosun College**, Victoria, BC – Computer Science, Business Foundations, Diploma in Visual Arts
-- **Columbia Academy**, Vancouver, BC – Diploma in Digital and Analog Recording Arts
+* Functional Testing
+* Integration Testing
+* Regression Testing
+* End-to-End Testing
+* Exploratory Testing
+* UI Testing
+* Payment Flow Testing
+* Defect Reproduction
+* Bug Verification
+* Troubleshooting
+
+### API Testing
+
+* REST API Testing
+* HTTP Methods
+* HTTP Status Codes
+* JSON Validation
+* Request / Response Validation
+* API Testing with Postman
+* Payment API Integration Testing
+
+### Database Testing
+
+* SQL Server
+* Data Validation
+* Querying and verifying application data
+
+### Technical Testing
+
+* POS Testing
+* EDC Testing
+* QR Payment Testing
+* Hardware / Software Integration Testing
+* Binary / Text Protocol Communication
+* Network / TCP/IP Troubleshooting
+* Log Analysis
+* Debugging
+
+---
+
+## TECHNICAL SKILLS
+
+| Category               | Skills                                                                                                               |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Testing**            | Manual Testing, Functional Testing, Integration Testing, Regression Testing, End-to-End Testing, Exploratory Testing |
+| **API**                | REST API, Postman, HTTP, JSON                                                                                        |
+| **Database**           | SQL Server, SQL                                                                                                      |
+| **Programming**        | AL, JavaScript                                                                                                       |
+| **Microsoft Dynamics** | Dynamics 365 Business Central, AL Extension                                                                          |
+| **Version Control**    | Git, GitHub, GitHub Projects                                                                                         |
+| **Development Tools**  | VS Code                                                                                                              |
+| **Project Management** | ClickUp                                                                                                              |
+| **Payment Technology** | EDC, QR Payment, Payment API Integration                                                                             |
+| **Communication**      | Binary/Text Protocol, Network, TCP/IP                                                                                |
+
+---
+
+## TESTING APPROACH
+
+As a developer working closely with business requirements and production systems, I apply testing throughout the development process.
+
+**Understand Requirement → Develop → Self-Test → Debug → Retest → Regression Test → Submit for Validation**
+
+I routinely test my own implementation before submitting completed work to consultants. This includes checking expected functionality, validating data flow, testing API communication, reproducing issues, and verifying fixes.
+
+This development background helps me understand both **how software is built and how it can fail**, which I aim to apply in my transition into Software QA.
+
+---
+
+## EDUCATION
+
+### Silpakorn University
+
+**Bachelor's Degree in Computer Science**
+**Graduated: 2024**
+
+---
+
+## COURSES & CONTINUOUS LEARNING
+
+Currently expanding knowledge in Software Quality Assurance and Software Testing through self-directed learning.
+
+Areas of study include:
+
+* Software Testing Fundamentals
+* Manual Testing
+* Test Case Design
+* Bug Reporting
+* API Testing
+* SQL for Software Testing
+* Test Automation
+* Playwright
+* QA Processes and Best Practices
+
+---
+
+## SOFT SKILLS
+
+* Analytical Thinking
+* Problem Solving
+* Attention to Detail
+* Troubleshooting
+* Critical Thinking
+* Communication
+* Team Collaboration
+* Self-Learning
+* Adaptability
+* Continuous Improvement
+
+---
+
+## LANGUAGES
+
+**Thai:** Native
+
+**English:**
+
+* Reading / Technical Documentation: Good
+* Writing: Developing
+* Listening: Developing
+* Speaking: Developing
+
+---
+
+## QA PORTFOLIO
+
+My QA Portfolio contains hands-on projects demonstrating my knowledge and practical skills in software testing.
+
+**Portfolio:** [QA Portfolio URL](https://github.com/Printdonut4444/QA-Portfolio)
+
+### Portfolio Areas
+
+* Manual Testing
+* Test Scenarios & Test Cases
+* Bug Reports
+* SQL
+* API Testing
+* Test Planning
+* Test Automation
