@@ -65,6 +65,9 @@ Before executing the test cases:
 - Returned records contain the expected customer fields.
 - Data matches the records stored in Business Central.
 
+### Test Execution Evidence
+
+A valid customer creation request was sent using Postman.
 <img width="1664" height="692" alt="image" src="https://github.com/user-attachments/assets/5e89c8a1-0a4a-45b1-a02b-6539924f84f0" />
 <img width="1117" height="895" alt="image" src="https://github.com/user-attachments/assets/aa3fec00-e4fb-4607-8af1-3b72e6a78fdf" />
 <img width="1652" height="558" alt="image" src="https://github.com/user-attachments/assets/0b9ad3de-e028-49f1-ae53-09c62b96e2a8" />
