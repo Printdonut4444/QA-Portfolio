@@ -2,7 +2,7 @@
 
 Welcome to my QA Portfolio.
 
-## ABOUT ME
+## About Me
 
 I am a Software Developer transitioning into a Software QA Engineer role.
 
@@ -14,43 +14,42 @@ This portfolio showcases my practical QA work, including manual testing, test ca
 
 ---
 
-## PROJECTS
+## Projects
 
 A collection of hands-on QA projects demonstrating my practical testing skills.
 
-* **Test Planning**
+### Test Planning
 
 Practice creating test plans, regression checklists, and other QA documentation.
 
-[Project1 : E_Commerce](./01-Projects/1.1-E_Commerce)
+* [**Project 1: E-Commerce**](./01-Projects/1.1-E_Commerce)
+* [**Project 2: Book Store**](./01-Projects/1.2-Book_Store)
 
-**[View Projects →](./01-Projects)**
+**[View All Projects →](./01-Projects)**
 
 ---
 
-## SKILLS
-Skills for QA Testing/QA Engineer/Tester
+## Skills
+
+Skills relevant to QA Testing / QA Engineering / Software Testing.
 
 * **SQL**
-...
+  SQL querying and data validation using SQL Server, including SELECT, JOIN, WHERE, GROUP BY, and data verification queries for testing purposes.
 
-* **API Testing** 
-
-REST API testing and validation using Postman, including request/response validation and HTTP status code verification.
+* **API Testing**
+  REST API testing and validation using Postman, including request/response validation, HTTP status code verification, and CRUD operation testing.
 
 * **Manual Testing**
-
-Practical exercises covering test scenarios, test cases, bug reporting, and functional testing.
+  Practical exercises covering test scenarios, test cases, bug reporting, and functional testing.
 
 * **Test Automation**
-
-Automation testing practice with a focus on building maintainable automated tests.
+  Automation testing practice with Playwright, with a focus on building maintainable automated tests.
 
 **[View Skills →](./02-Skills)**
 
 ---
 
-## COURSES
+## Courses
 
 Courses and training I have completed as part of my QA learning journey.
 
@@ -64,6 +63,6 @@ Courses and training I have completed as part of my QA learning journey.
 
 > Course details, certificates, and learning outcomes are documented in the repository.
 
-[QA Basic](https://app.futureskill.co/api/certificate?courseId=711&userId=322587)
+* [QA Basic — FutureSkill Certificate](https://app.futureskill.co/api/certificate?courseId=711&userId=322587)
 
 **[View Courses →](./02-Skills/Courses)**
