@@ -41,36 +41,53 @@ Before executing the test cases:
 
 # GET Test Cases
 
-## GET-001 — Get All Customers
+### GET-001 — Get All Customers
 
-| Field                    | Details                                                                                                                                             |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Test Case ID**         | GET-001                                                                                                                                             |
-| **Test Objective**       | Verify that the API returns a list of all customers successfully.                                                                                   |
-| **Preconditions**        | API service is available and customer data exists in the system.                                                                                    |
-| **HTTP Method**          | `GET`                                                                                                                                               |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                 |
-| **Headers**              | `Content-Type: application/json`                                                                                                                    |
-| **Test Data**            | N/A                                                                                                                                                 |
-| **Test Steps**           | 1. Send a `GET` request to the customers endpoint.<br>2. Send the request without any query parameters.<br>3. Verify the response.                  |
-| **Expected Status Code** | `200 OK`                                                                                                                                            |
-| **Expected Result**      | API returns a successful response containing a list of customers. Each customer object contains the expected fields and the response is valid JSON. |
-| **Actual Result**        | API returned `200 OK` and a list of customer records in valid JSON format.                                                                          |
-| **Test Status**          | `PASS`                                                                                                                                              |
-
-**Expected Result**
-
-- API returns a successful response.
-- Response contains the customer collection.
-- Returned records contain the expected customer fields.
-- Data matches the records stored in Business Central.
+| Field                | Details                                                                                                                                                                                                                                                                                                                           |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Test Case ID         | GET-001                                                                                                                                                                                                                                                                                                                           |
+| Test Objective       | Verify that the API returns a list of all customers successfully.                                                                                                                                                                                                                                                                 |
+| Preconditions        | API service is available and customer data exists in the system.                                                                                                                                                                                                                                                                  |
+| HTTP Method          | `GET`                                                                                                                                                                                                                                                                                                                             |
+| Endpoint             | `/api/v1/customers`                                                                                                                                                                                                                                                                                                               |
+| Headers              | `Content-Type: application/json`                                                                                                                                                                                                                                                                                                  |
+| Test Data            | N/A                                                                                                                                                                                                                                                                                                                               |
+| Test Steps           | 1. Send a `GET` request to the customers endpoint.<br>2. Send the request without any query parameters.<br>3. Verify the response.                                                                                                                                                                                                |
+| Expected Status Code | `200 OK`                                                                                                                                                                                                                                                                                                                          |
+| Expected Result      | API returns a successful response containing a list of customers. Each customer object contains the expected fields and the response is valid JSON.                                                                                                                                                                               |
+| Actual Status Code   | `200 OK`                                                                                                                                                                                                                                                                                                                          |
+| Actual Result        | API returned `200 OK` and successfully returned a list of customer records in valid JSON format. The response contained the expected customer fields including `id`, `number`, `displayName`, `phoneNumber`, and `city`. The returned customer data matched the corresponding records in Microsoft Dynamics 365 Business Central. |
+| Test Status          | `PASS`                                                                                                                                                                                                                                                                                                                            |
 
 ### Test Execution Evidence
 
-A GET request was sent using Postman to retrieve the customer data.
+**Execution Tool:** Postman
+
+**Request:**
+
+```http
+GET /api/v1/customers
+```
+
+**Response Status:**
+
+```text
+200 OK
+```
+
+**Response Validation:**
+
+* Response was returned successfully.
+* Response contained the customer collection.
+* Response was valid JSON.
+* Customer records contained the expected fields.
+* Returned customer data matched the corresponding records in Microsoft Dynamics 365 Business Central.
+
+**Evidence:**
+
 <img width="1074" height="902" alt="image" src="https://github.com/user-attachments/assets/43ad447c-565c-4f61-8f2b-898fea4cd5ee" />
 
-
+The screenshot shows the Postman request, response status, and response body containing the customer collection.
 
 ---
 
