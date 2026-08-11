@@ -91,29 +91,53 @@ The screenshot shows the Postman request, response status, and response body con
 
 ---
 
-## GET-002 — Get Customer by No.
+### GET-002 — Get Customer by No.
 
-| Field                    | Details                                                                                                                                                                           |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Test Case ID**         | GET-002                                                                                                                                                                           |
-| **Test Objective**       | Verify that a specific customer can be retrieved using a valid customer identifier.                                                                                               |
-| **Preconditions**        | API service is available and the specified customer exists in the system.                                                                                                         |
-| **HTTP Method**          | `GET`                                                                                                                                                                             |
-| **Endpoint**             | `/customers({id})`                                                                                                                                                                |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                  |
-| **Test Data**            | `TD-001`                                                                                                                                                                          |
-| **Test Steps**           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a valid customer identifier.<br>3. Send the request.<br>4. Verify the response.                                   |
-| **Expected Status Code** | `200 OK`                                                                                                                                                                          |
-| **Expected Result**      | API returns the requested customer successfully. The returned customer number matches the requested identifier and the customer data matches the data stored in Business Central. |
-| **Actual Result**        | TBD                                                                                                                                                                               |
-| **Test Status**          | `Not Executed`                                                                                                                                                                    |
+| Field                | Details                                                                                                                                                                                                                                                                 |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Test Case ID         | GET-002                                                                                                                                                                                                                                                                 |
+| Test Objective       | Verify that a specific customer can be retrieved using a valid customer identifier.                                                                                                                                                                                                                                                 |
+| Preconditions        | API service is available and the specified customer exists in the system.                                                                                                                                                                                                                                                           |
+| HTTP Method          | `GET`                                                                                                                                                                                                                                                                                                                               |
+| Endpoint             | `/api/v1/customers({id})`                                                                                                                                                                                                                                                                                                           |
+| Headers              | `Content-Type: application/json`                                                                                                                                                                                                                                                                                                    |
+| Test Data            | `TD-001` (`CUST001`)                                                                                                                                                                                                                                                                                                                |
+| Test Steps           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a valid customer identifier (`CUST001`).<br>3. Send the request.<br>4. Verify the response.                                                                                                          |
+| Expected Status Code | `200 OK`                                                                                                                                                                                                                                                                                                                            |
+| Expected Result      | API returns the requested customer successfully. The returned customer number matches the requested identifier and the customer data matches the corresponding record in Microsoft Dynamics 365 Business Central.                                                      |
+| Actual Status Code   | `TBD`                                                                                                                                                                                                                                                                                                                              |
+| Actual Result        | `TBD`                                                                                                                                                                                                                                                                                                                              |
+| Test Status          | `Not Executed`                                                                                                                                                                                                                                                                                                                     |
 
-**Expected Result**
+### Test Execution Evidence
 
-- API returns a successful response.
-- The response contains the requested customer.
-- The returned customer number matches the requested record.
-- Customer data matches Business Central.
+**Execution Tool:** Postman
+
+**Request:**
+
+```http
+GET /api/v1/customers(CUST001)
+```
+
+**Response Status:**
+
+```text
+200 OK
+```
+
+**Response Validation:**
+
+* Response was returned successfully.
+* Response contained the requested customer CUST001.
+* Returned customer number matched the requested identifier.
+* Returned customer data matched the corresponding record in Microsoft Dynamics 365 Business Central.
+
+**Evidence:**
+
+<img width="1054" height="846" alt="image" src="https://github.com/user-attachments/assets/5fe33f41-f6e6-4aa5-a239-4fe9cd7b3084" />
+
+
+The screenshot should show the Postman request, response status, and response body containing the requested customer CUST001.
 
 ---
 
