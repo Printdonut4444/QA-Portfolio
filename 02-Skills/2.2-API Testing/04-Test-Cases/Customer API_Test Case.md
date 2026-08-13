@@ -41,87 +41,153 @@ Before executing the test cases:
 
 # GET Test Cases
 
-## GET-001 — Get All Customers
+### GET-001 — Get All Customers
 
-| Field                    | Details                                                                                                                                             |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Test Case ID**         | GET-001                                                                                                                                             |
-| **Test Objective**       | Verify that the API returns a list of all customers successfully.                                                                                   |
-| **Preconditions**        | API service is available and customer data exists in the system.                                                                                    |
-| **HTTP Method**          | `GET`                                                                                                                                               |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                 |
-| **Headers**              | `Content-Type: application/json`                                                                                                                    |
-| **Test Data**            | N/A                                                                                                                                                 |
-| **Test Steps**           | 1. Send a `GET` request to the customers endpoint.<br>2. Send the request without any query parameters.<br>3. Verify the response.                  |
-| **Expected Status Code** | `200 OK`                                                                                                                                            |
-| **Expected Result**      | API returns a successful response containing a list of customers. Each customer object contains the expected fields and the response is valid JSON. |
-| **Actual Result**        | API returned `200 OK` and a list of customer records in valid JSON format.                                                                          |
-| **Test Status**          | `PASS`                                                                                                                                              |
-
-**Expected Result**
-
-- API returns a successful response.
-- Response contains the customer collection.
-- Returned records contain the expected customer fields.
-- Data matches the records stored in Business Central.
+| Field                | Details                                                                                                                                                                                                                                                                                                                           |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Test Case ID         | GET-001                                                                                                                                                                                                                                                                                                                           |
+| Test Objective       | Verify that the API successfully returns the customer collection.                                                                                                                                                                                                                                                                |
+| Preconditions        | API service is available and customer data exists in the system.                                                                                                                                                                                                                                                                  |
+| HTTP Method          | `GET`                                                                                                                                                                                                                                                                                                                             |
+| Endpoint             | `/api/v1/customers`                                                                                                                                                                                                                                                                                                               |
+| Headers              | `Accept: application/json`                                                                                                                                                                                                                                                                                                  |
+| Test Data            | N/A                                                                                                                                                                                                                                                                                                                               |
+| Test Steps           | 1. Send a `GET` request to the customers endpoint.<br>2. Send the request without any query parameters.<br>3. Verify the response.                                                                                                                                                                                                |
+| Expected Status Code | `200 OK`                                                                                                                                                                                                                                                                                                                          |
+| Expected Result      | API returns 200 OK with a valid JSON response containing the customer collection. Each customer object contains the expected fields.                                                                                                                                                                               |
+| Actual Status Code   | `200 OK`                                                                                                                                                                                                                                                                                                                          |
+| Actual Result        | API returned `200 OK` and successfully returned a list of customer records in valid JSON format. The response contained the expected customer fields including `id`, `number`, `displayName`, `phoneNumber`, and `city`. The returned customer data matched the corresponding records in Microsoft Dynamics 365 Business Central. |
+| Test Status          | `PASS`                                                                                                                                                                                                                                                                                                                            |
 
 ### Test Execution Evidence
 
-A GET request was sent using Postman to retrieve the customer data.
+**Execution Tool:** Postman
+
+**Request:**
+
+```http
+GET /api/v1/customers
+```
+
+**Response Status:**
+
+```text
+200 OK
+```
+
+**Response Validation:**
+
+* Response was returned successfully.
+* Response contained the customer collection.
+* Response was valid JSON.
+* Customer records contained the expected fields.
+* Returned customer data matched the corresponding records in Microsoft Dynamics 365 Business Central.
+
+**Evidence:**
+
 <img width="1074" height="902" alt="image" src="https://github.com/user-attachments/assets/43ad447c-565c-4f61-8f2b-898fea4cd5ee" />
 
-
-
----
-
-## GET-002 — Get Customer by No.
-
-| Field                    | Details                                                                                                                                                                           |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Test Case ID**         | GET-002                                                                                                                                                                           |
-| **Test Objective**       | Verify that a specific customer can be retrieved using a valid customer identifier.                                                                                               |
-| **Preconditions**        | API service is available and the specified customer exists in the system.                                                                                                         |
-| **HTTP Method**          | `GET`                                                                                                                                                                             |
-| **Endpoint**             | `/customers({id})`                                                                                                                                                                |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                  |
-| **Test Data**            | `TD-001`                                                                                                                                                                          |
-| **Test Steps**           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a valid customer identifier.<br>3. Send the request.<br>4. Verify the response.                                   |
-| **Expected Status Code** | `200 OK`                                                                                                                                                                          |
-| **Expected Result**      | API returns the requested customer successfully. The returned customer number matches the requested identifier and the customer data matches the data stored in Business Central. |
-| **Actual Result**        | TBD                                                                                                                                                                               |
-| **Test Status**          | `Not Executed`                                                                                                                                                                    |
-
-**Expected Result**
-
-- API returns a successful response.
-- The response contains the requested customer.
-- The returned customer number matches the requested record.
-- Customer data matches Business Central.
+The screenshot shows the Postman request, response status, and response body containing the customer collection.
 
 ---
 
-## GET-003 — Get Non-existing Customer
+### GET-002 — Get Customer by Customer Number.
 
-| Field                    | Details                                                                                                                                                |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Test Case ID**         | GET-003                                                                                                                                                |
-| **Test Objective**       | Verify that the API handles a request for a customer that does not exist.                                                                              |
-| **Preconditions**        | API service is available.                                                                                                                              |
-| **HTTP Method**          | `GET`                                                                                                                                                  |
-| **Endpoint**             | `/customers({id})`                                                                                                                                     |
-| **Headers**              | `Content-Type: application/json`                                                                                                                       |
-| **Test Data**            | `TD-002`                                                                                                                                               |
-| **Test Steps**           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a non-existing customer identifier.<br>3. Send the request.<br>4. Verify the response. |
-| **Expected Status Code** | `4xx`                                                                                                                                                  |
-| **Expected Result**      | API returns an appropriate error response and does not return an existing customer record.                                                             |
-| **Actual Result**        | TBD                                                                                                                                                    |
-| **Test Status**          | `Not Executed`                                                                                                                                         |
+| Field                | Details                                                                                                                                                                                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Test Case ID         | GET-002                                                                                                                                                                                                                                    |
+| Test Objective       | Verify that a specific customer can be retrieved using a valid customer number.                                                                                                                                                            |
+| Preconditions        | API service is available and the specified customer exists in the system.                                                                                                                                                                  |
+| HTTP Method          | `GET`                                                                                                                                                                                                                                      |
+| Endpoint             | `/api/v1/customers?$filter=no eq 'CUST001'`                                                                                                                                                                                                |
+| Headers              | `Accept: application/json`                                                                                                                                                                                                                 |
+| Test Data            | `TD-001` (`CUST001`)                                                                                                                                                                                                                       |
+| Test Steps           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a valid customer number (`CUST001`) as a filter.<br>3. Send the request.<br>4. Verify the response.                                                                        |
+| Expected Status Code | `200 OK`                                                                                                                                                                                                                                   |
+| Expected Result      | API returns the requested customer successfully. The returned customer number matches the requested customer number, and the customer data matches the corresponding record in Microsoft Dynamics 365 Business Central.                    |
+| Actual Status Code   | `200 OK`                                                                                                                                                                                                                                   |
+| Actual Result        | API returned `200 OK` and successfully returned customer `CUST001`. The returned customer number matched the requested customer number, and the customer data matched the corresponding record in Microsoft Dynamics 365 Business Central. |
+| Test Status          | `PASS`                                                                                                                                                                                                                                     |
 
-**Expected Result**
+### Test Execution Evidence
 
-- API does not return an existing customer.
-- An appropriate error response is returned.
-- No customer record is created or modified.
+**Execution Tool:** Postman
+
+**Request:**
+
+```http
+GET /api/v1/customers?$filter=no eq 'CUST001'
+```
+
+**Response Status:**
+
+```text
+200 OK
+```
+
+**Response Validation:**
+
+* Response was returned successfully.
+* Response contained the requested customer CUST001.
+* Returned customer number matched the requested customer number.
+* Returned customer data matched the corresponding record in Microsoft Dynamics 365 Business Central.
+
+**Evidence:**
+
+<img width="1054" height="846" alt="image" src="https://github.com/user-attachments/assets/5fe33f41-f6e6-4aa5-a239-4fe9cd7b3084" />
+
+
+The screenshot shows the Postman request, response status, and response body containing the requested customer CUST001.
+
+---
+### GET-003 — Get Customer by Non-existing No.
+
+| Field                    | Details                                                                                                                                                                                             |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | GET-003                                                                                                                                                                                             |
+| **Test Objective**       | Verify that the API returns an empty customer collection when searching for a non-existing customer number.                                                                                         |
+| **Preconditions**        | API service is available.                                                                                                                                                                           |
+| **HTTP Method**          | `GET`                                                                                                                                                                                               |
+| **Endpoint**             | `/api/v1/customers?$filter=no eq 'CUST102'`                                                                                                                                                         |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                          |
+| **Test Data**            | `TD-002` (`CUST102`)                                                                                                                                                                                |
+| **Test Steps**           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a non-existing customer number (`CUST102`) as a filter.<br>3. Send the request.<br>4. Verify the response status and response body. |
+| **Expected Status Code** | `200 OK`                                                                                                                                                                                            |
+| **Expected Result**      | API returns `200 OK` with an empty `value` array because no customer matches the specified customer number. No existing customer record is returned.                                                |
+| **Actual Status Code**   | `200 OK`                                                                                                                                                                                            |
+| **Actual Result**        | API returned `200 OK` with an empty `value` array. No customer matched the specified customer number `CUST102`, and no existing customer record was returned.                                       |
+| **Test Status**          | `PASS`                                                                                                                                                                                              |
+
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+```http
+GET /api/v1/customers?$filter=no eq 'CUST102'
+```
+**Response Status:**
+
+```text
+200 OK
+```
+
+**Response Validation:**
+
+* Response was returned successfully.
+* Response status was 200 OK.
+* Response contained an empty value array.
+* No customer matched the specified customer number CUST102.
+* No existing customer record was returned.
+
+**Evidence:**
+
+<img width="1666" height="367" alt="image" src="https://github.com/user-attachments/assets/b3410a6e-418f-46fb-b148-9b079d3f4e0c" />
+
+<img width="1278" height="908" alt="image" src="https://github.com/user-attachments/assets/727f1b27-e154-431c-a65e-367eb4051444" />
+
+The screenshots show the Postman request using the non-existing customer number CUST102 and the 200 OK response with an empty value array.
 
 ---
 
@@ -136,7 +202,7 @@ A GET request was sent using Postman to retrieve the customer data.
 | **Preconditions**        | API service is available and the customer number does not already exist.                                                                                                                                            |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                              |
 | **Endpoint**             | `/customers`                                                                                                                                                                                                        |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                    |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                                    |
 | **Test Data**            | `TD-003`                                                                                                                                                                                                            |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide valid customer data in the request body.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify the created customer in Business Central. |
 | **Expected Status Code** | `201 Created`*                                                                                                                                                                                                      |
@@ -170,7 +236,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and the provided customer number does not already exist.                                                                                                                       |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                  |
 | **Endpoint**             | `/customers`                                                                                                                                                                                            |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                        |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                        |
 | **Test Data**            | `TD-002`                                                                                                                                                                                                |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide only the minimum required customer data.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify the created customer record.  |
 | **Expected Status Code** | `2xx` if accepted; otherwise an appropriate validation error                                                                                                                                            |
@@ -197,7 +263,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and `No.` is configured as a required field.                                                                                                                                                    |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                   |
 | **Endpoint**             | `/customers`                                                                                                                                                                                                             |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                         |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                                         |
 | **Test Data**            | `TD-003`                                                                                                                                                                                                                 |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Omit the customer number from the request body.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that no incomplete customer record was created. |
 | **Expected Status Code** | `4xx`                                                                                                                                                                                                                    |
@@ -224,7 +290,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | Customer `C00001` already exists in the system.                                                                                                                                                                         |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                  |
 | **Endpoint**             | `/customers`                                                                                                                                                                                                            |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                        |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                                        |
 | **Test Data**            | `TD-004`                                                                                                                                                                                                                |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide the existing customer number `C00001`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that the existing customer was not overwritten. |
 | **Expected Status Code** | `4xx`                                                                                                                                                                                                                   |
@@ -249,7 +315,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and the customer type field has defined valid values.                                                                                                                          |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                  |
 | **Endpoint**             | `/customers`                                                                                                                                                                                            |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                        |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                        |
 | **Test Data**            | `TD-005`                                                                                                                                                                                                |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide an unsupported customer type, `Unknown`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that no customer was created. |
 | **Expected Status Code** | `4xx`                                                                                                                                                                                                   |
@@ -274,7 +340,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and the status field has defined valid values.                                                                                                                          |
 | **HTTP Method**          | `POST`                                                                                                                                                                                           |
 | **Endpoint**             | `/customers`                                                                                                                                                                                     |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                 |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                 |
 | **Test Data**            | `TD-006`                                                                                                                                                                                         |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide an unsupported status, `Pending`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that no customer was created. |
 | **Expected Status Code** | `4xx`                                                                                                                                                                                            |
@@ -299,7 +365,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and the API enforces the expected data types for each field.                                                                                                                                                               |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                                              |
 | **Endpoint**             | `/customers`                                                                                                                                                                                                                                        |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                                                    |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                                                                    |
 | **Test Data**            | `TD-007`                                                                                                                                                                                                                                            |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide a string value for `creditLimit` instead of a number.<br>3. Provide a string value for `marketingConsent` instead of a Boolean.<br>4. Send the request.<br>5. Verify the response. |
 | **Expected Status Code** | `4xx`                                                                                                                                                                                                                                               |
@@ -325,7 +391,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available.                                                                                                                                                                                   |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                      |
 | **Endpoint**             | `/customers`                                                                                                                                                                                                |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                            |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                            |
 | **Test Data**            | `TD-008`                                                                                                                                                                                                    |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide a negative value for `creditLimit`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify whether a customer record was created. |
 | **Expected Status Code** | `4xx` if the business rule requires `creditLimit >= 0`                                                                                                                                                      |
@@ -353,7 +419,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                        |
 | **HTTP Method**          | `PATCH`                                                                                                                                                                                            |
 | **Endpoint**             | `/customers({id})`                                                                                                                                                                                 |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                   |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                   |
 | **Test Data**            | `TD-009`                                                                                                                                                                                           |
 | **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide a new customer name.<br>3. Send the request.<br>4. Verify the response.<br>5. Retrieve the customer and verify the updated name. |
 | **Expected Status Code** | `2xx`                                                                                                                                                                                              |
@@ -379,7 +445,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                               |
 | **HTTP Method**          | `PATCH`                                                                                                                                                                                                   |
 | **Endpoint**             | `/customers({id})`                                                                                                                                                                                        |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                          |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                          |
 | **Test Data**            | `TD-010`                                                                                                                                                                                                  |
 | **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide new values for name, phone number, and city.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify the updated customer data. |
 | **Expected Status Code** | `2xx`                                                                                                                                                                                                     |
@@ -405,7 +471,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and customer `C99999` does not exist.                                                                                                                                     |
 | **HTTP Method**          | `PATCH`                                                                                                                                                                                            |
 | **Endpoint**             | `/customers({id})`                                                                                                                                                                                 |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                   |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                   |
 | **Test Data**            | `TD-011`                                                                                                                                                                                           |
 | **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide the non-existing customer identifier `C99999`.<br>3. Provide an update value.<br>4. Send the request.<br>5. Verify the response. |
 | **Expected Status Code** | `4xx`                                                                                                                                                                                              |
@@ -430,7 +496,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                                            |
 | **HTTP Method**          | `PATCH`                                                                                                                                                                                                                |
 | **Endpoint**             | `/customers({id})`                                                                                                                                                                                                     |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                       |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                                       |
 | **Test Data**            | `TD-012`                                                                                                                                                                                                               |
 | **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide the unsupported status `Pending`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that the existing customer data remains unchanged. |
 | **Expected Status Code** | `4xx`                                                                                                                                                                                                                  |
@@ -457,7 +523,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and the test customer exists.                                                                                                                                                                                                              |
 | **HTTP Method**          | `DELETE`                                                                                                                                                                                                                                                            |
 | **Endpoint**             | `/customers({id})`                                                                                                                                                                                                                                                  |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                                                                    |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                                                                                    |
 | **Test Data**            | `TD-013`                                                                                                                                                                                                                                                            |
 | **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the existing customer identifier.<br>3. Send the request.<br>4. Verify the response.<br>5. Send a `GET` request for the deleted customer.<br>6. Verify that the customer is no longer available. |
 | **Expected Status Code** | `2xx`                                                                                                                                                                                                                                                               |
@@ -482,7 +548,7 @@ A valid customer creation request was sent using Postman.
 | **Preconditions**        | API service is available and customer `C99999` does not exist.                                                                                                                                                                     |
 | **HTTP Method**          | `DELETE`                                                                                                                                                                                                                           |
 | **Endpoint**             | `/customers({id})`                                                                                                                                                                                                                 |
-| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                                   |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                                                   |
 | **Test Data**            | `TD-014`                                                                                                                                                                                                                           |
 | **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the non-existing customer identifier `C99999`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that existing customer records remain unchanged. |
 | **Expected Status Code** | `4xx`                                                                                                                                                                                                                              |
