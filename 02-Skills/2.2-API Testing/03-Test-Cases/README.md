@@ -46,11 +46,11 @@ Each test case contains:
 ---
 ## Test Execution Summary
 
-Test Cases Designed: 17
-Test Cases Executed: 9
-Passed: 9
-Failed: 0
-Not Executed: 8
+* Test Cases Designed: 17
+* Test Cases Executed: 9
+* Passed: 9
+* Failed: 0
+* Not Executed: 8
 
 ## Related Sections
 * [Customer API_Test Cases](../03-Test-Cases/Customer%20API_Test%20Case.md)
