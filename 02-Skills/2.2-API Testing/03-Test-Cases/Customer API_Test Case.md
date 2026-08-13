@@ -143,26 +143,50 @@ The screenshot should show the Postman request, response status, and response bo
 
 ## GET-003 — Get Non-existing Customer
 
-| Field                    | Details                                                                                                                                                |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Test Case ID**         | GET-003                                                                                                                                                |
-| **Test Objective**       | Verify that the API handles a request for a customer that does not exist.                                                                              |
-| **Preconditions**        | API service is available.                                                                                                                              |
-| **HTTP Method**          | `GET`                                                                                                                                                  |
-| **Endpoint**             | `/customers({id})`                                                                                                                                     |
-| **Headers**              | `Content-Type: application/json`                                                                                                                       |
-| **Test Data**            | `TD-002`                                                                                                                                               |
-| **Test Steps**           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a non-existing customer identifier.<br>3. Send the request.<br>4. Verify the response. |
-| **Expected Status Code** | `4xx`                                                                                                                                                  |
-| **Expected Result**      | API returns an appropriate error response and does not return an existing customer record.                                                             |
-| **Actual Result**        | TBD                                                                                                                                                    |
-| **Test Status**          | `Not Executed`                                                                                                                                         |
+| **FieldDetails**         |                                                                                                                                                                                                                                      |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Test Case ID**         | GET-003                                                                                                                                                                                                                              |
+| **Test Objective**       | Verify that the API handles a request for a customer that does not exist.                                                                                                                                                            |
+| **Preconditions**        | API service is available.                                                                                                                                                                                                            |
+| **HTTP Method**          | `GET`                                                                                                                                                                                                                                |
+| **Endpoint**             | `/customers({id})`                                                                                                                                                                                                                   |
+| **Headers**              | `Content-Type: application/json`                                                                                                                                                                                                     |
+| **Test Data**            | `TD-002`                                                                                                                                                                                                                             |
+| **Test Steps**           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a non-existing customer identifier.<br>3. Send the request.<br>4. Verify the response.                    |
+| **Expected Status Code** | `4xx`                                                                                                                                                                                                                                |
+| **Expected Result**      | API returns an appropriate error response and does not return an existing customer record.                                                                                                                                           |
+| **Actual Status Code**   | `200 OK`                                                                                                                                                                                                                             |
+| **Actual Result**        | API returned `200 OK` with an empty customer collection. The response contained an empty `value` array, indicating that no customer matched the requested identifier. However, the API did not return the expected `4xx` error response. |
+| **Test Status**          | `FAIL`                                                                                                                                                                                                                               |
 
-**Expected Result**
+### Test Execution Evidence
 
-- API does not return an existing customer.
-- An appropriate error response is returned.
-- No customer record is created or modified.
+**Execution Tool:** Postman
+
+**Request:**
+
+```http
+GET /customers(<non-existing-customer-id>)
+```
+**Response Status:**
+
+```text
+200 OK
+```
+
+**Response Validation:**
+
+* Response was returned successfully.
+* Response status was 200 OK.
+* Response contained an empty value array.
+* No existing customer record was returned.
+* Expected a 4xx error response, but the API returned 200 OK.
+
+**Evidence:**
+
+<img width="1278" height="908" alt="image" src="https://github.com/user-attachments/assets/727f1b27-e154-431c-a65e-367eb4051444" />
+
+The screenshot shows the Postman request using a non-existing customer identifier and the 200 OK response with an empty value array.
 
 ---
 
