@@ -46,7 +46,7 @@ Before executing the test cases:
 | Field                | Details                                                                                                                                                                                                                                                                                                                           |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Test Case ID         | GET-001                                                                                                                                                                                                                                                                                                                           |
-| Test Objective       | Verify that the API returns a list of all customers successfully.                                                                                                                                                                                                                                                                 |
+| Test Objective       | Verify that the API successfully returns the customer collection.                                                                                                                                                                                                                                                                |
 | Preconditions        | API service is available and customer data exists in the system.                                                                                                                                                                                                                                                                  |
 | HTTP Method          | `GET`                                                                                                                                                                                                                                                                                                                             |
 | Endpoint             | `/api/v1/customers`                                                                                                                                                                                                                                                                                                               |
@@ -54,7 +54,7 @@ Before executing the test cases:
 | Test Data            | N/A                                                                                                                                                                                                                                                                                                                               |
 | Test Steps           | 1. Send a `GET` request to the customers endpoint.<br>2. Send the request without any query parameters.<br>3. Verify the response.                                                                                                                                                                                                |
 | Expected Status Code | `200 OK`                                                                                                                                                                                                                                                                                                                          |
-| Expected Result      | API returns a successful response containing a list of customers. Each customer object contains the expected fields and the response is valid JSON.                                                                                                                                                                               |
+| Expected Result      | API returns 200 OK with a valid JSON response containing the customer collection. Each customer object contains the expected fields.                                                                                                                                                                               |
 | Actual Status Code   | `200 OK`                                                                                                                                                                                                                                                                                                                          |
 | Actual Result        | API returned `200 OK` and successfully returned a list of customer records in valid JSON format. The response contained the expected customer fields including `id`, `number`, `displayName`, `phoneNumber`, and `city`. The returned customer data matched the corresponding records in Microsoft Dynamics 365 Business Central. |
 | Test Status          | `PASS`                                                                                                                                                                                                                                                                                                                            |
@@ -91,7 +91,7 @@ The screenshot shows the Postman request, response status, and response body con
 
 ---
 
-### GET-002 — Get Customer by No.
+### GET-002 — Get Customer by Customer Number.
 
 | Field                | Details                                                                                                                                                                                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -137,7 +137,7 @@ GET /api/v1/customers?$filter=no eq 'CUST001'
 <img width="1054" height="846" alt="image" src="https://github.com/user-attachments/assets/5fe33f41-f6e6-4aa5-a239-4fe9cd7b3084" />
 
 
-The screenshot should show the Postman request, response status, and response body containing the requested customer CUST001.
+The screenshot shows the Postman request, response status, and response body containing the requested customer CUST001.
 
 ---
 ### GET-003 — Get Customer by Non-existing No.
@@ -187,7 +187,7 @@ GET /api/v1/customers?$filter=no eq 'CUST102'
 
 <img width="1278" height="908" alt="image" src="https://github.com/user-attachments/assets/727f1b27-e154-431c-a65e-367eb4051444" />
 
-The screenshot shows the Postman request using a non-existing customer identifier and the 200 OK response with an empty value array.
+The screenshots show the Postman request using the non-existing customer number CUST102 and the 200 OK response with an empty value array.
 
 ---
 
