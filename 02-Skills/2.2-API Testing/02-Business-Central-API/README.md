@@ -76,12 +76,12 @@ key(PK; "No.")
 This ensures that each customer record has a unique identifier.
 
 ### Source Code 
-
+**[CustomerAPI.Table.al](https://github.com/Printdonut4444/QA-Portfolio/blob/main/02-Skills/2.2-API%20Testing/02-Business-Central-API/Table/CustomerAPI.Table.al)**
 ```text
 Table/
 └── CustomerAPI.Table.al
 ```
-**[CustomerAPI.Table.al](https://github.com/Printdonut4444/QA-Portfolio/blob/main/02-Skills/2.2-API%20Testing/02-Business-Central-API/Table/CustomerAPI.Table.al)**
+
 ---
 
 # 2. API Page
@@ -121,12 +121,12 @@ page 50100 "QA Customer API"
 | SourceTable   | `Customer API` | Connects the API to the data table  |
 
 ### Source Code
-
+**[CustomerAPI.Page.al](https://github.com/Printdonut4444/QA-Portfolio/blob/main/02-Skills/2.2-API%20Testing/02-Business-Central-API/API-Page/CustomerAPI.Page.al)**
 ```text
 API-Page/
 └── CustomerAPI.Page.al
 ```
-**[CustomerAPI.Page.al](https://github.com/Printdonut4444/QA-Portfolio/blob/main/02-Skills/2.2-API%20Testing/02-Business-Central-API/API-Page/CustomerAPI.Page.al)**
+
 ---
 
 # 3. API Endpoint
