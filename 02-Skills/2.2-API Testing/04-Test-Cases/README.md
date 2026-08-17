@@ -53,6 +53,6 @@ Each test case contains:
 * Not Executed: 8
 
 ## Related Sections
-* [Customer API_Test Cases](../03-Test-Cases/Customer%20API_Test%20Case.md)
+* [Customer API_Test Cases](../04-Test-Cases/Customer%20API_Test%20Case.md)
 * [Business Central API](../01-Business-Central-API)
 * [API Collection](../02-API-Collection/)
