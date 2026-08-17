@@ -297,53 +297,96 @@ The screenshots show the Postman request, 201 Created response, created customer
 
 ## POST-003 — Missing Required Customer No.
 
-| Field                    | Details                                                                                                                                                                                                                  |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Test Case ID**         | POST-003                                                                                                                                                                                                                 |
-| **Test Objective**       | Verify that the API handles a request without the customer number correctly.                                                                                                                                             |
-| **Preconditions**        | API service is available and `No.` is configured as a required field.                                                                                                                                                    |
-| **HTTP Method**          | `POST`                                                                                                                                                                                                                   |
-| **Endpoint**             | `/customers`                                                                                                                                                                                                             |
-| **Headers**              | `Accept: application/json`                                                                                                                                                                                         |
-| **Test Data**            | `TD-003`                                                                                                                                                                                                                 |
-| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Omit the customer number from the request body.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that no incomplete customer record was created. |
-| **Expected Status Code** | `4xx`                                                                                                                                                                                                                    |
-| **Expected Result**      | Request is rejected if `No.` is required. No incomplete customer record is created, and an appropriate validation error is returned.                                                                                     |
-| **Actual Result**        | TBD                                                                                                                                                                                                                      |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                                           |
+| Field                    | Details                                                                                                                                                                                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-003                                                                                                                                                                                                                                                |
+| **Test Objective**       | Verify that the API rejects a customer creation request when the required customer number (`No.`) is missing.                                                                                                                                           |
+| **Preconditions**        | 1. API service is available.<br>2. `No.` is defined as a required field according to the API/Business Central business requirement.<br>3. The test request does not provide a customer number.                                                          |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                                                                  |
+| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                     |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                          |
+| **Test Data**            | `TD-003` — Customer data without the `No.` field.                                                                                                                                                                                                       |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Omit the required customer number (`No.`) from the request body.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that no customer record was created. |
+| **Expected Status Code** | `4xx` validation error                                                                                                                                                                                                                                  |
+| **Expected Result**      | API rejects the request because the required `No.` field is missing. An appropriate validation error is returned, and no customer record is created.                                                                                                    |
+| **Actual Status Code**   | `201 Created`                                                                                                                                                                                                                                           |
+| **Actual Result**        | API returned `201 Created` even though the required `No.` field was omitted from the request. A customer record was created successfully. This behavior does not match the expected validation rule for the test case.                                  |
+| **Test Status**          | `FAIL`                                                                                                                                                                                                                                                  |
+### Test Execution Evidence
 
-**Expected Result**
+**Execution Tool:** Postman
 
-- Request is rejected if `No.` is configured as required.
-- No incomplete customer record is created.
-- An appropriate validation error is returned.
+**Request:**
 
-> Note: Business Central's actual behavior should be verified during execution because `DelayedInsert` and table validation rules affect the result.
+```http
+POST /api/v1/customers
+```
+
+**Response Status:**
+
+```text
+201 Created
+```
+
+**Response Validation:**
+
+* Response was returned successfully.
+* Response status was 201 Created.
+* The request was accepted even though the required No. field was omitted.
+* A customer record was created.
+* The actual response does not match the expected 4xx validation error.
+* The test case therefore failed.
+
+**Evidence:**
+<img width="1414" height="902" alt="image" src="https://github.com/user-attachments/assets/9fb0ddeb-3000-43e3-8e86-53eab19a64db" />
+<img width="1677" height="403" alt="image" src="https://github.com/user-attachments/assets/317726e0-c1ff-4116-ac52-2186d72443eb" />
+
 
 ---
 
 ## POST-004 — Duplicate Customer No.
 
-| Field                    | Details                                                                                                                                                                                                                 |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Test Case ID**         | POST-004                                                                                                                                                                                                                |
-| **Test Objective**       | Verify that the API prevents duplicate customer numbers.                                                                                                                                                                |
-| **Preconditions**        | Customer `C00001` already exists in the system.                                                                                                                                                                         |
-| **HTTP Method**          | `POST`                                                                                                                                                                                                                  |
-| **Endpoint**             | `/customers`                                                                                                                                                                                                            |
-| **Headers**              | `Accept: application/json`                                                                                                                                                                                        |
-| **Test Data**            | `TD-004`                                                                                                                                                                                                                |
-| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide the existing customer number `C00001`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that the existing customer was not overwritten. |
-| **Expected Status Code** | `4xx`                                                                                                                                                                                                                   |
-| **Expected Result**      | Request is rejected. Existing customer `C00001` is not overwritten, and an appropriate duplicate-key or validation error is returned.                                                                                   |
-| **Actual Result**        | TBD                                                                                                                                                                                                                     |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                                          |
+| Field                    | Details                                                                                                                                                                                                                                                               |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-004                                                                                                                                                                                                                                                              |
+| **Test Objective**       | Verify that the API prevents duplicate customer numbers.                                                                                                                                                                                                              |
+| **Preconditions**        | Customer `CUST001` already exists in the system.                                                                                                                                                                                                                       |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                                                                                |
+| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                                   |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                                        |
+| **Test Data**            | `TD-004` — Existing customer number `CUST001`.                                                                                                                                                                                                                         |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide the existing customer number `CUST001`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that the existing customer `CUST001` was not overwritten or modified. |
+| **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                                                                                                 |
+| **Expected Result**      | Request is rejected because customer number `CUST001` already exists. An appropriate duplicate-key or validation error is returned. The existing customer record is not overwritten or modified, and no duplicate customer record is created.                          |
+| **Actual Status Code**   | `400 Bad Request`                                                                                                                                                                                                    |
+| **Actual Result**        | API rejected the request because customer number `CUST001` already exists. An appropriate validation/duplicate-key error was returned. The existing customer `CUST001` was not overwritten or modified, and no duplicate customer record was created.                   |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                                                                |
+### Test Execution Evidence
 
-**Expected Result**
+**Execution Tool:** Postman
 
-- Request is rejected.
-- Existing customer `C00001` is not overwritten.
-- An appropriate duplicate-key or validation error is returned.
+**Request:**
+
+```http
+POST /api/v1/customers
+```
+
+**Response Status:**
+
+```text
+400 Bad Request
+```
+
+**Response Validation:**
+
+* Response was returned with the expected 400 Bad Request status.
+* The API rejected the request because customer number CUST001 already exists.
+* An appropriate duplicate-key/validation error was returned.
+* No duplicate customer record was created.
+* The existing customer CUST001 was not overwritten or modified.
+
+**Evidence:**
+<img width="1399" height="836" alt="image" src="https://github.com/user-attachments/assets/2a323b4f-5f2a-4654-91b5-5d2daa59bde3" />
 
 ---
 
