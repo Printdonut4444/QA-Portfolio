@@ -201,56 +201,97 @@ The screenshots show the Postman request using the non-existing customer number 
 | **Test Objective**       | Verify that a customer can be successfully created using valid data.                                                                                                                                                |
 | **Preconditions**        | API service is available and the customer number does not already exist.                                                                                                                                            |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                              |
-| **Endpoint**             | `/customers`                                                                                                                                                                                                        |
-| **Headers**              | `Accept: application/json`                                                                                                                                                                                    |
-| **Test Data**            | `TD-003`                                                                                                                                                                                                            |
+| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                  |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                     |
+| **Test Data**            | `TD-003` (`CUST101`)                                                                                                                                                                                                |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide valid customer data in the request body.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify the created customer in Business Central. |
-| **Expected Status Code** | `201 Created`*                                                                                                                                                                                                      |
-| **Expected Result**      | API accepts the request and creates a new customer. The response contains the created customer and the stored data matches the submitted data.                                                                      |
-| **Actual Result**        | TBD                                                                                                                                                                                                                 |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                                      |
-
-**Expected Result**
-
-- API accepts the request.
-- A successful creation response is returned.
-- The response contains the created customer.
-- Customer `CUST101` exists in Business Central.
-- Customer data matches the submitted request.
+| **Expected Status Code** | `201 Created`                                                                                                                                                                                                       |
+| **Expected Result**      | API accepts the request and creates a new customer. The response contains the created customer and the stored data matches the submitted data.                                                                     |
+| **Actual Status Code**   | `201 Created`                                                                                                                                                                                                       |
+| **Actual Result**        | API returned `201 Created` and successfully created customer `CUST101`. The response contained the created customer, and the stored customer data matched the submitted request. The customer record was verified in Microsoft Dynamics 365 Business Central. |
+| **Test Status**          | `PASS`                                                                                                                                                                                                              |
 
 ### Test Execution Evidence
 
-A valid customer creation request was sent using Postman.
+**Execution Tool:** Postman
+
+**Request:**
+
+```http
+POST /api/v1/customers
+```
+
+**Response Status:**
+
+```text
+201 Created
+```
+
+**Response Validation:**
+* Request was accepted successfully.
+* API returned 201 Created.
+* Response contained the created customer.
+* Customer number CUST101 matched the submitted customer number.
+* Submitted customer data matched the stored customer data.
+* Customer CUST101 was successfully created and verified in Microsoft Dynamics 365 Business Central.
+
+**Evidence:**
+
 <img width="1664" height="692" alt="image" src="https://github.com/user-attachments/assets/5e89c8a1-0a4a-45b1-a02b-6539924f84f0" />
 <img width="1117" height="895" alt="image" src="https://github.com/user-attachments/assets/aa3fec00-e4fb-4607-8af1-3b72e6a78fdf" />
 <img width="1652" height="558" alt="image" src="https://github.com/user-attachments/assets/0b9ad3de-e028-49f1-ae53-09c62b96e2a8" />
 
+The screenshots show the Postman request, 201 Created response, created customer data, and the corresponding customer record in Microsoft Dynamics 365 Business Central.
 ---
 
 ## POST-002 — Create Customer with Minimum Data
 
-| Field                    | Details                                                                                                                                                                                                 |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Test Case ID**         | POST-002                                                                                                                                                                                                |
-| **Test Objective**       | Verify API behavior when only the minimum required customer data is provided.                                                                                                                           |
-| **Preconditions**        | API service is available and the provided customer number does not already exist.                                                                                                                       |
-| **HTTP Method**          | `POST`                                                                                                                                                                                                  |
-| **Endpoint**             | `/customers`                                                                                                                                                                                            |
-| **Headers**              | `Accept: application/json`                                                                                                                                                                        |
-| **Test Data**            | `TD-002`                                                                                                                                                                                                |
-| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide only the minimum required customer data.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify the created customer record.  |
-| **Expected Status Code** | `2xx` if accepted; otherwise an appropriate validation error                                                                                                                                            |
-| **Expected Result**      | Request is accepted if the provided fields satisfy the configured Business Central requirements. A customer record is created, and optional fields use their configured default values or remain empty. |
-| **Actual Result**        | TBD                                                                                                                                                                                                     |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                          |
+| Field                    | Details                                                                                                                                                                                                                                                  |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-002                                                                                                                                                                                                                                                 |
+| **Test Objective**       | Verify that the API can create a customer successfully when only the minimum required customer data is provided.                                                                                                                                         |
+| **Preconditions**        | API service is available and the provided customer number does not already exist.                                                                                                                                                                        |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                                                                   |
+| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                      |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                           |
+| **Test Data**            | `TD-002`                                                                                                                                                                                                                                                 |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide only the minimum required customer data.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that the customer record was created successfully.    |
+| **Expected Status Code** | `201 Created`                                                                                                                                                                                                                                            |
+| **Expected Result**      | API returns `201 Created`. A new customer record is created successfully using the minimum required data. Optional fields that were not provided use their configured default values or remain empty.                                                    |
+| **Actual Status Code**   | `201 Created`                                                                                                                                                                                                                                            |
+| **Actual Result**        | API returned `201 Created`. The customer was created successfully using the minimum required data. The created customer record was verified successfully. Optional fields that were not provided used their configured default values or remained empty. |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                                                   |
 
-**Expected Result**
+### Test Execution Evidence
 
-- Request is accepted if these fields satisfy the configured Business Central requirements.
-- A customer record is created.
-- Optional fields use their configured default values or remain empty.
+**Execution Tool:** Postman
 
-> Note: The expected result depends on the validation rules implemented in the Business Central table.
+**Request:**
+
+```http
+POST /api/v1/customers
+```
+
+**Response Status:**
+
+```text
+201 Created
+```
+
+**Response Validation:**
+
+* Response was returned successfully.
+* Response status was 201 Created.
+* Customer was created successfully.
+* The returned customer number/identifier matched the submitted test data.
+* The created customer record was verified in Business Central.
+* Optional fields were verified according to the configured default/empty-value behavior.
+
+**Evidence:**
+
+<img width="1263" height="907" alt="image" src="https://github.com/user-attachments/assets/b19808b6-5a97-4127-991c-d37b54a8afd6" />
+<img width="1678" height="471" alt="image" src="https://github.com/user-attachments/assets/0cd4a7a6-7c34-4e90-ae9d-02ab542361df" />
+The screenshots show the Postman request, 201 Created response, created customer data, and the corresponding customer record in Microsoft Dynamics 365 Business Central.
 
 ---
 
