@@ -4,7 +4,7 @@
 
 This document contains the test cases designed for the **Customer REST API** developed in Microsoft Dynamics 365 Business Central.
 
-The test cases focus on validating API functionality, request and response data, business rules, and expected behavior for common customer operations.
+The test cases focus on validating API functionality, request and response data, business rules, and expected behavior for common customer operations. <br>
 [👉 Link to Google Drive with task](https://docs.google.com/spreadsheets/d/1iPMz0umkHpiaKKFS_dCT20KML73zl27V/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true)
 ---
 
