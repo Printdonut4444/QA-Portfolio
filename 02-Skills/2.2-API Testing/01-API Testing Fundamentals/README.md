@@ -231,4 +231,4 @@ API testing is a fundamental skill for modern QA professionals, as it allows iss
 
 ---
 
-*Recommended next topic: `02-Business-Central-API/`*
+*Recommended next topic: [02-Business-Central-API](https://github.com/Printdonut4444/QA-Portfolio/tree/main/02-Skills/2.2-API%20Testing/02-Business-Central-API)*
