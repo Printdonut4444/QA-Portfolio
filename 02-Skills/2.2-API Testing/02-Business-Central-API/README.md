@@ -79,9 +79,9 @@ This ensures that each customer record has a unique identifier.
 
 ```text
 Table/
-└── [CustomerAPI.Table.al](https://github.com/Printdonut4444/QA-Portfolio/blob/main/02-Skills/2.2-API%20Testing/02-Business-Central-API/Table/CustomerAPI.Table.al)
+└── CustomerAPI.Table.al
 ```
-
+[CustomerAPI.Table.al](https://github.com/Printdonut4444/QA-Portfolio/blob/main/02-Skills/2.2-API%20Testing/02-Business-Central-API/Table/CustomerAPI.Table.al)
 ---
 
 # 2. API Page
@@ -126,7 +126,7 @@ page 50100 "QA Customer API"
 API-Page/
 └── CustomerAPI.Page.al
 ```
-
+[CustomerAPI.Page.al](https://github.com/Printdonut4444/QA-Portfolio/blob/main/02-Skills/2.2-API%20Testing/02-Business-Central-API/API-Page/CustomerAPI.Page.al)
 ---
 
 # 3. API Endpoint
@@ -348,6 +348,6 @@ This implementation demonstrates practical understanding of:
 
 The custom API developed in this section is used as the system under test in:
 
-**`03-API-Cases`**
+**[03-API-Cases](https://github.com/Printdonut4444/QA-Portfolio/tree/main/02-Skills/2.2-API%20Testing/04-Test-Cases)**
 
 The API is tested using REST API requests and the resulting data is verified against the records stored in Business Central.
