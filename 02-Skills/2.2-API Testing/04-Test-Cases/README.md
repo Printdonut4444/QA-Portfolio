@@ -47,10 +47,14 @@ Each test case contains:
 ## Test Execution Summary
 
 * Test Cases Designed: 17
-* Test Cases Executed: 9
-* Passed: 9
-* Failed: 0
-* Not Executed: 8
+* Test Cases Executed: 17
+* Passed: 15
+* Failed: 2
+* Not Executed: 0
+
+---
+## Bug Report
+[👉 Link to Google Drive with task](https://docs.google.com/spreadsheets/d/1-_Nk95mSvJ2fMcFxr6KnIteri9trmvbO/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true)
 
 ## Related Sections
 * [Customer API_Test Cases](../04-Test-Cases/Customer%20API_Test%20Case.md)
