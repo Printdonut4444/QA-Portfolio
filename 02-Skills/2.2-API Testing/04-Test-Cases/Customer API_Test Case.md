@@ -4,7 +4,7 @@
 
 This document contains the test cases designed for the **Customer REST API** developed in Microsoft Dynamics 365 Business Central.
 
-## The test cases focus on validating API functionality, request and response data, business rules, and expected behavior for common customer operations. <br> [👉 Link to Google Drive with task](https://docs.google.com/spreadsheets/d/1iPMz0umkHpiaKKFS_dCT20KML73zl27V/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true)
+The test cases focus on validating API functionality, request and response data, business rules, and expected behavior for common customer operations. <br> [👉 Link to Google Drive with task](https://docs.google.com/spreadsheets/d/1iPMz0umkHpiaKKFS_dCT20KML73zl27V/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true)
 
 ## Test Scope
 
@@ -44,6 +44,7 @@ and avoid ambiguity between scenarios.
 
 | Test Case  | Test Data | Purpose                               |
 |------------|-----------|---------------------------------------|
+| GET-001    | `N/A`     | Get All Customers                     |
 | GET-002    | `TD-001`  | Existing customer `CUST001`           |
 | GET-003    | `TD-002`  | Non-existing customer `CUST102`       |
 | POST-001   | `TD-003`  | Valid customer creation (`CUST101`)   |
@@ -65,7 +66,7 @@ and avoid ambiguity between scenarios.
 
 # GET Test Cases
 
-### GET-001 — Get All Customers
+## GET-001 — Get All Customers
 
 | Field                | Details                                                                                                                                                                                                                                                                                                                           |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -115,7 +116,7 @@ The screenshot shows the Postman request, response status, and response body con
 
 ------------------------------------------------------------------------
 
-### GET-002 — Get Customer by Customer Number.
+## GET-002 — Get Customer by Customer Number.
 
 | Field                | Details                                                                                                                                                                                                                                    |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -165,7 +166,7 @@ body containing the requested customer CUST001.
 
 ------------------------------------------------------------------------
 
-### GET-003 — Get Customer by Non-existing No.
+## GET-003 — Get Customer by Non-existing No.
 
 | Field                    | Details                                                                                                                                                                                              |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -268,7 +269,7 @@ POST /api/v1/customers
 <img width="1117" height="895" alt="image" src="https://github.com/user-attachments/assets/aa3fec00-e4fb-4607-8af1-3b72e6a78fdf" />
 <img width="1652" height="558" alt="image" src="https://github.com/user-attachments/assets/0b9ad3de-e028-49f1-ae53-09c62b96e2a8" />
 
-## The screenshots show the Postman request, 201 Created response, created customer data, and the corresponding customer record in Microsoft Dynamics 365 Business Central.
+The screenshots show the Postman request, 201 Created response, created customer data, and the corresponding customer record in Microsoft Dynamics 365 Business Central.
 
 ## POST-002 — Create Customer with Minimum Data
 
