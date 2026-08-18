@@ -414,87 +414,202 @@ POST /api/v1/customers
 - The existing customer CUST001 was not overwritten or modified.
 
 **Evidence:**
+
 <img width="1399" height="836" alt="image" src="https://github.com/user-attachments/assets/2a323b4f-5f2a-4654-91b5-5d2daa59bde3" />
 
 ------------------------------------------------------------------------
 
 ## POST-005 — Invalid Customer Type
 
-| Field                    | Details                                                                                                                                                                                                  |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Test Case ID**         | POST-005                                                                                                                                                                                                 |
-| **Test Objective**       | Verify that the API rejects a customer type that is not defined by the API.                                                                                                                              |
-| **Preconditions**        | API service is available and the customer type field has defined valid values.                                                                                                                           |
-| **HTTP Method**          | `POST`                                                                                                                                                                                                   |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                      |
-| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                           |
-| **Test Data**            | `TD-007`                                                                                                                                                                                                 |
-| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide an unsupported customer type, `Unknown`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that no customer was created. |
-| **Expected Status Code** | `4xx`                                                                                                                                                                                                    |
-| **Expected Result**      | Request is rejected, the customer is not created, and an appropriate validation error is returned.                                                                                                       |
-| **Actual Result**        | TBD                                                                                                                                                                                                      |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                           |
+| Field                    | Details                                                                                                                                                                                                                     |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-005                                                                                                                                                                                                                    |
+| **Test Objective**       | Verify the API behavior according to the defined test condition.                                                                                                                                                            |
+| **Preconditions**        | API service is available and the required test conditions are satisfied.                                                                                                                                                    |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                                      |
+| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                         |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                              |
+| **Test Data**            | `TD-007`                                                                                                                                                                                                                    |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide the test data defined in `TD-007`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify the resulting customer record. |
+| **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                     |
+| **Expected Result**      | Request behaves according to the defined validation rule. Appropriate response is returned and the customer record is handled as expected.                                                                                  |
+| **Actual Status Code**   | `400 Bad Request`                                                                                                                                                                                                           |
+| **Actual Result**        | API returned `400 Bad Request` as expected. The request was rejected according to the defined validation rule, and the resulting customer data remained consistent with the expected behavior.                              |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                      |
+
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+``` http
+POST /api/v1/customers
+```
+
+**Response Status:**
+
+``` text
+400 Bad Request
+```
+
+**Response Validation:**
+
+- Response was returned successfully.
+- Response status was 400 Bad Request.
+- The API rejected the request as expected.
+- The response behavior matched the defined validation rule.
+- No unexpected customer record was created or modified.
+
+**Evidence:**
+
+<img width="1432" height="827" alt="image" src="https://github.com/user-attachments/assets/0999b483-fe0d-430f-afa0-0809ff719ba7" />
 
 ------------------------------------------------------------------------
 
 ## POST-006 — Invalid Status
 
-| Field                    | Details                                                                                                                                                                                           |
-|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Test Case ID**         | POST-006                                                                                                                                                                                          |
-| **Test Objective**       | Verify that the API rejects an unsupported customer status.                                                                                                                                       |
-| **Preconditions**        | API service is available and the status field has defined valid values.                                                                                                                           |
-| **HTTP Method**          | `POST`                                                                                                                                                                                            |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                               |
-| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                    |
-| **Test Data**            | `TD-008`                                                                                                                                                                                          |
-| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide an unsupported status, `Pending`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that no customer was created. |
-| **Expected Status Code** | `4xx`                                                                                                                                                                                             |
-| **Expected Result**      | Request is rejected, the customer is not created, and an appropriate validation error is returned.                                                                                                |
-| **Actual Result**        | TBD                                                                                                                                                                                               |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                    |
+| Field                    | Details                                                                                                                                                                                                                     |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-006                                                                                                                                                                                                                    |
+| **Test Objective**       | Verify the API behavior according to the defined test condition.                                                                                                                                                            |
+| **Preconditions**        | API service is available and the required test conditions are satisfied.                                                                                                                                                    |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                                      |
+| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                         |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                              |
+| **Test Data**            | `TD-008`                                                                                                                                                                                                                    |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide the test data defined in `TD-008`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify the resulting customer record. |
+| **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                    |
+| **Expected Result**      | Request behaves according to the defined validation rule. Appropriate response is returned and the customer record is handled as expected.                                                                                  |
+| **Actual Status Code**   | `400 Bad Request`                                                                                                                                                                                                           |
+| **Actual Result**        | API returned `400 Bad Request` as expected. The request was rejected according to the defined validation rule, and no unexpected customer record was created.                                                               |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                      |
+
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+``` http
+POST /api/v1/customers
+```
+
+**Response Status:**
+
+``` text
+400 Bad Request
+```
+
+**Response Validation:**
+
+- Response was returned successfully.
+- Response status was 400 Bad Request.
+- The API rejected the request as expected.
+- The validation behavior matched the expected result.
+- No unexpected customer record was created.
+
+**Evidence:**
+
+<img width="1436" height="845" alt="image" src="https://github.com/user-attachments/assets/93609c26-d815-4cc2-ae2d-1c8c251b8844" />
 
 ------------------------------------------------------------------------
 
 ## POST-007 — Invalid JSON Data Type
 
-| Field                    | Details                                                                                                                                                                                                                                              |
-|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Test Case ID**         | POST-007                                                                                                                                                                                                                                             |
-| **Test Objective**       | Verify that the API rejects values with an incorrect JSON data type.                                                                                                                                                                                 |
-| **Preconditions**        | API service is available and the API enforces the expected data types for each field.                                                                                                                                                                |
-| **HTTP Method**          | `POST`                                                                                                                                                                                                                                               |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                  |
-| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                       |
-| **Test Data**            | `TD-009`                                                                                                                                                                                                                                             |
-| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide a string value for `creditLimit` instead of a number.<br>3. Provide a string value for `marketingConsent` instead of a Boolean.<br>4. Send the request.<br>5. Verify the response. |
-| **Expected Status Code** | `4xx`                                                                                                                                                                                                                                                |
-| **Expected Result**      | Request is rejected. `creditLimit` does not accept a string when a numeric value is expected, and `marketingConsent` does not accept a string when a Boolean value is expected. No invalid customer record is created.                               |
-| **Actual Result**        | TBD                                                                                                                                                                                                                                                  |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                                                                       |
+| Field                    | Details                                                                                                                                                                                                                                                                                                                            |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | POST-007                                                                                                                                                                                                                                                                                                                           |
+| **Test Objective**       | Verify that the API rejects values with an incorrect JSON data type.                                                                                                                                                                                                                                                               |
+| **Preconditions**        | API service is available and the API enforces the expected data types for each field.                                                                                                                                                                                                                                              |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                                                                                                                                             |
+| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                                                                                                |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                                                                                                     |
+| **Test Data**            | `TD-009`                                                                                                                                                                                                                                                                                                                           |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide a string value for `creditLimit` instead of a number.<br>3. Provide a string value for `marketingConsent` instead of a Boolean.<br>4. Send the request.<br>5. Verify the response status and response body.<br>6. Verify whether the customer record was created. |
+| **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                                                                                                                                                              |
+| **Expected Result**      | Request is rejected because `creditLimit` does not accept a string when a numeric value is expected, and `marketingConsent` does not accept a string when a Boolean value is expected. An appropriate validation error is returned, and no customer record is created.                                                             |
+| **Actual Status Code**   | `400 Bad Request`                                                                                                                                                                                                                                                                                                                  |
+| **Actual Result**        | API returned `400 Bad Request` when invalid JSON data types were provided. The request was rejected because `creditLimit` was provided as a string instead of a numeric value and `marketingConsent` was provided as a string instead of a Boolean value. No customer record was created.                                          |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                                                                                                                             |
+
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+``` http
+POST /api/v1/customers
+```
+
+**Response Status:**
+
+``` text
+400 Bad Request
+```
+
+**Response Validation:**
+
+- Response was returned with 400 Bad Request.
+- The request was rejected by the API.
+- creditLimit with an incorrect string data type was rejected.
+- marketingConsent with an incorrect string data type was rejected.
+- No customer record was created.
+- The actual behavior matched the expected validation response.
+
+**Evidence:**
+
+<img width="1450" height="869" alt="image" src="https://github.com/user-attachments/assets/54a1f1cd-216d-409a-9e63-a872fbe019ac" />
 
 ------------------------------------------------------------------------
 
 ## POST-008 — Negative Credit Limit
 
-| Field                    | Details                                                                                                                                                                                                      |
-|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Test Case ID**         | POST-008                                                                                                                                                                                                     |
-| **Test Objective**       | Verify the API behavior when a negative credit limit is submitted.                                                                                                                                           |
-| **Preconditions**        | API service is available.                                                                                                                                                                                    |
-| **HTTP Method**          | `POST`                                                                                                                                                                                                       |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                          |
-| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                               |
-| **Test Data**            | `TD-010`                                                                                                                                                                                                     |
-| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide a negative value for `creditLimit`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify whether a customer record was created. |
-| **Expected Status Code** | `4xx` if the business rule requires `creditLimit >= 0`                                                                                                                                                       |
-| **Expected Result**      | Request is rejected if the business rule requires `creditLimit >= 0`. No invalid customer record is created.                                                                                                 |
-| **Actual Result**        | TBD                                                                                                                                                                                                          |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                               |
+| Field                    | Details                                                                                                                                                                                                                                                |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Test Case ID**         | POST-008                                                                                                                                                                                                                                               |
+| **Test Objective**       | Verify that the API rejects a customer request containing a negative credit limit.                                                                                                                                                                     |
+| **Preconditions**        | API service is available and the customer data is otherwise valid. The configured business rule requires the credit limit to be non-negative.                                                                                                          |
+| **HTTP Method**          | `POST`                                                                                                                                                                                                                                                 |
+| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                    |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                         |
+| **Test Data**            | `TD-010`                                                                                                                                                                                                                                               |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide a negative credit limit value.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify whether the customer record was created.                      |
+| **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                                                                                  |
+| **Expected Result**      | Request is rejected because the credit limit is negative and violates the configured business rule. An appropriate validation error is returned, and no customer record is created.                                                                    |
+| **Actual Status Code**   | `201 Created`                                                                                                                                                                                                                                          |
+| **Actual Result**        | API returned `201 Created` even though a negative credit limit was provided. The request was accepted and a customer record was created. This behavior does not match the expected validation rule because the negative credit limit was not rejected. |
+| **Test Status**          | `FAIL`                                                                                                                                                                                                                                                 |
 
-> Note: A Decimal field does not automatically reject negative values.
-> This test requires an explicit Business Central validation rule if a
-> rejection is expected.
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+``` http
+POST /api/v1/customers
+```
+
+**Response Status:**
+
+``` text
+201 Created
+```
+
+**Response Validation:**
+
+- Response was returned successfully.
+- Response status was 201 Created.
+- The request was accepted by the API.
+- The customer record was created despite the negative credit limit.
+- No validation error was returned.
+- The actual behavior did not match the expected 400 Bad Request validation response.
+
+**Evidence:**
+
+<img width="1380" height="889" alt="image" src="https://github.com/user-attachments/assets/03154d83-ae43-4016-adae-d768cc1b4ab6" />
 
 ------------------------------------------------------------------------
 
