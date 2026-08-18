@@ -818,39 +818,101 @@ PATCH /api/v1/customers(no)
 
 ## DELETE-001 — Delete Existing Customer
 
-| Field                    | Details                                                                                                                                                                                                                                                              |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Test Case ID**         | DELETE-001                                                                                                                                                                                                                                                           |
-| **Test Objective**       | Verify that an existing customer can be deleted.                                                                                                                                                                                                                     |
-| **Preconditions**        | API service is available and the test customer exists.                                                                                                                                                                                                               |
-| **HTTP Method**          | `DELETE`                                                                                                                                                                                                                                                             |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                                                            |
-| **Headers**              | `Accept: application/json`                                                                                                                                                                                                                                           |
-| **Test Data**            | `TD-015`                                                                                                                                                                                                                                                             |
+| Field                    | Details                                                                                                                                                                                                                                                             |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | DELETE-001                                                                                                                                                                                                                                                          |
+| **Test Objective**       | Verify that an existing customer can be deleted.                                                                                                                                                                                                                    |
+| **Preconditions**        | API service is available and the test customer exists.                                                                                                                                                                                                              |
+| **HTTP Method**          | `DELETE`                                                                                                                                                                                                                                                            |
+| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                                                           |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                                                                                          |
+| **Test Data**            | `TD-015`                                                                                                                                                                                                                                                            |
 | **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the existing customer identifier.<br>3. Send the request.<br>4. Verify the response.<br>5. Send a `GET` request for the deleted customer.<br>6. Verify that the customer is no longer available. |
-| **Expected Status Code** | `2xx`                                                                                                                                                                                                                                                                |
-| **Expected Result**      | API accepts the delete request. Customer is removed from the Customer API table, and a subsequent `GET` request does not return the deleted customer.                                                                                                                |
-| **Actual Result**        | TBD                                                                                                                                                                                                                                                                  |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                                                                                       |
+| **Expected Status Code** | `204 No Content`                                                                                                                                                                                                                                                               |
+| **Expected Result**      | API accepts the delete request. Customer is removed from the Customer API table, and a subsequent `GET` request does not return the deleted customer.                                                                                                               |
+| **Actual Status Code**   | `204 No Content`                                                                                                                                                                                                                                                    |
+| **Actual Result**        | API returned `204 No Content` after the DELETE request was submitted. The customer was successfully deleted, and a subsequent `GET` request confirmed that the deleted customer was no longer available.                                                            |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                                                              |
+
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+``` http
+DELETE /api/v1/customers({id})
+```
+
+**Response Status:**
+
+``` text
+204 No Content
+```
+
+**Response Validation:**
+
+- DELETE request was processed successfully.
+- Response status was 204 No Content.
+- The existing customer was successfully deleted.
+- A subsequent GET request was used to verify the deletion.
+- The deleted customer was no longer available.
+- The actual behavior matched the expected delete behavior.
+
+**Evidence:**
+
+<img width="1768" height="433" alt="image" src="https://github.com/user-attachments/assets/0e57db94-d34a-475b-96c5-038af3f01cc3" />
+<img width="1445" height="831" alt="image" src="https://github.com/user-attachments/assets/060b3ce9-a483-48b5-b322-2d4d22d695e7" />
+<img width="1732" height="364" alt="image" src="https://github.com/user-attachments/assets/564a9e11-7db7-448b-9e63-f6a30524a3e4" />
 
 ------------------------------------------------------------------------
 
 ## DELETE-002 — Delete Non-existing Customer
 
-| Field                    | Details                                                                                                                                                                                                                             |
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Test Case ID**         | DELETE-002                                                                                                                                                                                                                          |
-| **Test Objective**       | Verify the API behavior when attempting to delete a customer that does not exist.                                                                                                                                                   |
-| **Preconditions**        | API service is available and customer `C99999` does not exist.                                                                                                                                                                      |
-| **HTTP Method**          | `DELETE`                                                                                                                                                                                                                            |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                           |
-| **Headers**              | `Accept: application/json`                                                                                                                                                                                                          |
-| **Test Data**            | `TD-016`                                                                                                                                                                                                                            |
-| **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the non-existing customer identifier `C99999`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that existing customer records remain unchanged. |
-| **Expected Status Code** | `4xx`                                                                                                                                                                                                                               |
-| **Expected Result**      | Request does not delete any record. An appropriate error response is returned, and existing customer records remain unchanged.                                                                                                      |
-| **Actual Result**        | TBD                                                                                                                                                                                                                                 |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                                                      |
+| Field                    | Details                                                                                                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | DELETE-002                                                                                                                                                                                                                            |
+| **Test Objective**       | Verify the API behavior when attempting to delete a customer that does not exist.                                                                                                                                                     |
+| **Preconditions**        | API service is available and customer `C99999` does not exist.                                                                                                                                                                        |
+| **HTTP Method**          | `DELETE`                                                                                                                                                                                                                              |
+| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                             |
+| **Headers**              | `Accept: application/json`                                                                                                                                                                                                            |
+| **Test Data**            | `TD-016`                                                                                                                                                                                                                              |
+| **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the non-existing customer identifier `C99999`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that existing customer records remain unchanged.    |
+| **Expected Status Code** | `404 Not Found`                                                                                                                                                                                                                                 |
+| **Expected Result**      | Request does not delete any record. An appropriate error response is returned, and existing customer records remain unchanged.                                                                                                        |
+| **Actual Status Code**   | `404 Not Found`                                                                                                                                                                                                                       |
+| **Actual Result**        | API returned `404 Not Found` when attempting to delete the non-existing customer `C99999`. No customer record was deleted, and existing customer records remained unchanged. The actual behavior matched the expected error handling. |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                                |
+
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+``` http
+DELETE /api/v1/customers(C99999)
+```
+
+**Response Status:**
+
+``` text
+404 Not Found
+```
+
+**Response Validation:**
+
+- DELETE request was sent for the non-existing customer C99999.
+- Response status was 404 Not Found.
+- The API correctly rejected the delete request.
+- No customer record was deleted.
+- Existing customer records remained unchanged.
+- The actual behavior matched the expected error handling.
+
+**Evidence:**
+
+<img width="727" height="407" alt="image" src="https://github.com/user-attachments/assets/b0da4e30-c256-49d5-bd5c-e1781a484ebc" />
 
 ------------------------------------------------------------------------
 
