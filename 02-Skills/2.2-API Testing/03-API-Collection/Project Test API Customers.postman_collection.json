@@ -1,0 +1,2575 @@
+{
+  "info": {
+    "_postman_id": "2ce8bdbf-af3a-4e90-b095-32ae39072b55",
+    "name": "Project Test API Customers",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40963180",
+    "_collection_link": "https://go.postman.co/collection/40963180-2ce8bdbf-af3a-4e90-b095-32ae39072b55?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "001 GetAllCustomers",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            },
+            {
+              "key": "domain",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "disableRetryRequest",
+              "value": false,
+              "type": "boolean"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "001 GetAllCustomers",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; odata.metadata=minimal; odata.streaming=true"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "OData-Version",
+              "value": "4.0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Expose-Headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "5c7713c8-b173-48d2-8ca4-b723f7bfc2bb"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 11 Aug 2026 08:07:48 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"@odata.context\": \"http://localhost:7148/BC270/api/donut/qa/v1.0/$metadata#companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers\",\n    \"value\": [\n        {\n            \"@odata.etag\": \"W/\\\"JzE5OzIyOTMyODE1MjIwNTA2MzM3MjIxOzAwOyc=\\\"\",\n            \"no\": \"CUST001\",\n            \"name\": \"John Smith\",\n            \"email\": \"john@example.com\",\n            \"phoneNo\": \"\",\n            \"address\": \"\",\n            \"city\": \"\",\n            \"country\": \"\",\n            \"postalCode\": \"\",\n            \"customerType\": \"Individual\",\n            \"status\": \"Active\",\n            \"registrationDate\": \"0001-01-01\",\n            \"lastModifiedDate\": \"0001-01-01T00:00:00Z\",\n            \"creditLimit\": 0,\n            \"currencyCode\": \"\",\n            \"marketingConsent\": false\n        },\n        {\n            \"@odata.etag\": \"W/\\\"JzE5OzMzMDAzODQyMDM1Mzc5ODgxMjAxOzAwOyc=\\\"\",\n            \"no\": \"CUST002\",\n            \"name\": \"Alice Johnson\",\n            \"email\": \"alice.johnson@example.com\",\n            \"phoneNo\": \"0891234567\",\n            \"address\": \"88 Rama 9 Road\",\n            \"city\": \"Bangkok\",\n            \"country\": \"TH\",\n            \"postalCode\": \"10310\",\n            \"customerType\": \"Individual\",\n            \"status\": \"Active\",\n            \"registrationDate\": \"0001-01-01\",\n            \"lastModifiedDate\": \"0001-01-01T00:00:00Z\",\n            \"creditLimit\": 75000,\n            \"currencyCode\": \"THB\",\n            \"marketingConsent\": true\n        },\n        {\n            \"@odata.etag\": \"W/\\\"JzE5OzUxMjkxOTY5MjcyMDU1MjE5OTYxOzAwOyc=\\\"\",\n            \"no\": \"CUST101\",\n            \"name\": \"Emma Thompson\",\n            \"email\": \"emma.thompson@example.com\",\n            \"phoneNo\": \"0815674321\",\n            \"address\": \"25 Sukhumvit 39\",\n            \"city\": \"Bangkok\",\n            \"country\": \"TH\",\n            \"postalCode\": \"10110\",\n            \"customerType\": \"Individual\",\n            \"status\": \"Active\",\n            \"registrationDate\": \"0001-01-01\",\n            \"lastModifiedDate\": \"0001-01-01T00:00:00Z\",\n            \"creditLimit\": 85000,\n            \"currencyCode\": \"THB\",\n            \"marketingConsent\": true\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "002 GetCustomerbyNo.",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            },
+            {
+              "key": "domain",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "disableRetryRequest",
+              "value": false,
+              "type": "boolean"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers?$filter= no eq 'CUST001'",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ],
+          "query": [
+            {
+              "key": "$filter",
+              "value": " no eq 'CUST001'"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "002 GetCustomerbyNo.",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers?$filter= no eq 'CUST001'",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "$filter",
+                  "value": " no eq 'CUST001'"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; odata.metadata=minimal; odata.streaming=true"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "OData-Version",
+              "value": "4.0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Expose-Headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "7ba8c597-5d03-4211-aadc-861d02233207"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 11 Aug 2026 08:32:13 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"@odata.context\": \"http://localhost:7148/BC270/api/donut/qa/v1.0/$metadata#companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers\",\n    \"value\": [\n        {\n            \"@odata.etag\": \"W/\\\"JzE5OzIyOTMyODE1MjIwNTA2MzM3MjIxOzAwOyc=\\\"\",\n            \"no\": \"CUST001\",\n            \"name\": \"John Smith\",\n            \"email\": \"john@example.com\",\n            \"phoneNo\": \"\",\n            \"address\": \"\",\n            \"city\": \"\",\n            \"country\": \"\",\n            \"postalCode\": \"\",\n            \"customerType\": \"Individual\",\n            \"status\": \"Active\",\n            \"registrationDate\": \"0001-01-01\",\n            \"lastModifiedDate\": \"0001-01-01T00:00:00Z\",\n            \"creditLimit\": 0,\n            \"currencyCode\": \"\",\n            \"marketingConsent\": false\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "003 GetNon-existCustomer",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            },
+            {
+              "key": "domain",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "disableRetryRequest",
+              "value": false,
+              "type": "boolean"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers?$filter= no eq 'CUST102'",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ],
+          "query": [
+            {
+              "key": "$filter",
+              "value": " no eq 'CUST102'"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "003 GetNon-existCustomer",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers?$filter= no eq 'CUST102'",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "$filter",
+                  "value": " no eq 'CUST102'"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; odata.metadata=minimal; odata.streaming=true"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "OData-Version",
+              "value": "4.0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Expose-Headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "9bcec083-3fb9-4992-bce7-af963ccce26c"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 13 Aug 2026 02:33:22 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"@odata.context\": \"http://localhost:7148/BC270/api/donut/qa/v1.0/$metadata#companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers\",\n    \"value\": []\n}"
+        }
+      ]
+    },
+    {
+      "name": "001 CreateValidData",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            },
+            {
+              "key": "domain",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "disableRetryRequest",
+              "value": false,
+              "type": "boolean"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"no\": \"CUST101\",\r\n  \"name\": \"Emma Thompson\",\r\n  \"email\": \"emma.thompson@example.com\",\r\n  \"phoneNo\": \"0815674321\",\r\n  \"address\": \"25 Sukhumvit 39\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10110\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": 85000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "001 CreateValidData",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"no\": \"CUST101\",\r\n  \"name\": \"Emma Thompson\",\r\n  \"email\": \"emma.thompson@example.com\",\r\n  \"phoneNo\": \"0815674321\",\r\n  \"address\": \"25 Sukhumvit 39\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10110\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": 85000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; odata.metadata=minimal; odata.streaming=true"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Location",
+              "value": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST101')"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "OData-Version",
+              "value": "4.0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Expose-Headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "1e5a8901-557c-46f0-bba5-fdda83f9e3fe"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 17 Aug 2026 09:35:10 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"@odata.context\": \"http://localhost:7148/BC270/api/donut/qa/v1.0/$metadata#companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers/$entity\",\n    \"@odata.etag\": \"W/\\\"JzE5OzUxMjkxOTY5MjcyMDU1MjE5OTYxOzAwOyc=\\\"\",\n    \"no\": \"CUST101\",\n    \"name\": \"Emma Thompson\",\n    \"email\": \"emma.thompson@example.com\",\n    \"phoneNo\": \"0815674321\",\n    \"address\": \"25 Sukhumvit 39\",\n    \"city\": \"Bangkok\",\n    \"country\": \"TH\",\n    \"postalCode\": \"10110\",\n    \"customerType\": \"Individual\",\n    \"status\": \"Active\",\n    \"registrationDate\": \"0001-01-01\",\n    \"lastModifiedDate\": \"0001-01-01T00:00:00Z\",\n    \"creditLimit\": 85000,\n    \"currencyCode\": \"THB\",\n    \"marketingConsent\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "002 CreateMinimumData",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            },
+            {
+              "key": "domain",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "disableRetryRequest",
+              "value": false,
+              "type": "boolean"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"no\": \"CUST103\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "002 CreateMinimumData",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"no\": \"CUST103\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; odata.metadata=minimal; odata.streaming=true"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Location",
+              "value": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST103')"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "OData-Version",
+              "value": "4.0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Expose-Headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "e28ed8b0-5538-4800-911b-8ffb4e7ef53f"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 17 Aug 2026 07:54:16 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"@odata.context\": \"http://localhost:7148/BC270/api/donut/qa/v1.0/$metadata#companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers/$entity\",\n    \"@odata.etag\": \"W/\\\"JzIwOzEzOTcyMDcwMzY4OTg2OTQ3MTkxMTswMDsn\\\"\",\n    \"no\": \"CUST103\",\n    \"name\": \"\",\n    \"email\": \"\",\n    \"phoneNo\": \"\",\n    \"address\": \"\",\n    \"city\": \"\",\n    \"country\": \"\",\n    \"postalCode\": \"\",\n    \"customerType\": \"Individual\",\n    \"status\": \"Active\",\n    \"registrationDate\": \"0001-01-01\",\n    \"lastModifiedDate\": \"0001-01-01T00:00:00Z\",\n    \"creditLimit\": 0,\n    \"currencyCode\": \"\",\n    \"marketingConsent\": false\n}"
+        }
+      ]
+    },
+    {
+      "name": "003  Missing Required CusNo",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "003  Missing Required CusNo",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Emma Thompson\",\r\n  \"email\": \"emma.thompson@example.com\",\r\n  \"phoneNo\": \"0815674321\",\r\n  \"address\": \"25 Sukhumvit 39\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10110\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": 85000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; odata.metadata=minimal; odata.streaming=true"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Location",
+              "value": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('')"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "OData-Version",
+              "value": "4.0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Expose-Headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "23cab9b0-61e1-4af9-a0a2-71be1540afe8"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 17 Aug 2026 09:53:35 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"@odata.context\": \"http://localhost:7148/BC270/api/donut/qa/v1.0/$metadata#companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers/$entity\",\n    \"@odata.etag\": \"W/\\\"JzIwOzEyMTc5MDE4OTkxNzAwMTMyMTUzMTswMDsn\\\"\",\n    \"no\": \"\",\n    \"name\": \"Emma Thompson\",\n    \"email\": \"emma.thompson@example.com\",\n    \"phoneNo\": \"0815674321\",\n    \"address\": \"25 Sukhumvit 39\",\n    \"city\": \"Bangkok\",\n    \"country\": \"TH\",\n    \"postalCode\": \"10110\",\n    \"customerType\": \"Individual\",\n    \"status\": \"Active\",\n    \"registrationDate\": \"0001-01-01\",\n    \"lastModifiedDate\": \"0001-01-01T00:00:00Z\",\n    \"creditLimit\": 85000,\n    \"currencyCode\": \"THB\",\n    \"marketingConsent\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "004 duplicate CusNo",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "004 duplicate CusNo",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"no\": \"CUST001\",\r\n  \"name\": \"Emma Thompson\",\r\n  \"email\": \"emma.thompson@example.com\",\r\n  \"phoneNo\": \"0815674321\",\r\n  \"address\": \"25 Sukhumvit 39\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10110\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": 85000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ]
+            }
+          },
+          "status": "The record in table Customer API already exists. Identification fields and values: Customer No.='CUST001'",
+          "code": 400,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Expose-Headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "1b5ea7ac-9f8d-4a44-a8a7-4539f6bab678"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 17 Aug 2026 10:05:15 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": {\n        \"code\": \"Internal_EntityWithSameKeyExists\",\n        \"message\": \"The record in table Customer API already exists. Identification fields and values: Customer No.='CUST001'  CorrelationId:  1b5ea7ac-9f8d-4a44-a8a7-4539f6bab678.\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "005 Invalid Customer Type",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"no\": \"CUST105\",\r\n  \"name\": \"Test Invalid Type\",\r\n  \"email\": \"test.invalidtype@example.com\",\r\n  \"phoneNo\": \"0899999999\",\r\n  \"address\": \"1 Test Street\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10100\",\r\n  \"customerType\": \"Unknown\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": 50000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "005 Invalid Customer Type",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"no\": \"CUST105\",\r\n  \"name\": \"Test Invalid Type\",\r\n  \"email\": \"test.invalidtype@example.com\",\r\n  \"phoneNo\": \"0899999999\",\r\n  \"address\": \"1 Test Street\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10100\",\r\n  \"customerType\": \"Unknown\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": 50000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ]
+            }
+          },
+          "status": "'Unknown' is not an option. The existing options are: Individual,Company",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-expose-headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "d041d9b5-141a-48db-bd48-2f2b4397a203"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 18 Aug 2026 03:41:29 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": {\n    \"code\": \"Application_InvalidOptionEnumValue\",\n    \"message\": \"'Unknown' is not an option. The existing options are: Individual,Company  CorrelationId:  d041d9b5-141a-48db-bd48-2f2b4397a203.\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "006 Invalid Status",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"no\": \"CUST106\",\r\n  \"name\": \"Test Invalid Status\",\r\n  \"email\": \"test.invalidstatus@example.com\",\r\n  \"phoneNo\": \"0898888888\",\r\n  \"address\": \"1 Test Street\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10100\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Pending\",\r\n  \"creditLimit\": 50000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "006 Invalid Status",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"no\": \"CUST106\",\r\n  \"name\": \"Test Invalid Status\",\r\n  \"email\": \"test.invalidstatus@example.com\",\r\n  \"phoneNo\": \"0898888888\",\r\n  \"address\": \"1 Test Street\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10100\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Pending\",\r\n  \"creditLimit\": 50000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ]
+            }
+          },
+          "status": "'Pending' is not an option. The existing options are: Active,Inactive,Blocked",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-expose-headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "6c54de13-79d9-4f50-9f19-554ab978fb2f"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 18 Aug 2026 03:45:08 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": {\n    \"code\": \"Application_InvalidOptionEnumValue\",\n    \"message\": \"'Pending' is not an option. The existing options are: Active,Inactive,Blocked  CorrelationId:  6c54de13-79d9-4f50-9f19-554ab978fb2f.\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "007 Invalid JSON Data Type",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"no\": \"CUST107\",\r\n  \"name\": \"Test Invalid Type\",\r\n  \"email\": \"test.invalidjsontype@example.com\",\r\n  \"phoneNo\": \"0897777777\",\r\n  \"address\": \"1 Test Street\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10100\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"currencyCode\": \"THB\",\r\n  \"creditLimit\": \"eighty-five thousand\",\r\n  \"marketingConsent\": \"yes\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "007 Invalid JSON Data Type",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"no\": \"CUST107\",\r\n  \"name\": \"Test Invalid Type\",\r\n  \"email\": \"test.invalidjsontype@example.com\",\r\n  \"phoneNo\": \"0897777777\",\r\n  \"address\": \"1 Test Street\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10100\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"currencyCode\": \"THB\",\r\n  \"creditLimit\": \"eighty-five thousand\",\r\n  \"marketingConsent\": \"yes\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ]
+            }
+          },
+          "status": "Cannot convert a value to target type 'Edm.Decimal' because of conflict between input format string/number and parameter 'IEEE754Compatible' false/true.",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-expose-headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "32a69da8-43fd-4b1d-ad84-2580d65d8404"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 18 Aug 2026 03:50:14 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": {\n    \"code\": \"BadRequest\",\n    \"message\": \"Cannot convert a value to target type 'Edm.Decimal' because of conflict between input format string/number and parameter 'IEEE754Compatible' false/true.  CorrelationId:  32a69da8-43fd-4b1d-ad84-2580d65d8404.\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "008 Negative Credit Limit",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"no\": \"CUST108\",\r\n  \"name\": \"Test Negative Credit\",\r\n  \"email\": \"test.negativecredit@example.com\",\r\n  \"phoneNo\": \"0896666666\",\r\n  \"address\": \"1 Test Street\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10100\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": -50000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "008 Negative Credit Limit",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"no\": \"CUST108\",\r\n  \"name\": \"Test Negative Credit\",\r\n  \"email\": \"test.negativecredit@example.com\",\r\n  \"phoneNo\": \"0896666666\",\r\n  \"address\": \"1 Test Street\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10100\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": -50000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; odata.metadata=minimal; odata.streaming=true"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "location",
+              "value": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST108')"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "odata-version",
+              "value": "4.0"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-expose-headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "f99f97ba-b7c2-4807-9259-bda1a7ecb606"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 18 Aug 2026 03:53:43 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"@odata.context\": \"http://localhost:7148/BC270/api/donut/qa/v1.0/$metadata#companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers/$entity\",\n  \"@odata.etag\": \"W/\\\"JzE5OzY0Mzc0NjE4MTIwNTY1Njc3MzIxOzAwOyc=\\\"\",\n  \"no\": \"CUST108\",\n  \"name\": \"Test Negative Credit\",\n  \"email\": \"test.negativecredit@example.com\",\n  \"phoneNo\": \"0896666666\",\n  \"address\": \"1 Test Street\",\n  \"city\": \"Bangkok\",\n  \"country\": \"TH\",\n  \"postalCode\": \"10100\",\n  \"customerType\": \"Individual\",\n  \"status\": \"Active\",\n  \"registrationDate\": \"0001-01-01\",\n  \"lastModifiedDate\": \"0001-01-01T00:00:00Z\",\n  \"creditLimit\": -50000,\n  \"currencyCode\": \"THB\",\n  \"marketingConsent\": false\n}"
+        }
+      ]
+    },
+    {
+      "name": "001 Update Customer Name",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {
+          "content-type": true
+        }
+      },
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "/ตๅๅภภ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "If-Match",
+            "value": "*"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Marcus Webb\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST001')",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers('CUST001')"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "001 Update Customer Name",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "If-Match",
+                "value": "*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Marcus Webb\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST001')",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers('CUST001')"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; odata.metadata=minimal; odata.streaming=true"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "odata-version",
+              "value": "4.0"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-expose-headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "4e9b2dcf-c280-44ea-ba65-839f2fb3706f"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 18 Aug 2026 02:52:36 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"@odata.context\": \"http://localhost:7148/BC270/api/donut/qa/v1.0/$metadata#companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers/$entity\",\n  \"@odata.etag\": \"W/\\\"JzE5OzgyMjg1ODQ5NTI0NjAxNzYyODQxOzAwOyc=\\\"\",\n  \"no\": \"CUST001\",\n  \"name\": \"Marcus Webb\",\n  \"email\": \"john@example.com\",\n  \"phoneNo\": \"\",\n  \"address\": \"\",\n  \"city\": \"\",\n  \"country\": \"\",\n  \"postalCode\": \"\",\n  \"customerType\": \"Individual\",\n  \"status\": \"Active\",\n  \"registrationDate\": \"0001-01-01\",\n  \"lastModifiedDate\": \"0001-01-01T00:00:00Z\",\n  \"creditLimit\": 0,\n  \"currencyCode\": \"\",\n  \"marketingConsent\": false\n}"
+        }
+      ]
+    },
+    {
+      "name": "002 Update Multi Customer Fields",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "If-Match",
+            "value": "*"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Nathan Cole\",\r\n  \"email\": \"nathan.cole@example.com\",\r\n  \"phoneNo\": \"0891234567\",\r\n  \"address\": \"88 Silom Road\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10500\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": 120000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST103')",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers('CUST103')"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "002 Update Multi Customer Fields",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "If-Match",
+                "value": "*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Nathan Cole\",\r\n  \"email\": \"nathan.cole@example.com\",\r\n  \"phoneNo\": \"0891234567\",\r\n  \"address\": \"88 Silom Road\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10500\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": 120000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST103')",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers('CUST103')"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; odata.metadata=minimal; odata.streaming=true"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "odata-version",
+              "value": "4.0"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-expose-headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "9f0b9133-c596-4c54-8d55-2d403223e483"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 18 Aug 2026 02:36:10 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"@odata.context\": \"http://localhost:7148/BC270/api/donut/qa/v1.0/$metadata#companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers/$entity\",\n  \"@odata.etag\": \"W/\\\"JzE5OzM3MzM2MTA0NTk5MzQwNDE0ODQxOzAwOyc=\\\"\",\n  \"no\": \"CUST103\",\n  \"name\": \"Nathan Cole\",\n  \"email\": \"nathan.cole@example.com\",\n  \"phoneNo\": \"0891234567\",\n  \"address\": \"88 Silom Road\",\n  \"city\": \"Bangkok\",\n  \"country\": \"TH\",\n  \"postalCode\": \"10500\",\n  \"customerType\": \"Individual\",\n  \"status\": \"Active\",\n  \"registrationDate\": \"0001-01-01\",\n  \"lastModifiedDate\": \"0001-01-01T00:00:00Z\",\n  \"creditLimit\": 120000,\n  \"currencyCode\": \"THB\",\n  \"marketingConsent\": false\n}"
+        }
+      ]
+    },
+    {
+      "name": "003 Update non-exist",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "If-Match",
+            "value": "*"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Priya Sharma\",\r\n  \"email\": \"priya.sharma@example.com\",\r\n  \"phoneNo\": \"0876543210\",\r\n  \"address\": \"42 Sathorn Soi 12\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10120\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": 65000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('C99999')",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers('C99999')"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "003 Update non-exist",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "If-Match",
+                "value": "*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Priya Sharma\",\r\n  \"email\": \"priya.sharma@example.com\",\r\n  \"phoneNo\": \"0876543210\",\r\n  \"address\": \"42 Sathorn Soi 12\",\r\n  \"city\": \"Bangkok\",\r\n  \"country\": \"TH\",\r\n  \"postalCode\": \"10120\",\r\n  \"customerType\": \"Individual\",\r\n  \"status\": \"Active\",\r\n  \"creditLimit\": 65000,\r\n  \"currencyCode\": \"THB\",\r\n  \"marketingConsent\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('C99999')",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers('C99999')"
+              ]
+            }
+          },
+          "status": "Resource not found for the segment 'customer'.",
+          "code": 404,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-expose-headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "af14cb46-0c61-4181-8011-4cf6367fb2ca"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 18 Aug 2026 03:05:42 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": {\n    \"code\": \"BadRequest_ResourceNotFound\",\n    \"message\": \"Resource not found for the segment 'customer'.  CorrelationId:  af14cb46-0c61-4181-8011-4cf6367fb2ca.\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "004 Update Cus Invalid Status",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {
+          "content-type": true
+        }
+      },
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "If-Match",
+            "value": "*"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"status\": \"Pending\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST001')",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers('CUST001')"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "004 Update Cus Invalid Status",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "If-Match",
+                "value": "*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"Pending\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST001')",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers('CUST001')"
+              ]
+            }
+          },
+          "status": "'Pending' is not an option. The existing options are: Active,Inactive,Blocked",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-expose-headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "fe669cb4-fb3b-49a7-bd0d-2ff435195540"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 18 Aug 2026 03:11:52 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": {\n    \"code\": \"Application_InvalidOptionEnumValue\",\n    \"message\": \"'Pending' is not an option. The existing options are: Active,Inactive,Blocked  CorrelationId:  fe669cb4-fb3b-49a7-bd0d-2ff435195540.\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "001 Delete Existing Cust",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "If-Match",
+            "value": "*"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST108')",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers('CUST108')"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "001 Delete Existing Cust",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "If-Match",
+                "value": "*"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST108')",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers('CUST108')"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-expose-headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "d3647ea1-00b6-48a3-832a-bf01c02a7587"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 18 Aug 2026 04:14:44 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "002 Delete Non-existing Customer",
+      "request": {
+        "auth": {
+          "type": "ntlm",
+          "ntlm": [
+            {
+              "key": "username",
+              "value": "AVISION115",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "291144",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "If-Match",
+            "value": "*"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('C99999')",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7148",
+          "path": [
+            "BC270",
+            "api",
+            "donut",
+            "qa",
+            "v1.0",
+            "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+            "customers('C99999')"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "002 Delete Non-existing Customer",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "If-Match",
+                "value": "*"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('C99999')",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7148",
+              "path": [
+                "BC270",
+                "api",
+                "donut",
+                "qa",
+                "v1.0",
+                "companies(f2f066a8-f293-f011-9c69-00155ddaf077)",
+                "customers('C99999')"
+              ]
+            }
+          },
+          "status": "Resource not found for the segment 'customer'.",
+          "code": 404,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "server",
+              "value": "Microsoft-HTTPAPI/2.0"
+            },
+            {
+              "key": "urls-rewritten-to-public",
+              "value": "false"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-expose-headers",
+              "value": "Date, Content-Length, Server, OData-Version"
+            },
+            {
+              "key": "request-id",
+              "value": "6f66ba3a-e192-45ca-885d-c845ff5e246c"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 18 Aug 2026 04:18:37 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": {\n    \"code\": \"BadRequest_ResourceNotFound\",\n    \"message\": \"Resource not found for the segment 'customer'.  CorrelationId:  6f66ba3a-e192-45ca-885d-c845ff5e246c.\"\n  }\n}"
+        }
+      ]
+    }
+  ]
+}
