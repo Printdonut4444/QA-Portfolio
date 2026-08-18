@@ -502,77 +502,200 @@ POST /api/v1/customers
 
 ## PATCH-001 — Update Customer Name
 
-| Field                    | Details                                                                                                                                                                                             |
-|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Test Case ID**         | PATCH-001                                                                                                                                                                                           |
-| **Test Objective**       | Verify that an existing customer's name can be updated.                                                                                                                                             |
-| **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                         |
-| **HTTP Method**          | `PATCH`                                                                                                                                                                                             |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                           |
-| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                      |
-| **Test Data**            | `TD-011`                                                                                                                                                                                            |
-| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide a new customer name.<br>3. Send the request.<br>4. Verify the response.<br>5. Retrieve the customer and verify the updated name. |
-| **Expected Status Code** | `2xx`                                                                                                                                                                                               |
-| **Expected Result**      | API accepts the request. Customer name is updated, other customer fields remain unchanged, and Business Central displays the updated value.                                                         |
-| **Actual Result**        | TBD                                                                                                                                                                                                 |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                      |
+| Field                    | Details                                                                                                                                                                                                                     |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | PATCH-001                                                                                                                                                                                                                   |
+| **Test Objective**       | Verify that an existing customer's name can be updated.                                                                                                                                                                     |
+| **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                                                 |
+| **HTTP Method**          | `PATCH`                                                                                                                                                                                                                     |
+| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                   |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                              |
+| **Test Data**            | `TD-011`                                                                                                                                                                                                                    |
+| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide a new customer name.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Retrieve the customer and verify the updated name. |
+| **Expected Status Code** | `2xx`                                                                                                                                                                                                                       |
+| **Expected Result**      | API accepts the request. Customer name is updated, other customer fields remain unchanged, and Business Central displays the updated value.                                                                                 |
+| **Actual Status Code**   | `200 OK`                                                                                                                                                                                                                    |
+| **Actual Result**        | API returned `200 OK`. The customer name was updated successfully. Other customer fields remained unchanged, and the updated customer name was verified successfully in Business Central.                                   |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                      |
+
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+``` http
+PATCH /api/v1/customers(no)
+```
+
+**Response Status:**
+
+``` text
+200 OK
+```
+
+**Response Validation:**
+
+-  Response was returned successfully.
+- Response status was 200 OK.
+- The customer name was updated successfully.
+- Other customer fields remained unchanged.
+- The updated customer name was verified successfully in Business Central.
+
+**Evidence:**
+
+<img width="1687" height="217" alt="image" src="https://github.com/user-attachments/assets/a6eedbe1-3d52-4af8-afb8-43462433fb2d" />
+<img width="1410" height="812" alt="image" src="https://github.com/user-attachments/assets/622ddc03-9893-4e91-ba85-bd8336e48bbd" />
+<img width="1655" height="228" alt="image" src="https://github.com/user-attachments/assets/541c53cf-859f-42c5-82f6-0b03ebb27fe7" />
 
 ------------------------------------------------------------------------
 
 ## PATCH-002 — Update Multiple Customer Fields
 
-| Field                    | Details                                                                                                                                                                                                    |
-|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Test Case ID**         | PATCH-002                                                                                                                                                                                                  |
-| **Test Objective**       | Verify that multiple customer fields can be updated in a single request.                                                                                                                                   |
-| **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                                |
-| **HTTP Method**          | `PATCH`                                                                                                                                                                                                    |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                  |
-| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                             |
-| **Test Data**            | `TD-012`                                                                                                                                                                                                   |
-| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide new values for name, phone number, and city.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify the updated customer data. |
-| **Expected Status Code** | `2xx`                                                                                                                                                                                                      |
-| **Expected Result**      | API accepts the request. All specified fields are updated, while fields not included in the request remain unchanged. Updated data matches Business Central.                                               |
-| **Actual Result**        | TBD                                                                                                                                                                                                        |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                             |
+| Field                    | Details                                                                                                                                                                                                                                             |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | PATCH-002                                                                                                                                                                                                                                           |
+| **Test Objective**       | Verify that multiple customer fields can be updated in a single request.                                                                                                                                                                            |
+| **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                                                                         |
+| **HTTP Method**          | `PATCH`                                                                                                                                                                                                                                             |
+| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                                           |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                      |
+| **Test Data**            | `TD-012`                                                                                                                                                                                                                                            |
+| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide new values for name, phone number, and city.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify the updated customer data.                  |
+| **Expected Status Code** | `2xx`                                                                                                                                                                                                                                               |
+| **Expected Result**      | API accepts the request. All specified fields are updated, while fields not included in the request remain unchanged. Updated data matches Business Central.                                                                                        |
+| **Actual Status Code**   | `200 OK`                                                                                                                                                                                                                                            |
+| **Actual Result**        | API returned `200 OK`. The customer name, phone number, and city were updated successfully in a single request. Fields not included in the request remained unchanged, and the updated customer data was verified successfully in Business Central. |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                                              |
+
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+``` http
+PATCH /api/v1/customers(no)
+```
+
+**Response Status:**
+
+``` text
+200 OK
+```
+
+**Response Validation:**
+
+- Response was returned successfully.
+- Response status was 200 OK.
+- Customer name was updated successfully.
+- Phone number was updated successfully.
+- City was updated successfully.
+- Fields not included in the request remained unchanged.
+- The updated customer data was verified successfully in Business Central.
+
+**Evidence:**
+
+<img width="1729" height="346" alt="image" src="https://github.com/user-attachments/assets/bdfb3b41-130c-4f11-a0c7-0ab36d55e243" />
+<img width="1392" height="865" alt="image" src="https://github.com/user-attachments/assets/5153a19e-92c4-4396-a20d-80d03368bb87" />
+<img width="1667" height="312" alt="image" src="https://github.com/user-attachments/assets/84596299-4c14-47f9-9c3c-7fb7fcbb7fdb" />
 
 ------------------------------------------------------------------------
 
 ## PATCH-003 — Update Non-existing Customer
 
-| Field                    | Details                                                                                                                                                                                             |
-|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Test Case ID**         | PATCH-003                                                                                                                                                                                           |
-| **Test Objective**       | Verify the API behavior when attempting to update a customer that does not exist.                                                                                                                   |
-| **Preconditions**        | API service is available and customer `C99999` does not exist.                                                                                                                                      |
-| **HTTP Method**          | `PATCH`                                                                                                                                                                                             |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                           |
-| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                      |
-| **Test Data**            | `TD-013`                                                                                                                                                                                            |
-| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide the non-existing customer identifier `C99999`.<br>3. Provide an update value.<br>4. Send the request.<br>5. Verify the response. |
-| **Expected Status Code** | `4xx`                                                                                                                                                                                               |
-| **Expected Result**      | Request is rejected. No new customer is created, and an appropriate error response is returned.                                                                                                     |
-| **Actual Result**        | TBD                                                                                                                                                                                                 |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                      |
+| Field                    | Details                                                                                                                                                                                                                     |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | PATCH-003                                                                                                                                                                                                                   |
+| **Test Objective**       | Verify the API behavior when attempting to update a customer that does not exist.                                                                                                                                           |
+| **Preconditions**        | API service is available and customer `C99999` does not exist.                                                                                                                                                              |
+| **HTTP Method**          | `PATCH`                                                                                                                                                                                                                     |
+| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                   |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                              |
+| **Test Data**            | `TD-013`                                                                                                                                                                                                                    |
+| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide the non-existing customer identifier `C99999`.<br>3. Provide an update value.<br>4. Send the request.<br>5. Verify the response status and response body. |
+| **Expected Status Code** | `404 Not Found`                                                                                                                                                                                                                       |
+| **Expected Result**      | Request is rejected because the specified customer does not exist. An appropriate error response is returned, and no new customer is created.                                                                               |
+| **Actual Status Code**   | `404 Not Found`                                                                                                                                                                                                             |
+| **Actual Result**        | API returned `404 Not Found` because customer `C99999` does not exist. The update request was rejected, and no new customer record was created.                                                                             |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                      |
+
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+``` http
+PATCH /api/v1/customers(no)
+```
+
+**Response Status:**
+
+``` text
+404 Not Found
+```
+
+**Response Validation:**
+
+- Response was returned successfully.
+- Response status was 404 Not Found.
+- The API rejected the update request because customer C99999 does not exist.
+- No new customer record was created.
+- The response behavior matched the expected result.
+
+**Evidence:**
+
+<img width="1420" height="843" alt="image" src="https://github.com/user-attachments/assets/238d6943-ab9b-45d3-a03b-3dc9188002b3" />
 
 ------------------------------------------------------------------------
 
 ## PATCH-004 — Update Customer with Invalid Status
 
-| Field                    | Details                                                                                                                                                                                                                 |
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Test Case ID**         | PATCH-004                                                                                                                                                                                                               |
-| **Test Objective**       | Verify that an existing customer cannot be updated with an unsupported status.                                                                                                                                          |
-| **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                                             |
-| **HTTP Method**          | `PATCH`                                                                                                                                                                                                                 |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                               |
-| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                          |
-| **Test Data**            | `TD-014`                                                                                                                                                                                                                |
-| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide the unsupported status `Pending`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that the existing customer data remains unchanged. |
-| **Expected Status Code** | `4xx`                                                                                                                                                                                                                   |
-| **Expected Result**      | Request is rejected. Existing customer data remains unchanged, and an appropriate validation error is returned.                                                                                                         |
-| **Actual Result**        | TBD                                                                                                                                                                                                                     |
-| **Test Status**          | `Not Executed`                                                                                                                                                                                                          |
+| Field                    | Details                                                                                                                                                                                                                                         |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**         | PATCH-004                                                                                                                                                                                                                                       |
+| **Test Objective**       | Verify that an existing customer cannot be updated with an unsupported status.                                                                                                                                                                  |
+| **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                                                                     |
+| **HTTP Method**          | `PATCH`                                                                                                                                                                                                                                         |
+| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                                       |
+| **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                  |
+| **Test Data**            | `TD-014`                                                                                                                                                                                                                                        |
+| **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide the unsupported status `Pending`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that the existing customer data remains unchanged. |
+| **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                                                                           |
+| **Expected Result**      | Request is rejected because `Pending` is not a supported customer status. An appropriate validation error is returned, and the existing customer data remains unchanged.                                                                        |
+| **Actual Status Code**   | `400 Bad Request`                                                                                                                                                                                                                               |
+| **Actual Result**        | API returned `400 Bad Request` because the provided status `Pending` is not supported. The update request was rejected, and the existing customer data remained unchanged.                                                                      |
+| **Test Status**          | `PASS`                                                                                                                                                                                                                                          |
+
+### Test Execution Evidence
+
+**Execution Tool:** Postman
+
+**Request:**
+
+``` http
+PATCH /api/v1/customers(no)
+```
+
+**Response Status:**
+
+``` text
+400 Bad Request
+```
+
+**Response Validation:**
+
+- Response was returned successfully.
+- Response status was 400 Bad Request.
+- The API rejected the request because Pending is not a supported customer status.
+- The existing customer data remained unchanged.
+- No invalid status was saved to the customer record.
+- The response behavior matched the expected result.
+
+**Evidence:**
+
+<img width="1418" height="728" alt="image" src="https://github.com/user-attachments/assets/00e5e0bd-66cb-4a7b-af85-fc5f34087ee1" />
 
 ------------------------------------------------------------------------
 
