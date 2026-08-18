@@ -4,7 +4,8 @@
 
 This document contains the test cases designed for the **Customer REST API** developed in Microsoft Dynamics 365 Business Central.
 
-The test cases focus on validating API functionality, request and response data, business rules, and expected behavior for common customer operations. <br> [👉 Link to Google Drive with task](https://docs.google.com/spreadsheets/d/1iPMz0umkHpiaKKFS_dCT20KML73zl27V/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true)
+The test cases focus on validating API functionality, request and response data, business rules, and expected behavior for common customer operations. <br> 
+[👉 Link to Google Drive with task](https://docs.google.com/spreadsheets/d/1iPMz0umkHpiaKKFS_dCT20KML73zl27V/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true)
 
 ## Test Scope
 
@@ -116,7 +117,7 @@ The screenshot shows the Postman request, response status, and response body con
 
 ------------------------------------------------------------------------
 
-## GET-002 — Get Customer by Customer Number.
+## GET-002 — Get Customer by Customer Number
 
 | Field                | Details                                                                                                                                                                                                                                    |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -334,7 +335,7 @@ The screenshots show the Postman request, 201 Created response, created customer
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                           |
 | **Test Data**            | `TD-005` — Customer data without the `No.` field.                                                                                                                                                                                                        |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Omit the required customer number (`No.`) from the request body.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that no customer record was created. |
-| **Expected Status Code** | `4xx` validation error                                                                                                                                                                                                                                   |
+| **Expected Status Code** | `400 Bad Request` validation error                                                                                                                                                                                                                                   |
 | **Expected Result**      | API rejects the request because the required `No.` field is missing. An appropriate validation error is returned, and no customer record is created.                                                                                                     |
 | **Actual Status Code**   | `201 Created`                                                                                                                                                                                                                                            |
 | **Actual Result**        | API returned `201 Created` even though the required `No.` field was omitted from the request. A customer record was created successfully. This behavior does not match the expected validation rule for the test case.                                   |
@@ -362,8 +363,9 @@ POST /api/v1/customers
 - Response status was 201 Created.
 - The request was accepted even though the required No. field was omitted.
 - A customer record was created.
-- The actual response does not match the expected 4xx validation error.
+- The actual response does not match the expected 400 Bad Request validation error.
 - The test case therefore failed.
+- The customer record created during this test should be removed after execution to avoid polluting later test runs, since it was an unintended side effect of a validation failure.
 
 **Evidence:**
 <img width="1414" height="902" alt="image" src="https://github.com/user-attachments/assets/9fb0ddeb-3000-43e3-8e86-53eab19a64db" />
@@ -424,17 +426,17 @@ POST /api/v1/customers
 | Field                    | Details                                                                                                                                                                                                                     |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Test Case ID**         | POST-005                                                                                                                                                                                                                    |
-| **Test Objective**       | Verify the API behavior according to the defined test condition.                                                                                                                                                            |
-| **Preconditions**        | API service is available and the required test conditions are satisfied.                                                                                                                                                    |
+| **Test Objective**       | Verify that the API rejects a customer creation request when `customerType` is set to a value outside the defined enum (`Individual`, `Company`).                                                                          |
+| **Preconditions**        | API service is available and the `customerType` field is defined with a fixed set of valid values (`Individual`, `Company`).                                                                                               |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                      |
 | **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                         |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                              |
-| **Test Data**            | `TD-007`                                                                                                                                                                                                                    |
-| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide the test data defined in `TD-007`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify the resulting customer record. |
+| **Test Data**            | `TD-007` — Customer data with `customerType` set to `Unknown`.                                                                                                                                                             |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide an unsupported customer type, `Unknown`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that no customer record was created. |
 | **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                     |
-| **Expected Result**      | Request behaves according to the defined validation rule. Appropriate response is returned and the customer record is handled as expected.                                                                                  |
+| **Expected Result**      | API rejects the request because `Unknown` is not a valid `customerType`. An appropriate validation error is returned, and no customer record is created.                                                                    |
 | **Actual Status Code**   | `400 Bad Request`                                                                                                                                                                                                           |
-| **Actual Result**        | API returned `400 Bad Request` as expected. The request was rejected according to the defined validation rule, and the resulting customer data remained consistent with the expected behavior.                              |
+| **Actual Result**        | API returned `400 Bad Request` because `customerType` was set to `Unknown`, which is not a supported value. No customer record was created.                                                                                  |
 | **Test Status**          | `PASS`                                                                                                                                                                                                                      |
 
 ### Test Execution Evidence
@@ -457,9 +459,9 @@ POST /api/v1/customers
 
 - Response was returned successfully.
 - Response status was 400 Bad Request.
-- The API rejected the request as expected.
-- The response behavior matched the defined validation rule.
-- No unexpected customer record was created or modified.
+- The API rejected the request because `customerType` was `Unknown`.
+- No customer record was created.
+- The response behavior matched the expected enum validation.
 
 **Evidence:**
 
@@ -472,17 +474,17 @@ POST /api/v1/customers
 | Field                    | Details                                                                                                                                                                                                                     |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Test Case ID**         | POST-006                                                                                                                                                                                                                    |
-| **Test Objective**       | Verify the API behavior according to the defined test condition.                                                                                                                                                            |
-| **Preconditions**        | API service is available and the required test conditions are satisfied.                                                                                                                                                    |
+| **Test Objective**       | Verify that the API rejects a customer creation request when `status` is set to an unsupported value.                                                                                                                       |
+| **Preconditions**        | API service is available and the `status` field is defined with a fixed set of valid values.                                                                                                                                |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                      |
 | **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                         |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                              |
-| **Test Data**            | `TD-008`                                                                                                                                                                                                                    |
-| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide the test data defined in `TD-008`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify the resulting customer record. |
+| **Test Data**            | `TD-008` — Customer data with `status` set to `Pending`.                                                                                                                                                                   |
+| **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide an unsupported status, `Pending`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that no customer record was created. |
 | **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                    |
-| **Expected Result**      | Request behaves according to the defined validation rule. Appropriate response is returned and the customer record is handled as expected.                                                                                  |
+| **Expected Result**      | API rejects the request because `Pending` is not a supported `status` value. An appropriate validation error is returned, and no customer record is created.                                                                |
 | **Actual Status Code**   | `400 Bad Request`                                                                                                                                                                                                           |
-| **Actual Result**        | API returned `400 Bad Request` as expected. The request was rejected according to the defined validation rule, and no unexpected customer record was created.                                                               |
+| **Actual Result**        | API returned `400 Bad Request` because `status` was set to `Pending`, which is not a supported value. No customer record was created.                                                                                       |
 | **Test Status**          | `PASS`                                                                                                                                                                                                                      |
 
 ### Test Execution Evidence
@@ -505,9 +507,9 @@ POST /api/v1/customers
 
 - Response was returned successfully.
 - Response status was 400 Bad Request.
-- The API rejected the request as expected.
-- The validation behavior matched the expected result.
-- No unexpected customer record was created.
+- The API rejected the request because `status` was `Pending`.
+- No customer record was created.
+- The response behavior matched the expected enum validation.
 
 **Evidence:**
 
@@ -570,7 +572,7 @@ POST /api/v1/customers
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Test Case ID**         | POST-008                                                                                                                                                                                                                                               |
 | **Test Objective**       | Verify that the API rejects a customer request containing a negative credit limit.                                                                                                                                                                     |
-| **Preconditions**        | API service is available and the customer data is otherwise valid. The configured business rule requires the credit limit to be non-negative.                                                                                                          |
+| **Preconditions**        | API service is available and the customer data is otherwise valid. This test assumes a business rule requiring `creditLimit >= 0`; this assumption has not been independently confirmed against the Business Central validation logic (AL code) prior to execution.                                                                                                          |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                                                 |
 | **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                    |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                         |
@@ -579,8 +581,8 @@ POST /api/v1/customers
 | **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                                                                                  |
 | **Expected Result**      | Request is rejected because the credit limit is negative and violates the configured business rule. An appropriate validation error is returned, and no customer record is created.                                                                    |
 | **Actual Status Code**   | `201 Created`                                                                                                                                                                                                                                          |
-| **Actual Result**        | API returned `201 Created` even though a negative credit limit was provided. The request was accepted and a customer record was created. This behavior does not match the expected validation rule because the negative credit limit was not rejected. |
-| **Test Status**          | `FAIL`                                                                                                                                                                                                                                                 |
+| **Actual Result**        | API returned `201 Created` even though a negative credit limit was provided. The request was accepted and a customer record was created. This does not match the expected result *if* a `creditLimit >= 0` business rule is required — however, this test did not verify whether such a rule is actually configured in Business Central. The `201 Created` response could equally mean no such rule exists, in which case this is not a defect. |
+| **Test Status**          | `FAIL (pending confirmation)` — should be re-classified as PASS or FAIL once the `creditLimit >= 0` business rule requirement is confirmed against Business Central validation logic or the API specification.                                                                                                                                                                                                                                                 |
 
 ### Test Execution Evidence
 
@@ -605,7 +607,8 @@ POST /api/v1/customers
 - The request was accepted by the API.
 - The customer record was created despite the negative credit limit.
 - No validation error was returned.
-- The actual behavior did not match the expected 400 Bad Request validation response.
+- Whether this is a defect depends on an unconfirmed assumption (see Preconditions/Actual Result); the `creditLimit >= 0` business rule requirement should be verified against Business Central validation logic before this result is treated as final.
+- The customer record created during this test should be removed after execution to avoid polluting later test runs, since it was an unintended side effect of the validation not behaving as assumed.
 
 **Evidence:**
 
@@ -640,7 +643,7 @@ POST /api/v1/customers
 **Request:**
 
 ``` http
-PATCH /api/v1/customers(no)
+PATCH /api/v1/customers('CUST001')
 ```
 
 **Response Status:**
@@ -690,7 +693,7 @@ PATCH /api/v1/customers(no)
 **Request:**
 
 ``` http
-PATCH /api/v1/customers(no)
+PATCH /api/v1/customers('CUST103')
 ```
 
 **Response Status:**
@@ -742,7 +745,7 @@ PATCH /api/v1/customers(no)
 **Request:**
 
 ``` http
-PATCH /api/v1/customers(no)
+PATCH /api/v1/customers('C99999')
 ```
 
 **Response Status:**
@@ -790,7 +793,7 @@ PATCH /api/v1/customers(no)
 **Request:**
 
 ``` http
-PATCH /api/v1/customers(no)
+PATCH /api/v1/customers('CUST001')
 ```
 
 **Response Status:**
@@ -822,16 +825,16 @@ PATCH /api/v1/customers(no)
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Test Case ID**         | DELETE-001                                                                                                                                                                                                                                                          |
 | **Test Objective**       | Verify that an existing customer can be deleted.                                                                                                                                                                                                                    |
-| **Preconditions**        | API service is available and the test customer exists.                                                                                                                                                                                                              |
+| **Preconditions**        | API service is available and customer `CUST105` exists in the system.                                                                                                                                                                                               |
 | **HTTP Method**          | `DELETE`                                                                                                                                                                                                                                                            |
 | **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                                                           |
 | **Headers**              | `Accept: application/json`                                                                                                                                                                                                                                          |
-| **Test Data**            | `TD-015`                                                                                                                                                                                                                                                            |
-| **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the existing customer identifier.<br>3. Send the request.<br>4. Verify the response.<br>5. Send a `GET` request for the deleted customer.<br>6. Verify that the customer is no longer available. |
+| **Test Data**            | `TD-015` — Existing customer `CUST105`, created specifically for this deletion test.                                                                                                                                                                               |
+| **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the existing customer identifier `CUST105`.<br>3. Send the request.<br>4. Verify the response.<br>5. Send a `GET` request for the deleted customer.<br>6. Verify that the customer is no longer available. |
 | **Expected Status Code** | `204 No Content`                                                                                                                                                                                                                                                               |
-| **Expected Result**      | API accepts the delete request. Customer is removed from the Customer API table, and a subsequent `GET` request does not return the deleted customer.                                                                                                               |
+| **Expected Result**      | API accepts the delete request. Customer `CUST105` is removed from the Customer API table, and a subsequent `GET` request does not return the deleted customer.                                                                                                     |
 | **Actual Status Code**   | `204 No Content`                                                                                                                                                                                                                                                    |
-| **Actual Result**        | API returned `204 No Content` after the DELETE request was submitted. The customer was successfully deleted, and a subsequent `GET` request confirmed that the deleted customer was no longer available.                                                            |
+| **Actual Result**        | API returned `204 No Content` after the DELETE request for customer `CUST105` was submitted. The customer was successfully deleted, and a subsequent `GET` request confirmed that `CUST105` was no longer available.                                                            |
 | **Test Status**          | `PASS`                                                                                                                                                                                                                                                              |
 
 ### Test Execution Evidence
@@ -841,7 +844,7 @@ PATCH /api/v1/customers(no)
 **Request:**
 
 ``` http
-DELETE /api/v1/customers({id})
+DELETE /api/v1/customers('CUST105')
 ```
 
 **Response Status:**
@@ -852,11 +855,11 @@ DELETE /api/v1/customers({id})
 
 **Response Validation:**
 
-- DELETE request was processed successfully.
+- DELETE request was processed successfully for customer CUST105.
 - Response status was 204 No Content.
-- The existing customer was successfully deleted.
+- Customer CUST105 was successfully deleted.
 - A subsequent GET request was used to verify the deletion.
-- The deleted customer was no longer available.
+- Customer CUST105 was no longer available.
 - The actual behavior matched the expected delete behavior.
 
 **Evidence:**
@@ -892,7 +895,7 @@ DELETE /api/v1/customers({id})
 **Request:**
 
 ``` http
-DELETE /api/v1/customers(C99999)
+DELETE /api/v1/customers('C99999')
 ```
 
 **Response Status:**
