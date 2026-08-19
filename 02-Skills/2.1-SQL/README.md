@@ -1,4 +1,4 @@
-# SQL Database Testing Test Cases — Customer API Table
+<img width="1201" height="547" alt="image" src="https://github.com/user-attachments/assets/7afa49ad-a033-45f0-a441-78f411402a6f" /># SQL Database Testing Test Cases — Customer API Table
 
 ## 1. Test Scope
 
@@ -82,11 +82,9 @@ FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-07515525755
 - ไม่มี SQL Error
 - มี Customer records หรือแสดง empty result โดยไม่เกิด error
 
-**Actual Result:** __________________
+**Evidence:** 
+<img width="1692" height="237" alt="image" src="https://github.com/user-attachments/assets/1bbe254a-2141-4280-9570-f89948fec731" />
 
-**Status:** PASS / FAIL
-
-**Evidence:** __________________
 
 ---
 
@@ -114,9 +112,9 @@ FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-07515525755
 - Result มีเฉพาะ 7 columns ที่ระบุ
 - ข้อมูลของแต่ละ column ตรงกับ Customer record
 
-**Actual Result:** __________________
+**Evidence:** 
+<img width="915" height="184" alt="image" src="https://github.com/user-attachments/assets/de91fa02-830b-4cbe-adfc-0f2bda668dbb" />
 
-**Status:** PASS / FAIL
 
 ---
 
@@ -127,7 +125,7 @@ FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-07515525755
 **Objective:** ตรวจสอบการค้นหา Customer ด้วย Customer Number
 
 **Test Data:**
-- `[No_]` = `YOUR_CUSTOMER_NO`
+- `[No_]` = `CUST002`
 
 **SQL Query:**
 
@@ -145,9 +143,9 @@ WHERE [No_] = 'YOUR_CUSTOMER_NO';
 - แสดงเฉพาะ Customer ที่ `[No_]` ตรงกับ Test Data
 - ไม่แสดง Customer หมายเลขอื่น
 
-**Actual Result:** __________________
+**Evidence:** 
+<img width="599" height="146" alt="image" src="https://github.com/user-attachments/assets/898ecc3f-15a5-417a-8539-a783d341620c" />
 
-**Status:** PASS / FAIL
 
 ---
 
@@ -165,15 +163,14 @@ SELECT
     [Name],
     [Status]
 FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-075155257555]
-WHERE [Status] = 'Active';
+WHERE [Status] = '0';
 ```
 
 **Expected Result:**
-- ทุก Record ที่ได้ต้องมี `Status = Active`
+- ทุก Record ที่ได้ต้องมี `Status = 0` เนื่องจาก  OptionMembers = Active,Inactive,Blocked;
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="473" height="193" alt="image" src="https://github.com/user-attachments/assets/ed1b440d-b9e7-4e61-a801-e7981cf44766" />
 
 ---
 
@@ -192,17 +189,16 @@ SELECT
     [Status],
     [Marketing Consent]
 FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-075155257555]
-WHERE [Status] = 'Active'
+WHERE [Status] = '0'
   AND [Marketing Consent] = 1;
 ```
 
 **Expected Result:**
-- ทุก Record ต้องเป็น Active
+- ทุก Record ต้องเป็น Active(0)
 - ทุก Record ต้องมี Marketing Consent = 1
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="570" height="137" alt="image" src="https://github.com/user-attachments/assets/9b3eb429-1cf1-4327-9c02-bc4002e35479" />
 
 ---
 
@@ -226,9 +222,8 @@ WHERE [Name] LIKE 'A%';
 **Expected Result:**
 - ทุก Name ที่แสดงต้องขึ้นต้นด้วย `A`
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="583" height="114" alt="image" src="https://github.com/user-attachments/assets/db46a9fc-0941-4a60-bac6-dc183ff850d3" />
 
 ---
 
@@ -266,9 +261,8 @@ WHERE [Email] = NULL
 WHERE [Email] IS NULL
 ```
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="835" height="142" alt="image" src="https://github.com/user-attachments/assets/a9c56f4f-af62-491e-a397-b019b22d703c" />
 
 ---
 
@@ -292,9 +286,8 @@ ORDER BY [Credit Limit] DESC;
 **Expected Result:**
 - Credit Limit เรียงจากมากไปน้อย
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="669" height="185" alt="image" src="https://github.com/user-attachments/assets/dedacd1b-282b-4979-9ead-b35e482f6490" />
 
 ---
 
@@ -319,9 +312,8 @@ ORDER BY [Credit Limit] DESC;
 - ได้ไม่เกิน 10 Records
 - เป็น Customer ที่มี Credit Limit สูงสุด
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="824" height="321" alt="image" src="https://github.com/user-attachments/assets/a584776b-e425-4b47-b98f-10cd4fb365eb" />
 
 ---
 
@@ -344,9 +336,8 @@ ORDER BY [Country];
 - Country แต่ละค่าปรากฏเพียงครั้งเดียว
 - ไม่มี duplicate Country
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="341" height="179" alt="image" src="https://github.com/user-attachments/assets/40d3ffc3-8d5f-4b61-986e-ba0311373506" />
 
 ---
 
@@ -373,9 +364,8 @@ ORDER BY TotalCustomers DESC;
 - ได้หนึ่ง row ต่อหนึ่ง Status
 - จำนวน Customer ต่อ Status ถูกต้อง
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="392" height="129" alt="image" src="https://github.com/user-attachments/assets/d225f46f-be61-449a-9d3c-7b91aa71dd7c" />
 
 ---
 
@@ -400,9 +390,8 @@ ORDER BY TotalCustomers DESC;
 - ได้หนึ่ง row ต่อหนึ่ง Country
 - จำนวน Customer ของแต่ละ Country ถูกต้อง
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="436" height="193" alt="image" src="https://github.com/user-attachments/assets/0147e6d6-7d58-41eb-8cc8-bba3b5f826e2" />
 
 ---
 
@@ -427,9 +416,8 @@ FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-07515525755
 - ค่า Aggregate ถูกคำนวณจากข้อมูลจริง
 - `MIN <= AVG <= MAX`
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="1165" height="137" alt="image" src="https://github.com/user-attachments/assets/4c78b3cf-2ae6-496a-96e5-733911814d80" />
 
 ---
 
@@ -455,9 +443,8 @@ ORDER BY TotalCustomers DESC;
 - ทุก Country ที่แสดงต้องมี Customer มากกว่า 10
 - Country ที่มี 10 หรือน้อยกว่าต้องไม่แสดง
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="478" height="110" alt="image" src="https://github.com/user-attachments/assets/24e905c5-7a77-4d1f-a492-12a32d763760" />
 
 ---
 
@@ -465,7 +452,7 @@ ORDER BY TotalCustomers DESC;
 
 **Level:** Intermediate
 
-**Objective:** ตรวจสอบ Customer ที่ Registration Date อยู่ในปี 2026
+**Objective:** ตรวจสอบ Customer ที่มี Last Modified Date อยู่ในปีที่กำหนด
 
 **SQL Query:**
 
@@ -473,20 +460,21 @@ ORDER BY TotalCustomers DESC;
 SELECT
     [No_],
     [Name],
-    [Registration Date]
+    [Email],
+    [Last Modified Date]
 FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-075155257555]
-WHERE [Registration Date] >= '2026-01-01'
-  AND [Registration Date] < '2027-01-01'
-ORDER BY [Registration Date];
+WHERE [Last Modified Date] >= '2025-01-01'
+  AND [Last Modified Date] < '2026-01-01'
+ORDER BY [Last Modified Date];
 ```
 
 **Expected Result:**
-- ทุก Record มี Registration Date อยู่ในปี 2026
-- Record จากปีอื่นไม่ถูกนำมาแสดง
+- ทุก Record ที่แสดงต้องมี [Last Modified Date] อยู่ในปี 2025
+- Record ที่มีวันที่ก่อน 2025-01-01 หรือวันที่ตั้งแต่ 2026-01-01 เป็นต้นไปต้องไม่ถูกแสดง
+- ผลลัพธ์ต้องเรียงจากวันที่เก่าไปใหม่ตาม [Last Modified Date]
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="857" height="216" alt="image" src="https://github.com/user-attachments/assets/c36af0a8-71e1-4afd-8d8e-51147275faee" />
 
 ---
 
@@ -511,9 +499,8 @@ ORDER BY TotalCustomers DESC;
 - ได้จำนวน Customer แยกตาม Customer Type
 - ไม่มี Customer Type ที่หลุดจากการ Group
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="419" height="122" alt="image" src="https://github.com/user-attachments/assets/8422fbd0-785b-48c3-913f-8d92dc6ae49b" />
 
 ---
 
@@ -538,9 +525,8 @@ ORDER BY TotalCustomers DESC;
 - ได้จำนวน Customer ต่อ Currency Code
 - ข้อมูลสอดคล้องกับ Database
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="434" height="182" alt="image" src="https://github.com/user-attachments/assets/077da15e-0ea0-4e5c-ba32-1ef759b28d2b" />
 
 ---
 
@@ -571,9 +557,8 @@ HAVING COUNT(*) > 1;
 
 ถ้ามี Result ถือเป็น Potential Data Integrity Defect และต้องตรวจสอบ Requirement ก่อนเปิด Defect
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="1102" height="587" alt="image" src="https://github.com/user-attachments/assets/a1e90d2c-dc05-4649-8e86-4ffd1830db95" />
 
 ---
 
@@ -598,9 +583,8 @@ HAVING COUNT(*) > 1;
 **Expected Result:**
 - `0 rows` หาก `$systemId` ถูกกำหนดให้ Unique
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="1081" height="568" alt="image" src="https://github.com/user-attachments/assets/f39ca138-9120-49db-92ae-0546d22c6a73" />
 
 ---
 
@@ -639,12 +623,8 @@ WHERE [No_] IS NULL
 **Expected Result:**
 - `0 rows`
 
-**Important:**
-ต้องยืนยัน Required Field กับ Business Requirement ก่อนใช้เป็น Defect Rule
-
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="1108" height="581" alt="image" src="https://github.com/user-attachments/assets/1d057aec-73e7-40ab-8de9-44a8c8df4853" />
 
 ---
 
@@ -667,18 +647,14 @@ SELECT
     [Email]
 FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-075155257555]
 WHERE [Status] = 'Active'
-  AND (
-        [Email] IS NULL
-        OR LTRIM(RTRIM([Email])) = ''
-      );
+  AND ([Email] IS NULL ) OR LTRIM(RTRIM([Email])) = '';
 ```
 
 **Expected Result:**
 - `0 rows`
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="1249" height="488" alt="image" src="https://github.com/user-attachments/assets/679463a6-d824-448d-a772-7d14dd9b15ba" />
 
 ---
 
@@ -704,10 +680,9 @@ WHERE [Credit Limit] < 0;
 
 **Expected Result:**
 - `0 rows`
-
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+- 
+**Evidence:**
+<img width="1201" height="547" alt="image" src="https://github.com/user-attachments/assets/13a5a3bb-7480-4cd2-a824-ae7540194504" />
 
 ---
 
@@ -735,9 +710,8 @@ WHERE [Email] IS NOT NULL
 **Note:**
 Query นี้เป็น Data Quality Check แบบ Basic ไม่ใช่ RFC-compliant Email Validator
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="1098" height="554" alt="image" src="https://github.com/user-attachments/assets/65c0e14c-a3fd-4e6e-8ff0-413c465c379f" />
 
 ---
 
@@ -775,9 +749,8 @@ FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-07515525755
 **Expected Result:**
 - Category ของแต่ละ Customer ตรงตาม Business Rule
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="979" height="396" alt="image" src="https://github.com/user-attachments/assets/db1239fc-deb4-46a3-b806-ec33cf6ac234" />
 
 ---
 
@@ -802,9 +775,8 @@ WHERE [Last Modified Date] < [Registration Date];
 **Expected Result:**
 - `0 rows`
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="1056" height="510" alt="image" src="https://github.com/user-attachments/assets/51dda39d-b41a-497d-a041-7558e5628a27" />
 
 ---
 
@@ -828,9 +800,8 @@ WHERE [$systemModifiedAt] < [$systemCreatedAt];
 **Expected Result:**
 - `0 rows`
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="1081" height="486" alt="image" src="https://github.com/user-attachments/assets/5984e22b-a9ca-4702-8607-3ac7ce1dc360" />
 
 ---
 
@@ -857,9 +828,8 @@ WHERE [$systemCreatedAt] IS NULL
 **Expected Result:**
 - `0 rows` หาก Created Audit Fields เป็น Mandatory
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="1171" height="478" alt="image" src="https://github.com/user-attachments/assets/b59dc09c-15a9-4c82-877a-c74189c1a8c6" />
 
 ---
 
@@ -890,9 +860,8 @@ ORDER BY [Credit Limit] DESC;
 **Expected Result:**
 - ทุก Record ที่แสดงมี Credit Limit มากกว่าค่าเฉลี่ย
 
-**Actual Result:** __________________
-
-**Status:** PASS / FAIL
+**Evidence:** 
+<img width="813" height="218" alt="image" src="https://github.com/user-attachments/assets/43338735-9459-4673-9d64-4caaf2a0db20" />
 
 ---
 
@@ -921,9 +890,10 @@ FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-07515525755
 - Customer ที่มี Credit Limit เท่ากันได้ Rank เดียวกัน
 - Rank เรียงตาม Credit Limit จากมากไปน้อย
 
-**Actual Result:** __________________
 
-**Status:** PASS / FAIL
+
+**Evidence:** 
+<img width="931" height="420" alt="image" src="https://github.com/user-attachments/assets/d31b259b-3454-4d6c-9d77-427f780b5d46" />
 
 ---
 
@@ -966,9 +936,10 @@ ORDER BY
 - Customer ถูกจัดอันดับภายใน Country
 - Credit Limit สูงสุดของแต่ละ Country อยู่ด้านบน
 
-**Actual Result:** __________________
 
-**Status:** PASS / FAIL
+
+**Evidence:** 
+<img width="903" height="323" alt="image" src="https://github.com/user-attachments/assets/8c460bd9-1676-44eb-9f9f-0f6c2069aa3b" />
 
 ---
 
