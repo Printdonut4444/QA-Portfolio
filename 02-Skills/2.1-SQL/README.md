@@ -1,4 +1,4 @@
-<img width="1201" height="547" alt="image" src="https://github.com/user-attachments/assets/7afa49ad-a033-45f0-a441-78f411402a6f" /># SQL Database Testing Test Cases — Customer API Table
+# SQL Database Testing Test Cases — Customer API Table
 
 ## 1. Test Scope
 
