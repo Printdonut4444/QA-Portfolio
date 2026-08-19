@@ -8,7 +8,7 @@
 | Tool | SQL Server Management Studio (SSMS) 20 |
 | Target Table | [Customer API](../2.2-API%20Testing/02-Business-Central-API/Table/CustomerAPI.Table.al) |
 | Test Type | Database Testing / Data Validation / Data Integrity |
-| Difficulty | Basic → Intermediate → Advanced |
+| Difficulty | [Basic](#4-basic-sql) → [Intermediate](#5-intermediate-qa--aggregate--business-data) → [Advanced](#6-advanced--data-quality) |
 | Total Test Cases | 30 |
 
 ## 2. Target Table
@@ -45,10 +45,8 @@ GO
 
 ---
 
-# 3. Test Case Template
-
-ทุก Test Case ควรบันทึก: >>เดี๋ยวใส่ไฟล์จาก one drive
-
+# 3. Test Case 
+<!-- ทุก Test Case ควรบันทึก: >>เดี๋ยวใส่ไฟล์จาก one drive -->
 - Test Case ID
 - Level
 - Objective
@@ -56,8 +54,6 @@ GO
 - Test Data
 - SQL Query
 - Expected Result
-- Actual Result
-- Status
 - Notes / Evidence
 
 ---
@@ -942,66 +938,46 @@ ORDER BY
 
 ---
 
-# 9. Recommended QA Evidence
-
-สำหรับแต่ละ Test Case โดยเฉพาะกรณี FAIL ควรเก็บ: >> เดี๋ยวใส่ Bug Report
-
-- SQL Query
-- Screenshot ของ Query Result
-- Test Data
-- UI Screenshot
-- API Request
-- API Response
-- Expected Result
-- Actual Result
-- Execution Date/Time
-- Database Name
-- Environment
-- Related Requirement / User Story
-- Defect ID ถ้ามี
-
----
-
-# 10. SQL Skill Checklist
+# 9. SQL Skill 
 
 ## Basic 
 
-- [ ] SELECT
-- [ ] SELECT specific columns
-- [ ] WHERE
-- [ ] AND / OR
-- [ ] LIKE
-- [ ] IS NULL / IS NOT NULL
-- [ ] ORDER BY
-- [ ] TOP
-- [ ] DISTINCT
+- SELECT
+- SELECT specific columns
+- WHERE
+- AND / OR
+- LIKE
+- IS NULL / IS NOT NULL
+- ORDER BY
+- TOP
+- DISTINCT
 
 ## Intermediate
 
-- [ ] COUNT
-- [ ] GROUP BY
-- [ ] SUM
-- [ ] AVG
-- [ ] MIN / MAX
-- [ ] HAVING
-- [ ] Date Range
-- [ ] GROUP BY Customer Type
-- [ ] GROUP BY Currency Code
+- COUNT
+- GROUP BY
+- SUM
+- AVG
+- MIN / MAX
+- HAVING
+- Date Range
+- GROUP BY Customer Type
+- GROUP BY Currency Code
 
 ## Advanced
 
-- [ ] Duplicate detection
-- [ ] Data quality validation
-- [ ] Required field validation
-- [ ] Business Rule validation
-- [ ] CASE WHEN
-- [ ] Subquery
-- [ ] CTE
-- [ ] RANK
-- [ ] ROW_NUMBER
-- [ ] PARTITION BY
-- [ ] Audit field validation
-- [ ] Data integrity validation
-- [ ] UI/API → Database validation
+- Duplicate detection
+- Data quality validation
+- Required field validation
+- Business Rule validation
+- CASE WHEN
+- Subquery
+- CTE
+- RANK
+- ROW_NUMBER
+- PARTITION BY
+- Audit field validation
+- Data integrity validation
+- UI/API → Database validation
 
 ---
