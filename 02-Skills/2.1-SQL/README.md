@@ -135,7 +135,7 @@ SELECT
     [Email],
     [Status]
 FROM [dbo].[CRONUS - LS Central$Customer API$d5b4274d-3408-493a-995b-075155257555]
-WHERE [No_] = 'YOUR_CUSTOMER_NO';
+WHERE [No_] = 'CUST002';
 ```
 
 **Expected Result:**
