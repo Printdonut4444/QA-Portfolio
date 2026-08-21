@@ -34,7 +34,7 @@ This portfolio showcases my practical QA work, including manual testing, test ca
 * **E_Commerce**
   This Project for Learned to growing to QA Testing.
 
-* [**Project 1: E-Commerce**](./01-Projects%20&%20Skills/E_Commerce/)
+ [**Project 1: E-Commerce**](./01-Projects%20&%20Skills/E_Commerce/)
 
 **[View All Projects & Skills →](./01-Projects%20&%20Skills/)**
 
