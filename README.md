@@ -14,24 +14,10 @@ This portfolio showcases my practical QA work, including manual testing, test ca
 
 ---
 
-## Projects
+## Projects & Skills
 
-A collection of hands-on QA projects demonstrating my practical testing skills.
-
-### Test Planning
-
-Practice creating test plans, regression checklists, and other QA documentation.
-
-* [**Project 1: E-Commerce**](./01-Projects/1.1-E_Commerce)
-* [**Project 2: Book Store**](./01-Projects/1.2-Book_Store)
-
-**[View All Projects →](./01-Projects)**
-
----
-
-## Skills
-
-Skills relevant to QA Testing / QA Engineering / Software Testing.
+- A collection of hands-on QA projects demonstrating my practical testing skills.
+- Skills relevant to QA Testing / QA Engineering / Software Testing.
 
 * **SQL**
   SQL querying and data validation using SQL Server, including SELECT, JOIN, WHERE, GROUP BY, and data verification queries for testing purposes.
@@ -45,7 +31,12 @@ Skills relevant to QA Testing / QA Engineering / Software Testing.
 * **Test Automation**
   Automation testing practice with Playwright, with a focus on building maintainable automated tests.
 
-**[View Skills →](./02-Skills)**
+* **E_Commerce**
+  This Project for Learned to growing to QA Testing.
+
+* [**Project 1: E-Commerce**](./01-Projects%20&%20Skills/E_Commerce/)
+
+**[View All Projects & Skills →](./01-Projects%20&%20Skills/)**
 
 ---
 
@@ -53,16 +44,18 @@ Skills relevant to QA Testing / QA Engineering / Software Testing.
 
 Courses and training I have completed as part of my QA learning journey.
 
+* QA Testing Fundamentals
 * Software Testing / QA
+* SDLC management 
 * Manual Testing
+* Functional Manual
 * API Testing
 * SQL
 * Test Automation
 * Playwright
-* Agile / Scrum
 
 > Course details, certificates, and learning outcomes are documented in the repository.
 
 * [QA Basic — FutureSkill Certificate](https://app.futureskill.co/api/certificate?courseId=711&userId=322587)
 
-**[View Courses →](./02-Skills/Courses)**
+<!-- **[View Courses →](./02-Skills/Courses)** -->

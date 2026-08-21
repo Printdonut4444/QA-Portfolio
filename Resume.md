@@ -184,9 +184,9 @@ My QA Portfolio contains hands-on projects demonstrating my knowledge and practi
 ### Portfolio Areas
 
 * Manual Testing
+* Test Planning
 * Test Scenarios & Test Cases
 * Bug Reports
 * SQL
 * API Testing
-* Test Planning
 * Test Automation
