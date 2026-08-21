@@ -1,7 +1,7 @@
 # Project 1: E-Commerce — QA Testing Project
 
 > **Note:** This is a practice QA project based on common E-Commerce application requirements. Test scenarios, test cases, and bug reports are created for portfolio demonstration purposes.
-
+[Web ที่ใช้สำหรับ Test](https://academybugs.com/find-bugs/)
 ---
 
 ## Project Overview
