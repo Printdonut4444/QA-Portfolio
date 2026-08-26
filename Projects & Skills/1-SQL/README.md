@@ -6,7 +6,7 @@
 |---|---|
 | Database | `w1-ls-central-release-27-0-0-0` |
 | Tool | SQL Server Management Studio (SSMS) 20 |
-| Target Table | [Customer API](../2.2-API%20Testing/02-Business-Central-API/Table/CustomerAPI.Table.al) |
+| Target Table | [Customer API](../2-API%20Testing/02-Business-Central-API/Table/CustomerAPI.Table.al) |
 | Test Type | Database Testing / Data Validation / Data Integrity |
 | Total Test Cases | 30 |
 
