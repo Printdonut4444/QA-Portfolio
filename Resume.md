@@ -1,13 +1,13 @@
-# [Phurich Wichitjomthong]
+# Phurich Wichitjomthong
 **ภูริชา วิชิตจอมทอง**
 
 **Software QA Engineer | Software Tester | Developer → QA**
 
 📍 Thailand
 📧 [Email](mailto:phuricha2944@gmail.com)
-📱 [Phone] (+66)93-651-8304
+📱 [(+66) 93-651-8304](tel:+66936518304)
 🔗 GitHub: [GitHub URL](https://github.com/Printdonut4444)
-🔗 LinkedIn: [LinkedIn URL](https://www.linkedin.com/in/ภูริชา-วิชิตจอมทอง-378934325 )
+🔗 LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/ภูริชา-วิชิตจอมทอง-378934325)
 🔗 QA Portfolio: [Portfolio URL](https://github.com/Printdonut4444/QA-Portfolio)
 
 ---
@@ -18,7 +18,7 @@ Software Developer with hands-on experience in **Microsoft Dynamics 365 Business
 
 Strong hands-on testing mindset with experience performing **functional testing, API validation, regression testing, defect reproduction, log analysis, and troubleshooting** before delivering completed work to consultants.
 
-Currently transitioning into a **Software QA / Software Tester** role, with a focus on Manual Testing and growing skills in Test Automation.
+Currently transitioning into a **Software QA / Software Tester** role, with a focus on Manual Testing — and planning to grow into Test Automation as the next step in my QA journey.
 
 ---
 
@@ -93,18 +93,18 @@ Currently transitioning into a **Software QA / Software Tester** role, with a fo
 
 ## TECHNICAL SKILLS
 
-| Category               | Skills                                                                                                               |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Testing**            | Manual Testing, Functional Testing, Integration Testing, Regression Testing, End-to-End Testing, Exploratory Testing |
-| **API**                | REST API, Postman, HTTP, JSON                                                                                        |
-| **Database**           | SQL Server, SQL                                                                                                      |
-| **Programming**        | AL, JavaScript                                                                                                       |
-| **Microsoft Dynamics** | Dynamics 365 Business Central, AL Extension                                                                          |
-| **Version Control**    | Git, GitHub                                                                                         |
-| **Development Tools**  | VS Code                                                                                                              |
-| **Project Management** | ClickUp,GitHub Projects                                                                                                              |
-| **Payment Technology** | EDC, QR Payment, Payment API Integration                                                                             |
-| **Communication**      | Binary/Text Protocol, Network, TCP/IP                                                                                |
+| Category               | Skills                                                                                                                 |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Testing**             | Manual Testing, Functional Testing, Integration Testing, Regression Testing, End-to-End Testing, Exploratory Testing |
+| **API**                 | REST API, Postman, HTTP, JSON                                                                                        |
+| **Database**            | SQL Server, SQL                                                                                                      |
+| **Programming**         | AL, JavaScript                                                                                                       |
+| **Microsoft Dynamics**  | Dynamics 365 Business Central, AL Extension                                                                          |
+| **Version Control**     | Git, GitHub                                                                                                          |
+| **Development Tools**   | VS Code                                                                                                              |
+| **Project Management**  | ClickUp, GitHub Projects                                                                                             |
+| **Payment Technology**  | EDC, QR Payment, Payment API Integration                                                                             |
+| **Communication**       | Binary/Text Protocol, Network, TCP/IP                                                                                |
 
 ---
 
@@ -141,9 +141,9 @@ Areas of study include:
 * Bug Reporting
 * API Testing
 * SQL for Software Testing
-* Test Automation
-* Playwright
 * QA Processes and Best Practices
+
+🔜 **Next step:** planning to begin studying Test Automation (Playwright) as I continue growing in the QA field.
 
 ---
 
@@ -169,9 +169,7 @@ Areas of study include:
 **English:**
 
 * Reading / Technical Documentation: Good
-* Writing: Developing
-* Listening: Developing
-* Speaking: Developing
+* Speaking, Listening, Writing: Pre-Intermediate (actively improving)
 
 ---
 
@@ -179,7 +177,7 @@ Areas of study include:
 
 My QA Portfolio contains hands-on projects demonstrating my knowledge and practical skills in software testing.
 
-**Portfolio:** [QA Portfolio URL](https://github.com/Printdonut4444/QA-Portfolio)
+**Portfolio:** [QA Portfolio](./README.md)
 
 ### Portfolio Areas
 
@@ -189,4 +187,4 @@ My QA Portfolio contains hands-on projects demonstrating my knowledge and practi
 * Bug Reports
 * SQL
 * API Testing
-* Test Automation
+<!-- * Test Automation -->
