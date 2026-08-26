@@ -58,3 +58,7 @@ Courses and training I have completed as part of my QA learning journey.
 > Course details, certificates, and learning outcomes are documented in the repository.
 
 * [QA Basic — FutureSkill Certificate](https://app.futureskill.co/api/certificate?courseId=711&userId=322587)
+* [Introduction to QA & the Tech Industry] (https://assets.futureskill.co/certificates%2Fdf9c49c0-f992-4205-ba0a-c244e4511580.pdf)
+* [Test Planning, Test Cases & Test Reports] (https://assets.futureskill.co/certificates%2Fd41f905a-b25e-4756-8372-c4a2264e15d1.pdf) 
+* [API Testing & Functional Manual Testing Workshop] (https://assets.futureskill.co/certificates%2F496314aa-8ca9-429d-b1b3-79f480255e85.pdf)
+* [Manual Testing & Testing Tools] (https://assets.futureskill.co/certificates%2F126e2a64-079e-4687-a389-c9d3c133693b.pdf)
