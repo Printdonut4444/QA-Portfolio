@@ -35,7 +35,7 @@ The objective of this testing effort is to verify that the E-commerce Web Applic
 
 ### 1.3 Scope
 
-## Out of Scope
+#### Out of Scope
 **Module 1 — Product Discovery & Selection**
 Tests the functionality related to searching for and selecting products.
 
@@ -46,7 +46,7 @@ Tests the shopping cart management and checkout process.
 Tests account management and authentication.
 
 
-## Out of Scope
+#### Out of Scope
 To keep the project scope manageable, the following are **not** tested:
 
 - Real Payment Gateway
