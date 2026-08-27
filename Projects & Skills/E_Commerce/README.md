@@ -8,6 +8,8 @@
 
 - [1. Test Plan](#1-test-plan)
 - [2. Test Scenario](#2-test-scenario)
+- [3. Test Case & Execution](#3-test-case--execution)
+- [4. Bug Debug Report](#4-bug-debug-report)
 
 ---
 
@@ -232,3 +234,9 @@ Test Summary Report
 | 🛒 Cart & Checkout | TS-CART-001 → 005 | 5 |
 | 👤 Account & Pricing | TS-AUTH-001 → 005 | 5 |
 | **Total** | | **15** |
+
+---
+## 3. Test Case & Execution
+
+---
+## 4. Bug Debug Report
