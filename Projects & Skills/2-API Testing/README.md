@@ -90,7 +90,7 @@ The API testing covers different types of test scenarios.
 
 The API test collection contains the requests used during testing.
 
-[`03-API-Collection/`](../03-API-Collection)
+[`03-API-Collection/`](../2-API%20Testing/03-API-Collection)
 
 The collection includes:
 
@@ -137,8 +137,8 @@ Test cases and bug reports are linked together so a failed test always leads to 
    Regression Test 
 ```
 
-* Full test cases: [`04-Test-Cases/Customer API_Test Case.md`](../04-Test-Cases/Customer%20API_Test%20Case.md)
-* Bugs found from failed test cases: [`05-Bug-Reports/Customer API_Bug Report.md`](../05-Bug-Reports/Customer%20API_Bug%20Report.md)
+* Full test cases: [`04-Test-Cases/Customer API_Test Case.md`](../2-API%20Testing/04-Test-Cases/Customer%20API_Test%20Case.md)
+* Bugs found from failed test cases: [`05-Bug-Reports/Customer API_Bug Report.md`](../2-API%20Testing/04-Test-Cases/Customer%20API_Bug%20Report.md)
 
 ---
 

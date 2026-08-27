@@ -348,6 +348,6 @@ This implementation demonstrates practical understanding of:
 
 The custom API developed in this section is used as the system under test in:
 
-[03-API-Cases](https://github.com/Printdonut4444/QA-Portfolio/tree/main/02-Skills/2.2-API%20Testing/04-Test-Cases)
+[04-Test-Cases](../04-Test-Cases)
 
 The API is tested using REST API requests and the resulting data is verified against the records stored in Business Central.
