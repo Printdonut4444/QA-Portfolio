@@ -4,8 +4,15 @@
 [Web AcademyBugs Test](https://academybugs.com/find-bugs/)
 ---
 
+## Table of Contents
+
+- [1. Test Plan](#1-test-plan)
+- [2. Test Scenario](#2-test-scenario)
+
+---
+
 ## 1. Test Plan
-[👉 Link to Google Drive with Test Plan](https://docs.google.com/spreadsheets/d/1ZsHqiaHn-YSTEebcH8itGlkDoWNMotcA/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true)
+[👉 Link to Google Drive with Test Plan](https://docs.google.com/spreadsheets/d/1RojIaz6c4SeByoN2H1-pBnl2uJURtQe8/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true) 
 ### 1.1 Project Information
 
 | Item | Details |
@@ -166,7 +173,7 @@ Test Summary Report
 ---
 
 ## 2. Test Scenario
-[👉 Link to Google Drive with Test Scenario](https://docs.google.com/spreadsheets/d/1ZsHqiaHn-YSTEebcH8itGlkDoWNMotcA/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true)
+[👉 Link to Google Drive with Test Scenario](https://docs.google.com/spreadsheets/d/1udPjWEhLeXDhH3ZWdJD9yg1SDVtQ1ygG/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true) <br>
 **ID convention:**
 - `TS-PROD-xxx` — Product Discovery & Selection
 - `TS-CART-xxx` — Shopping Cart & Checkout
