@@ -10,7 +10,7 @@ This folder contains the **test cases and execution results** for each API/modul
 
 | File | Description |
 |---|---|
-| [`Customer API_Test Case.md`](./Customer%20API_Test%20Case.md) | Full test cases for the Customer API (GET / POST / PATCH / DELETE) — 17 cases covering retrieval, creation, update, and deletion of customer records against Business Central. |
+| [`Customer API_Test Case.md` ](./Customer%20API_Test%20Case.md) | Full test cases for the Customer API (GET / POST / PATCH / DELETE) — 17 cases covering retrieval, creation, update, and deletion of customer records against Business Central. |
 
 ---
 
