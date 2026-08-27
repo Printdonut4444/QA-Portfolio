@@ -1,4 +1,4 @@
-# API Testing Fundamentals
+# 📋 01-API Testing Fundamentals
 
 > QA Portfolio topic: API Testing
 > This document covers the foundational knowledge a QA should understand before testing real-world APIs.
@@ -17,8 +17,7 @@
 8. [What QA Should Check When Testing an API](#8-what-qa-should-check-when-testing-an-api)
 9. [Common API Testing Tools](#9-common-api-testing-tools)
 10. [Best Practices](#10-best-practices)
-11. [Sample Test Cases](#11-sample-test-cases)
-12. [Summary](#12-summary)
+11. [Summary](#12-summary)
 
 ---
 
@@ -210,25 +209,10 @@ Body:
 
 ---
 
-## 11. Sample Test Cases
-
-**Sample Endpoint:** `POST /api/v1/users`
-
-| Test Case ID | Description | Input | Expected Result |
-|---|---|---|---|
-| TC-01 | Successfully create a user with valid data | Complete, valid body | `201 Created`, response includes `id` and matches submitted data |
-| TC-02 | Create a user without a required field | Missing `email` | `400 Bad Request`, error message specifies the missing field |
-| TC-03 | Create a user with an email that already exists | Duplicate `email` | `409 Conflict` |
-| TC-04 | Create a user without an Authorization token | No Authorization header sent | `401 Unauthorized` |
-| TC-05 | Create a user with an invalid email format | `email: "not-an-email"` | `422 Unprocessable Entity` |
-| TC-06 | Verify response time | Normal request | Response time < 1 second |
-
----
-
-## 12. Summary
+## 11. Summary
 
 API testing is a fundamental skill for modern QA professionals, as it allows issues to be detected faster, deeper, and more efficiently than UI testing alone. Understanding the basics of HTTP structure, status codes, and different types of API testing forms the foundation for more advanced topics later in this portfolio, such as **API Automation Testing**, **Contract Testing**, and **Performance Testing**.
 
 ---
 
-*Recommended next topic: [02-Business-Central-API](https://github.com/Printdonut4444/QA-Portfolio/tree/main/02-Skills/2.2-API%20Testing/02-Business-Central-API)*
+*Recommended next topic: [02-Business-Central-API](../02-Business-Central-API/)*

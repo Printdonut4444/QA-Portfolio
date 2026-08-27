@@ -1,5 +1,17 @@
 # Business Central REST API & Testing
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Test Coverage](#test-coverage)
+- [API Test Collection](#api-test-collection)
+- [Testing Workflow](#testing-workflow)
+- [Skills Demonstrated](#skills-demonstrated)
+- [Purpose](#purpose)
+
+---
+
 ## Overview
 
 This project demonstrates the development and testing of a REST API using **Microsoft Dynamics 365 Business Central**.
@@ -9,31 +21,37 @@ A custom **Customer API** was created in Business Central and exposed through an
 The project demonstrates both:
 
 * **API Development** — Creating a custom Table and API Page in Business Central
-* **API Testing** — Testing REST API operations and validating the results
+* **API Testing** — Testing REST API operations, recording results, and reporting defects found during testing
 
 ---
 
 ## Project Structure
 
 ```text
-2.2-API-Testing
+2-API Testing
 │
 ├── README.md
-│__01-API Testing Fundamentals
-|   └── Testing Fundamentals.md
-|
+│
+├── 01-API Testing Fundamentals
+│   └── Testing Fundamentals.md
+│
 ├── 02-Business-Central-API
 │   ├── Table
 │   │   └── CustomerAPI.Table.al
 │   │
-│   └── API-Page
-│       └── CustomerAPI.Page.al
+│   ├── API-Page
+│   │    └── CustomerAPI.Page.al
+│   │
+│   └── README.md
 │
 ├── 03-API-Collection
 │   └── Project Test Customers.Postman_collection.json
 │
 └── 04-Test-Cases
-    └── Customer-API-Test-Cases.md
+    ├── Customer API_Test Case.md
+    ├── Customer API_Bug Report.md
+    └── README.md
+
 ```
 
 ---
@@ -98,6 +116,32 @@ DELETE
 
 ---
 
+## Testing Workflow
+
+Test cases and bug reports are linked together so a failed test always leads to a tracked defect:
+
+```
+04-Test-Cases (run & record results)
+        │
+        ▼
+   Fail found? ──No──▶ Done
+        │
+       Yes
+        ▼
+05-Bug-Reports (log defect, assign Bug ID)
+        │
+        ▼
+   Dev fixes defect
+        │
+        ▼
+   Regression Test 
+```
+
+* Full test cases: [`04-Test-Cases/Customer API_Test Case.md`](../04-Test-Cases/Customer%20API_Test%20Case.md)
+* Bugs found from failed test cases: [`05-Bug-Reports/Customer API_Bug Report.md`](../05-Bug-Reports/Customer%20API_Bug%20Report.md)
+
+---
+
 ## Skills Demonstrated
 
 This project demonstrates practical knowledge of:
@@ -114,6 +158,7 @@ This project demonstrates practical knowledge of:
 * Positive and negative testing
 * Boundary testing
 * Data validation
+* Bug reporting and defect tracking
 * API test organization
 * Git / GitHub
 
@@ -123,4 +168,4 @@ This project demonstrates practical knowledge of:
 
 This project was created as a practical demonstration of how a custom API can be developed in Business Central and subsequently tested through REST API requests.
 
-The focus is on understanding the complete flow from **data structure and API development to API testing and result verification**.
+The focus is on understanding the complete flow from **data structure and API development, through API testing and result verification, to defect reporting and tracking**.
