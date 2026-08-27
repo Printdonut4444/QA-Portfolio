@@ -17,13 +17,13 @@ This portfolio showcases my practical QA work, including manual testing, test ca
 ## Skills
 
 * **Manual Testing**
-  Test scenario and test case design, exploratory testing, functional testing, and bug reporting.
+  Test scenario and test case design, exploratory testing, functional testing, and bug reporting. **[View →](./Projects%20&%20Skills/3-Manual%20Testing)**
 
 * **API Testing**
-  REST API testing and validation using Postman, including request/response validation, HTTP status code verification, and CRUD operation testing.
+  REST API testing and validation using Postman, including request/response validation, HTTP status code verification, and CRUD operation testing. **[View →](./Projects%20&%20Skills/2-API%20Testing)**
 
 * **SQL**
-  SQL querying and data validation using SQL Server, including SELECT, JOIN, WHERE, GROUP BY, and data verification queries for testing purposes.
+  SQL querying and data validation using SQL Server, including SELECT, JOIN, WHERE, GROUP BY, and data verification queries for testing purposes. **[View →](./Projects%20&%20Skills/1-SQL/)**
 
 > 🔜 **Next step:** currently planning to begin studying Test Automation (Playwright) as the next stage of my QA learning journey.
 
@@ -35,7 +35,7 @@ This portfolio showcases my practical QA work, including manual testing, test ca
 
 A manual testing project on an e-commerce application, covering test planning, test case design, exploratory testing, and bug reporting.
 
-**[View Project →](./Projects%20%26%20Skills/E_Commerce/README.md)**
+**[View Project →](./Projects%20%26%20Skills/E_Commerce)**
 
 <!-- *More projects — including API and SQL-focused testing — coming soon.* -->
 
