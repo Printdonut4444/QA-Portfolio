@@ -88,7 +88,55 @@ Testing is considered complete when:
 - Regression testing has been performed as appropriate
 - The Test Summary Report has been produced
 
-### 1.7 Defect Severity
+### 1.7 Suspension & Resumption Criteria
+
+**Suspension Criteria (when to pause testing)**
+The AUT or test environment becomes inaccessible; a blocking (Critical) defect prevents further execution of the current module.
+
+**Resumption Criteria (when to resume testing)**
+The environment is restored and accessible again; the blocking defect has been fixed and verified as resolved.
+
+### 1.8 Roles & Responsibilities
+
+| Role | Responsibilities |
+|---|---|
+| QA Tester (Solo) | Owns the full QA process end-to-end: test planning, scenario & test case design, manual execution, bug reporting, regression testing, and the test summary report. |
+
+*Note: this is a solo portfolio project — all QA roles above are performed by a single tester.*
+
+### 1.9 Test Environment
+
+| Item | Details |
+|---|---|
+| Browser(s) | Google Chrome (latest), Mozilla Firefox (latest) |
+| Operating System | Windows 11 |
+| Device / Target | Desktop Web Application |
+| Test Data | Sample product data and self-created test accounts on the AcademyBugs demo site |
+| URL / Environment | *(fill in)* |
+| Access / Account | *(fill in)* |
+
+### 1.10 Schedule / Milestones
+
+| Activity | Duration | Owner |
+|---|---|---|
+| Test Planning & Test Scenario Design | Day 1 – 2 | QA Tester |
+| Test Case Design | Day 3 – 5 | QA Tester |
+| Test Execution — Round 1 | Day 6 – 9 | QA Tester |
+| Bug Reporting & Fix Verification | Day 10 – 11 | QA Tester |
+| Regression Testing | Day 12 | QA Tester |
+| Test Summary Report | Day 13 | QA Tester |
+
+*Note: illustrative timeline for a solo portfolio project — adjust dates/duration to your own schedule.*
+
+### 1.11 Risks & Mitigation
+
+| Risk | Mitigation |
+|---|---|
+| Limited time, since this is a solo/portfolio project run alongside other commitments | Prioritize Critical/High priority scenarios and modules first |
+| The AUT is a public demo site — data may reset or its environment may be unstable | Re-verify results close to reporting time; take screenshots as evidence while testing |
+| No dev/backend team available to confirm root cause | Document detailed reproduction steps and evidence in each bug report so it can be understood without direct code access |
+
+### 1.12 Defect Severity
 
 | Severity | Definition |
 |---|---|
@@ -97,7 +145,7 @@ Testing is considered complete when:
 | Medium | A function works incorrectly, but a workaround exists |
 | Low | A minor issue, e.g. UI or content |
 
-### 1.8 Test Deliverables
+### 1.13 Test Deliverables
 
 This project will produce the following documents, in sequence:
 
