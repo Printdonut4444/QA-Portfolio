@@ -191,7 +191,7 @@ Test Summary Report
 | TS-PROD-001 | Verify user can view the product listing | High |
 | TS-PROD-002 | Verify user can search and find a product | High |
 | TS-PROD-003 | Verify user can view product details and price | High |
-| TS-PROD-004 | Verify user can select required product options | Medium |
+| TS-PROD-004 | Verify user can select required product options | High / Medium |
 | TS-PROD-005 | Verify user can add a product to the shopping cart | Critical |
 
 **Flow:**
@@ -203,11 +203,11 @@ Test Summary Report
 
 | ID | Test Scenario | Priority |
 |---|---|---|
-| TS-CART-001 | Verify added product is displayed correctly in the shopping cart | Critical |
-| TS-CART-002 | Verify user can modify product quantity | High |
+| TS-CART-001 | Verify added product is displayed correctly in the shopping cart | High |
+| TS-CART-002 | Verify user can modify product quantity | High / Medium |
 | TS-CART-003 | Verify user can remove a product from the shopping cart | High |
 | TS-CART-004 | Verify cart subtotal is calculated correctly | Critical |
-| TS-CART-005 | Verify user can proceed from the shopping cart to checkout | Critical |
+| TS-CART-005 | Verify user can proceed from the shopping cart to checkout | Critical / High |
 
 **Flow:**
 `Add Product → Shopping Cart → Modify Quantity → Remove Product → Verify Subtotal → Checkout`
@@ -239,5 +239,8 @@ Test Summary Report
 ---
 ## 3. Test Case & Execution
 [👉 Link to Google Drive with Test Scenario](https://docs.google.com/spreadsheets/d/1w2VnLsfmrujZLgQYwh5rB_Y62ULzkGk8SY_JEVXv_QQ/edit?usp=sharing) 
+
 ---
 ## 4. Bug Debug Report
+
+---
