@@ -14,7 +14,7 @@
 ---
 
 ## 1. Test Plan
-[👉 Link to Google Drive with Test Plan](https://docs.google.com/spreadsheets/d/1RojIaz6c4SeByoN2H1-pBnl2uJURtQe8/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true) 
+[👉 Link to Google Drive with Test Plan](https://docs.google.com/spreadsheets/d/1EZQO2yP7j6iLyEMpt-4_Hn_bUbEntPoDEv3P496EWFo/edit?usp=sharing) 
 ### 1.1 Project Information
 
 | Item | Details |
@@ -122,7 +122,7 @@ The environment is restored and accessible again; the blocking defect has been f
 | Operating System | Windows 11 |
 | Device / Target | Desktop Web Application |
 | Test Data | Sample product data and self-created test accounts on the AcademyBugs demo site |
-| URL / Environment | *(fill in)* |
+| URL / Environment | https://academybugs.com/find-bugs/ |
 | Access / Account | *(fill in)* |
 
 ### 1.10 Schedule / Milestones
@@ -176,7 +176,7 @@ Test Summary Report
 ---
 
 ## 2. Test Scenario
-[👉 Link to Google Drive with Test Scenario](https://docs.google.com/spreadsheets/d/1udPjWEhLeXDhH3ZWdJD9yg1SDVtQ1ygG/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true) <br>
+[👉 Link to Google Drive with Test Scenario](https://docs.google.com/spreadsheets/d/17JfhSIWPl0n5Tl1FoOV8tWoV0zajnO31A1eEro3qg58/edit?usp=sharing) <br>
 **ID convention:**
 - `TS-PROD-xxx` — Product Discovery & Selection
 - `TS-CART-xxx` — Shopping Cart & Checkout
