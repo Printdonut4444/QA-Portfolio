@@ -1,9 +1,9 @@
-# What is Auto Test (Automated Testing)?
+# What is Auto Test (Automated Testing)
 
-## 1. What does it mean?
+## 1. What does it mean
 Automated Testing means using a **script or tool** to test software, instead of a person testing by hand (Manual Testing). The script acts like a user — it clicks buttons, fills in forms, and checks the result on the screen. Then it compares the result with what we expect (Expected Result).
 
-## 2. Why do we need Auto Test?
+## 2. Why do we need Auto Test
 - **Saves time** when we need to test the same thing many times (Regression Testing).
 - **More accurate** — fewer mistakes than a human doing the same task again and again.
 - **Can run anytime** — even at night, or automatically every time new code is released (CI/CD).
