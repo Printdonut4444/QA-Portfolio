@@ -134,7 +134,7 @@ See test case POST-008 in `Customer_API_Test_Case.md` for full request/response 
 
 | Current Status | Current Assignee | Regression Test Reference |
 |---|---|---|
-| Confirmed — Open — Needs Dev Fix | *(unassigned)* | *(to be filled once fixed — retest in sheet `5.Regression Test`)* |
+| Confirmed — Open — Needs Dev Fix | *(unassigned)* | *(unassigned)* |
 
 ---
 
