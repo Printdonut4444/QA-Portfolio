@@ -4,11 +4,10 @@
 **Software QA Engineer | Software Tester | Developer → QA**
 
 📍 Thailand
-📧 [Email](mailto:phuricha2944@gmail.com)
+📧 [Email](mailto:phuricha2944@gmail.com) 
 📱 [(+66) 93-651-8304](tel:+66936518304)
 🔗 GitHub: [GitHub URL](https://github.com/Printdonut4444)
 🔗 LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/ภูริชา-วิชิตจอมทอง-378934325)
-🔗 QA Portfolio: [Portfolio URL](https://github.com/Printdonut4444/QA-Portfolio)
 
 ---
 
