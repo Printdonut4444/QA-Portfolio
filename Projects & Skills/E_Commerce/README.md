@@ -238,9 +238,13 @@ Test Summary Report
 
 ---
 ## 3. Test Case & Execution
-[👉 Link to Google Drive with Test Scenario](https://docs.google.com/spreadsheets/d/1w2VnLsfmrujZLgQYwh5rB_Y62ULzkGk8SY_JEVXv_QQ/edit?usp=sharing) 
+[👉 Link to Google Drive with Test Case & Execution](https://docs.google.com/spreadsheets/d/1w2VnLsfmrujZLgQYwh5rB_Y62ULzkGk8SY_JEVXv_QQ/edit?usp=sharing) 
+
+### 3.1 Test Progress Report_Round1
+[👉 Link to Google Drive with Test Case & Execution](https://docs.google.com/spreadsheets/d/1NTnKRGkNk2EePWJdvzSUFsItfriyQ8iK5NLmJA_Tt9c/edit?usp=sharing) 
 
 ---
 ## 4. Bug Debug Report
+[👉 Link to Google Drive with Bug Debug Report](https://docs.google.com/spreadsheets/d/1WFOjSJ8rysZ4DFAJN_sDemBFAiAauZsjoY5HEP-SFRM/edit?usp=sharing)
 
 ---
