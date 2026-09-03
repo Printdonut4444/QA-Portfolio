@@ -27,7 +27,7 @@
 | Additional Testing | UI, Validation, Negative, Exploratory |
 | Test Environment | Web Browser |
 | Target | Desktop Web Application |
-| Tester | QA Tester |
+| Tester | Phuricha Wichitjomthong (QA) |
 
 ### 1.2 Test Objective
 
@@ -123,18 +123,18 @@ The environment is restored and accessible again; the blocking defect has been f
 | Device / Target | Desktop Web Application |
 | Test Data | Sample product data and self-created test accounts on the AcademyBugs demo site |
 | URL / Environment | https://academybugs.com/find-bugs/ |
-| Access / Account | *(fill in)* |
+
 
 ### 1.10 Schedule / Milestones
 
 | Activity | Duration | Owner |
 |---|---|---|
-| Test Planning & Test Scenario Design | Day 1 – 2 | QA Tester |
-| Test Case Design | Day 3 – 5 | QA Tester |
-| Test Execution — Round 1 | Day 6 – 9 | QA Tester |
-| Bug Reporting & Fix Verification | Day 10 – 11 | QA Tester |
-| Regression Testing | Day 12 | QA Tester |
-| Test Summary Report | Day 13 | QA Tester |
+| Test Planning & Test Scenario Design | Day 1 – 2 | Phuricha Wichitjomthong (QA) |
+| Test Case Design | Day 3 – 5 | Phuricha Wichitjomthong (QA) |
+| Test Execution — Round 1 | Day 6 – 9 | Phuricha Wichitjomthong (QA) |
+| Bug Reporting & Fix Verification | Day 10 – 11 | Phuricha Wichitjomthong (QA) |
+| Regression Testing | Day 12 | Phuricha Wichitjomthong (QA) |
+| Test Summary Report | Day 13 | Phuricha Wichitjomthong (QA) |
 
 *Note: illustrative timeline for a solo portfolio project — adjust dates/duration to your own schedule.*
 
@@ -169,8 +169,7 @@ Test Case
 Test Execution
    ↓
 Bug Report
-   ↓
-Test Summary Report
+
 ```
 
 ---
