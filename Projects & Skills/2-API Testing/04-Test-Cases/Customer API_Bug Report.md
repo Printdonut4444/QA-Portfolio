@@ -142,4 +142,4 @@ See test case [POST-008](https://github.com/Printdonut4444/QA-Portfolio/blob/mai
 
 - Both bugs originate from negative/boundary test cases designed to validate server-side business rule enforcement, not from positive-path functionality — core CRUD operations (GET, valid POST, valid PATCH, valid DELETE) all passed as expected.
 - **BUG-001 is a confirmed defect** — the required-field expectation is stated as a precondition of the test case and the API did not honor it.
-- **BUG-002 is not yet a confirmed defect** — it is flagged for investigation because the assumption behind the expected result (a `creditLimit >= 0` rule) was never independently verified before execution. This distinction is intentional and should be preserved when this report is shared with the development team, to avoid mischaracterizing an unconfirmed assumption as a proven defect.
+- **BUG-002 is a confirmed defect** — the expected business rule requiring creditLimit >= 0 has been verified, and the API does not enforce this rule correctly. As a result, requests containing an invalid negative creditLimit value are accepted when they should be rejected by server-side validation.
