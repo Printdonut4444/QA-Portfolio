@@ -2,7 +2,7 @@
 
 > Reference: [`Customer API_Test Case.md`](./Customer%20API_Test%20Case.md)
 > Filled-in QA template (per-bug sheets, following `4.Bug Debug Report`): `QA_Testing_Templates_API_Customer.xlsx` — sheets `4.Bug Report - BUG-001` and `4.Bug Report - BUG-002`
-> For full test execution logs (all cases, Pass and Fail), see the Google Sheet:
+> For full test execution logs (all cases, Pass and Fail):<br>
 > 👉 **[Customer API — Bug Tracking Sheet](https://docs.google.com/spreadsheets/d/1L4d_CPbux6vtLmcV85wGGop5wDtiRRi5/edit?usp=sharing&ouid=106458769860966290112&rtpof=true&sd=true)**
 
 This file summarizes the **bugs found while executing the Customer API test cases** (cases with result = Fail), following the structure of `4.Bug Debug Report` from the team's QA Testing Template — intended for Dev to pick up and fix. The content below mirrors what's filled in the `.xlsx` template exactly.
@@ -31,12 +31,12 @@ This file summarizes the **bugs found while executing the Customer API test case
 | | |
 |---|---|
 | Bug ID | BUG-001 |
-| Date Found | *(not specified in source — fill in actual date)* |
+| Date Found | `24 Aug 2026` |
 | Reported by | Phuricha Wichitjomthong (QA) |
 | Related Test Case | POST-003 — Missing Required Customer No. |
 | Module / Feature | Customer API — Create Customer (POST) |
 | Build/Version Found | Business Central (BC270), Customer API v1.0 |
-| HTTP Method / Endpoint | `POST /api/v1/customers` |
+| HTTP Method / Endpoint | `POST  /v1.0/companies/customers` |
 | Summary | API does not enforce required `No.` field on customer creation |
 
 **2. Severity & Priority**
@@ -48,7 +48,7 @@ This file summarizes the **bugs found while executing the Customer API test case
 **3. Details**
 
 - **Steps to Reproduce:**
-  1. Send a POST request to `/api/v1/customers`.
+  1. Send a POST request to ` /v1.0/companies/customers`.
   2. Omit the `No.` field from the request body (all other fields valid).
   3. Send the request.
 
@@ -58,12 +58,12 @@ This file summarizes the **bugs found while executing the Customer API test case
 - **Actual Result:**
   API returned 201 Created. A customer record was created successfully even though the required `No.` field was omitted from the request.
 
-- **Frequency:** *(not specified in source)*
+- **Frequency:** 100% Reproducible
 - **Environment:** Business Central (BC270), Customer API v1.0
 
 **4. Evidence**
 
-See test case POST-003 in `Customer_API_Test_Case.md` for full request/response evidence (Postman screenshots included).
+See test case [POST-003](https://github.com/Printdonut4444/QA-Portfolio/blob/main/Projects%20%26%20Skills/2-API%20Testing/04-Test-Cases/Customer%20API_Test%20Case.md#post-003--missing-required-customer-no) in `Customer_API_Test_Case.md` for full request/response evidence (Postman screenshots included). 
 
 **5. Root Cause & Fix (to be filled in by Dev)**
 
@@ -75,7 +75,7 @@ See test case POST-003 in `Customer_API_Test_Case.md` for full request/response 
 
 | Current Status | Current Assignee | Regression Test Reference |
 |---|---|---|
-| Open — Needs Dev Review | *(unassigned)* | *(to be filled once fixed — retest in sheet `5.Regression Test`)* |
+| Open — Needs Dev Review | Phuricha Wichitjomthong (QA) |  -  |
 
 ---
 
@@ -86,12 +86,12 @@ See test case POST-003 in `Customer_API_Test_Case.md` for full request/response 
 | | |
 |---|---|
 | Bug ID | BUG-002 |
-| Date Found | *(not specified in source — fill in actual date)* |
+| Date Found | 24 Aug 2026 |
 | Reported by | Phuricha Wichitjomthong (QA) |
 | Related Test Case | POST-008 — Negative Credit Limit |
 | Module / Feature | Customer API — Create Customer (POST) |
 | Build/Version Found | Business Central (BC270), Customer API v1.0 |
-| HTTP Method / Endpoint | `POST /api/v1/customers` |
+| HTTP Method / Endpoint | `POST  /v1.0/companies/customers` |
 | Summary | API accepts a negative value for `creditLimit` |
 
 **2. Severity & Priority**
@@ -103,7 +103,7 @@ See test case POST-003 in `Customer_API_Test_Case.md` for full request/response 
 **3. Details**
 
 - **Steps to Reproduce:**
-  1. Send a POST request to `/api/v1/customers`.
+  1. Send a POST request to ` /v1.0/companies/customers`.
   2. Provide a negative value for `creditLimit` (all other fields valid).
   3. Send the request.
 
@@ -113,12 +113,12 @@ See test case POST-003 in `Customer_API_Test_Case.md` for full request/response 
 - **Actual Result:**
   API returned 201 Created. A customer record was created successfully with the negative `creditLimit` value stored as submitted.
 
-- **Frequency:** *(not specified in source)*
+- **Frequency:** 100% Reproducible
 - **Environment:** Business Central (BC270), Customer API v1.0
 
 **4. Evidence**
 
-See test case POST-008 in `Customer_API_Test_Case.md` for full request/response evidence (Postman screenshots included).
+See test case [POST-008](https://github.com/Printdonut4444/QA-Portfolio/blob/main/Projects%20%26%20Skills/2-API%20Testing/04-Test-Cases/Customer%20API_Test%20Case.md#post-008--negative-credit-limit) in `Customer_API_Test_Case.md` for full request/response evidence (Postman screenshots included).
 
 **5. Root Cause & Fix (to be filled in by Dev)**
 
@@ -134,7 +134,7 @@ See test case POST-008 in `Customer_API_Test_Case.md` for full request/response 
 
 | Current Status | Current Assignee | Regression Test Reference |
 |---|---|---|
-| Confirmed — Open — Needs Dev Fix | *(unassigned)* | *(unassigned)* |
+| Confirmed — Open — Needs Dev Fix | Phuricha Wichitjomthong (QA) | - |
 
 ---
 
@@ -143,11 +143,3 @@ See test case POST-008 in `Customer_API_Test_Case.md` for full request/response 
 - Both bugs originate from negative/boundary test cases designed to validate server-side business rule enforcement, not from positive-path functionality — core CRUD operations (GET, valid POST, valid PATCH, valid DELETE) all passed as expected.
 - **BUG-001 is a confirmed defect** — the required-field expectation is stated as a precondition of the test case and the API did not honor it.
 - **BUG-002 is not yet a confirmed defect** — it is flagged for investigation because the assumption behind the expected result (a `creditLimit >= 0` rule) was never independently verified before execution. This distinction is intentional and should be preserved when this report is shared with the development team, to avoid mischaracterizing an unconfirmed assumption as a proven defect.
-
----
-
-## Legend
-
-- **Severity:** Critical = system down/unusable · High = core function broken · Medium = partial impact · Low = minor/UI
-- **Status:** New / Open / In Progress / Fixed / Retest / Reopen / Closed / Rejected
-- Any bug marked Fixed must be retested in sheet `5.Regression Test` before it can be closed.
