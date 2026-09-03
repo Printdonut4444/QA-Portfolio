@@ -75,7 +75,7 @@ and avoid ambiguity between scenarios.
 | Test Objective       | Verify that the API successfully returns the customer collection.                                                                                                                                                                                                                                                                 |
 | Preconditions        | API service is available and customer data exists in the system.                                                                                                                                                                                                                                                                  |
 | HTTP Method          | `GET`                                                                                                                                                                                                                                                                                                                             |
-| Endpoint             | `/api/v1/customers`                                                                                                                                                                                                                                                                                                               |
+| Endpoint             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers`                                                                                                                                                                                                                                                                                                               |
 | Headers              | `Accept: application/json`                                                                                                                                                                                                                                                                                                        |
 | Test Data            | N/A                                                                                                                                                                                                                                                                                                                               |
 | Test Steps           | 1. Send a `GET` request to the customers endpoint.<br>2. Send the request without any query parameters.<br>3. Verify the response.                                                                                                                                                                                               |
@@ -92,7 +92,7 @@ and avoid ambiguity between scenarios.
 **Request:**
 
 ``` http
-GET /api/v1/customers
+GET http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers
 ```
 
 **Response Status:**
@@ -125,7 +125,7 @@ The screenshot shows the Postman request, response status, and response body con
 | Test Objective       | Verify that a specific customer can be retrieved using a valid customer number.                                                                                                                                                            |
 | Preconditions        | API service is available and the specified customer exists in the system.                                                                                                                                                                  |
 | HTTP Method          | `GET`                                                                                                                                                                                                                                      |
-| Endpoint             | `/api/v1/customers?$filter=no eq 'CUST001'`                                                                                                                                                                                                |
+| Endpoint             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers?$filter= no eq 'CUST001'`                                                                                                                                                                                                |
 | Headers              | `Accept: application/json`                                                                                                                                                                                                                 |
 | Test Data            | `TD-001` (`CUST001`)                                                                                                                                                                                                                       |
 | Test Steps           | 1\. Send a `GET` request to the customer endpoint.<br>2. Provide a valid customer number (`CUST001`) as a filter.<br>3. Send the request.<br>4. Verify the response.                                                                       |
@@ -142,7 +142,7 @@ The screenshot shows the Postman request, response status, and response body con
 **Request:**
 
 ``` http
-GET /api/v1/customers?$filter=no eq 'CUST001'
+GET http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers?$filter= no eq 'CUST001''
 ```
 
 **Response Status:**
@@ -175,7 +175,7 @@ body containing the requested customer CUST001.
 | **Test Objective**       | Verify that the API returns an empty customer collection when searching for a non-existing customer number.                                                                                          |
 | **Preconditions**        | API service is available.                                                                                                                                                                            |
 | **HTTP Method**          | `GET`                                                                                                                                                                                                |
-| **Endpoint**             | `/api/v1/customers?$filter=no eq 'CUST102'`                                                                                                                                                          |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers?$filter= no eq 'CUST102'`                                                                                                                                                          |
 | **Headers**              | `Accept: application/json`                                                                                                                                                                           |
 | **Test Data**            | `TD-002` (`CUST102`)                                                                                                                                                                                 |
 | **Test Steps**           | 1. Send a `GET` request to the customer endpoint.<br>2. Provide a non-existing customer number (`CUST102`) as a filter.<br>3. Send the request.<br>4. Verify the response status and response body. |
@@ -192,7 +192,7 @@ body containing the requested customer CUST001.
 **Request:**
 
 ``` http
-GET /api/v1/customers?$filter=no eq 'CUST102'
+GET http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers?$filter= no eq 'CUST102''
 ```
 
 **Response Status:**
@@ -229,7 +229,7 @@ The screenshots show the Postman request using the non-existing customer number 
 | **Test Objective**       | Verify that a customer can be successfully created using valid data.                                                                                                                                                                                          |
 | **Preconditions**        | API service is available and the customer number does not already exist.                                                                                                                                                                                      |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                                                        |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                           |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers`                                                                                                                                                                                                                                           |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                                |
 | **Test Data**            | `TD-003` (`CUST101`)                                                                                                                                                                                                                                          |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide valid customer data in the request body.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify the created customer in Business Central.                                          |
@@ -246,7 +246,7 @@ The screenshots show the Postman request using the non-existing customer number 
 **Request:**
 
 ``` http
-POST /api/v1/customers
+POST http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers
 ```
 
 **Response Status:**
@@ -280,7 +280,7 @@ The screenshots show the Postman request, 201 Created response, created customer
 | **Test Objective**       | Verify that the API can create a customer successfully when only the minimum required customer data is provided.                                                                                                                                         |
 | **Preconditions**        | API service is available and the provided customer number does not already exist.                                                                                                                                                                        |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                                                   |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                      |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers`                                                                                                                                                                                                                                      |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                           |
 | **Test Data**            | `TD-004`                                                                                                                                                                                                                                                 |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide only the minimum required customer data.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that the customer record was created successfully.   |
@@ -297,7 +297,7 @@ The screenshots show the Postman request, 201 Created response, created customer
 **Request:**
 
 ``` http
-POST /api/v1/customers
+POST http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers
 ```
 
 **Response Status:**
@@ -331,7 +331,7 @@ The screenshots show the Postman request, 201 Created response, created customer
 | **Test Objective**       | Verify that the API rejects a customer creation request when the required customer number (`No.`) is missing.                                                                                                                                            |
 | **Preconditions**        | 1. API service is available.<br>2. `No.` is defined as a required field according to the API/Business Central business requirement.<br>3. The test request does not provide a customer number.                                                          |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                                                   |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                      |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers`                                                                                                                                                                                                                                      |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                           |
 | **Test Data**            | `TD-005` — Customer data without the `No.` field.                                                                                                                                                                                                        |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Omit the required customer number (`No.`) from the request body.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that no customer record was created. |
@@ -348,7 +348,7 @@ The screenshots show the Postman request, 201 Created response, created customer
 **Request:**
 
 ``` http
-POST /api/v1/customers
+POST http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers
 ```
 
 **Response Status:**
@@ -381,13 +381,13 @@ POST /api/v1/customers
 | **Test Objective**       | Verify that the API prevents duplicate customer numbers.                                                                                                                                                                                                                 |
 | **Preconditions**        | Customer `CUST001` already exists in the system.                                                                                                                                                                                                                         |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                                                                   |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                                      |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers`                                                                                                                                                                                                                                                      |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                                           |
 | **Test Data**            | `TD-006` — Existing customer number `CUST001`.                                                                                                                                                                                                                           |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide the existing customer number `CUST001`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that the existing customer `CUST001` was not overwritten or modified. |
 | **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                                                                                        |
 | **Expected Result**      | Request is rejected because customer number `CUST001` already exists. An appropriate duplicate-key or validation error is returned. The existing customer record is not overwritten or modified, and no duplicate customer record is created.                            |
-| **Actual Status Code**   | `400 Bad Request`                                                                                                                                                                                                                                                        |
+| **Actual Status Code**   | `400 The record in table Customer API already exists. Identification fields and values: Customer No.='CUST001'`                                                                                                                                                                                                                                                        |
 | **Actual Result**        | API rejected the request because customer number `CUST001` already exists. An appropriate validation/duplicate-key error was returned. The existing customer `CUST001` was not overwritten or modified, and no duplicate customer record was created.                    |
 | **Test Status**          | `PASS`                                                                                                                                                                                                                                                                   |
 
@@ -398,13 +398,13 @@ POST /api/v1/customers
 **Request:**
 
 ``` http
-POST /api/v1/customers
+POST http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers
 ```
 
 **Response Status:**
 
 ``` text
-400 Bad Request
+400 The record in table Customer API already exists. Identification fields and values: Customer No.='CUST001'
 ```
 
 **Response Validation:**
@@ -429,7 +429,7 @@ POST /api/v1/customers
 | **Test Objective**       | Verify that the API rejects a customer creation request when `customerType` is set to a value outside the defined enum (`Individual`, `Company`).                                                                          |
 | **Preconditions**        | API service is available and the `customerType` field is defined with a fixed set of valid values (`Individual`, `Company`).                                                                                               |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                      |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                         |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers`                                                                                                                                                                                                         |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                              |
 | **Test Data**            | `TD-007` — Customer data with `customerType` set to `Unknown`.                                                                                                                                                             |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide an unsupported customer type, `Unknown`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that no customer record was created. |
@@ -446,7 +446,7 @@ POST /api/v1/customers
 **Request:**
 
 ``` http
-POST /api/v1/customers
+POST http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers
 ```
 
 **Response Status:**
@@ -477,7 +477,7 @@ POST /api/v1/customers
 | **Test Objective**       | Verify that the API rejects a customer creation request when `status` is set to an unsupported value.                                                                                                                       |
 | **Preconditions**        | API service is available and the `status` field is defined with a fixed set of valid values.                                                                                                                                |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                      |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                         |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers`                                                                                                                                                                                                         |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                              |
 | **Test Data**            | `TD-008` — Customer data with `status` set to `Pending`.                                                                                                                                                                   |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide an unsupported status, `Pending`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that no customer record was created. |
@@ -494,7 +494,7 @@ POST /api/v1/customers
 **Request:**
 
 ``` http
-POST /api/v1/customers
+POST http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers
 ```
 
 **Response Status:**
@@ -525,7 +525,7 @@ POST /api/v1/customers
 | **Test Objective**       | Verify that the API rejects values with an incorrect JSON data type.                                                                                                                                                                                                                                                               |
 | **Preconditions**        | API service is available and the API enforces the expected data types for each field.                                                                                                                                                                                                                                              |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                                                                                                                             |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                                                                                                |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers`                                                                                                                                                                                                                                                                                                                |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                                                                                                     |
 | **Test Data**            | `TD-009`                                                                                                                                                                                                                                                                                                                           |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide a string value for `creditLimit` instead of a number.<br>3. Provide a string value for `marketingConsent` instead of a Boolean.<br>4. Send the request.<br>5. Verify the response status and response body.<br>6. Verify whether the customer record was created. |
@@ -542,7 +542,7 @@ POST /api/v1/customers
 **Request:**
 
 ``` http
-POST /api/v1/customers
+POST http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers
 ```
 
 **Response Status:**
@@ -574,15 +574,15 @@ POST /api/v1/customers
 | **Test Objective**       | Verify that the API rejects a customer request containing a negative credit limit.                                                                                                                                                                     |
 | **Preconditions**        | API service is available and the customer data is otherwise valid. This test assumes a business rule requiring `creditLimit >= 0`; this assumption has not been independently confirmed against the Business Central validation logic (AL code) prior to execution.                                                                                                          |
 | **HTTP Method**          | `POST`                                                                                                                                                                                                                                                 |
-| **Endpoint**             | `/api/v1/customers`                                                                                                                                                                                                                                    |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers`                                                                                                                                                                                                                                    |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                         |
 | **Test Data**            | `TD-010`                                                                                                                                                                                                                                               |
 | **Test Steps**           | 1. Send a `POST` request to the customer endpoint.<br>2. Provide a negative credit limit value.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify whether the customer record was created.                      |
 | **Expected Status Code** | `400 Bad Request`                                                                                                                                                                                                                                                  |
 | **Expected Result**      | Request is rejected because the credit limit is negative and violates the configured business rule. An appropriate validation error is returned, and no customer record is created.                                                                    |
 | **Actual Status Code**   | `201 Created`                                                                                                                                                                                                                                          |
-| **Actual Result**        | API returned `201 Created` even though a negative credit limit was provided. The request was accepted and a customer record was created. This does not match the expected result *if* a `creditLimit >= 0` business rule is required — however, this test did not verify whether such a rule is actually configured in Business Central. The `201 Created` response could equally mean no such rule exists, in which case this is not a defect. |
-| **Test Status**          | `FAIL (pending confirmation)` — should be re-classified as PASS or FAIL once the `creditLimit >= 0` business rule requirement is confirmed against Business Central validation logic or the API specification.                                                                                                                                                                                                                                                 |
+| **Actual Result**        | API returned `201 Created` even though a negative credit limit was provided. The request was accepted and a customer record was created. This does not match the expected result *if* a `creditLimit >= 0` business rule is required. |
+| **Test Status**          | `FAIL`                                                                                                                                                                                                                                                 |
 
 ### Test Execution Evidence
 
@@ -591,7 +591,7 @@ POST /api/v1/customers
 **Request:**
 
 ``` http
-POST /api/v1/customers
+POST http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers
 ```
 
 **Response Status:**
@@ -607,7 +607,7 @@ POST /api/v1/customers
 - The request was accepted by the API.
 - The customer record was created despite the negative credit limit.
 - No validation error was returned.
-- Whether this is a defect depends on an unconfirmed assumption (see Preconditions/Actual Result); the `creditLimit >= 0` business rule requirement should be verified against Business Central validation logic before this result is treated as final.
+- the `creditLimit >= 0` business rule requirement should be verified against Business Central validation logic before this result is treated as final.
 - The customer record created during this test should be removed after execution to avoid polluting later test runs, since it was an unintended side effect of the validation not behaving as assumed.
 
 **Evidence:**
@@ -626,7 +626,7 @@ POST /api/v1/customers
 | **Test Objective**       | Verify that an existing customer's name can be updated.                                                                                                                                                                     |
 | **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                                                 |
 | **HTTP Method**          | `PATCH`                                                                                                                                                                                                                     |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                   |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST001')`                                                                                                                                                                                                   |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                              |
 | **Test Data**            | `TD-011`                                                                                                                                                                                                                    |
 | **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide a new customer name.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Retrieve the customer and verify the updated name. |
@@ -643,7 +643,7 @@ POST /api/v1/customers
 **Request:**
 
 ``` http
-PATCH /api/v1/customers('CUST001')
+PATCH http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST001')
 ```
 
 **Response Status:**
@@ -676,7 +676,7 @@ PATCH /api/v1/customers('CUST001')
 | **Test Objective**       | Verify that multiple customer fields can be updated in a single request.                                                                                                                                                                            |
 | **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                                                                         |
 | **HTTP Method**          | `PATCH`                                                                                                                                                                                                                                             |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                                           |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST103')`                                                                                                                                                                                                                           |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                      |
 | **Test Data**            | `TD-012`                                                                                                                                                                                                                                            |
 | **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide new values for name, phone number, and city.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify the updated customer data.                  |
@@ -693,7 +693,7 @@ PATCH /api/v1/customers('CUST001')
 **Request:**
 
 ``` http
-PATCH /api/v1/customers('CUST103')
+PATCH http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST103')
 ```
 
 **Response Status:**
@@ -728,7 +728,7 @@ PATCH /api/v1/customers('CUST103')
 | **Test Objective**       | Verify the API behavior when attempting to update a customer that does not exist.                                                                                                                                           |
 | **Preconditions**        | API service is available and customer `C99999` does not exist.                                                                                                                                                              |
 | **HTTP Method**          | `PATCH`                                                                                                                                                                                                                     |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                   |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('C99999')`                                                                                                                                                                                                   |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                              |
 | **Test Data**            | `TD-013`                                                                                                                                                                                                                    |
 | **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide the non-existing customer identifier `C99999`.<br>3. Provide an update value.<br>4. Send the request.<br>5. Verify the response status and response body. |
@@ -745,7 +745,7 @@ PATCH /api/v1/customers('CUST103')
 **Request:**
 
 ``` http
-PATCH /api/v1/customers('C99999')
+PATCH http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('C99999')
 ```
 
 **Response Status:**
@@ -776,7 +776,7 @@ PATCH /api/v1/customers('C99999')
 | **Test Objective**       | Verify that an existing customer cannot be updated with an unsupported status.                                                                                                                                                                  |
 | **Preconditions**        | API service is available and the specified customer exists.                                                                                                                                                                                     |
 | **HTTP Method**          | `PATCH`                                                                                                                                                                                                                                         |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                                       |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST001')`                                                                                                                                                                                                                       |
 | **Headers**              | `Accept: application/json`<br>`Content-Type: application/json`                                                                                                                                                                                  |
 | **Test Data**            | `TD-014`                                                                                                                                                                                                                                        |
 | **Test Steps**           | 1. Send a `PATCH` request to the customer endpoint.<br>2. Provide the unsupported status `Pending`.<br>3. Send the request.<br>4. Verify the response status and response body.<br>5. Verify that the existing customer data remains unchanged. |
@@ -793,7 +793,7 @@ PATCH /api/v1/customers('C99999')
 **Request:**
 
 ``` http
-PATCH /api/v1/customers('CUST001')
+PATCH http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST001')
 ```
 
 **Response Status:**
@@ -825,16 +825,16 @@ PATCH /api/v1/customers('CUST001')
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Test Case ID**         | DELETE-001                                                                                                                                                                                                                                                          |
 | **Test Objective**       | Verify that an existing customer can be deleted.                                                                                                                                                                                                                    |
-| **Preconditions**        | API service is available and customer `CUST105` exists in the system.                                                                                                                                                                                               |
+| **Preconditions**        | API service is available and customer `CUST108` exists in the system.                                                                                                                                                                                               |
 | **HTTP Method**          | `DELETE`                                                                                                                                                                                                                                                            |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                                                           |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST108')`                                                                                                                                                                                                                                           |
 | **Headers**              | `Accept: application/json`                                                                                                                                                                                                                                          |
-| **Test Data**            | `TD-015` — Existing customer `CUST105`, created specifically for this deletion test.                                                                                                                                                                               |
-| **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the existing customer identifier `CUST105`.<br>3. Send the request.<br>4. Verify the response.<br>5. Send a `GET` request for the deleted customer.<br>6. Verify that the customer is no longer available. |
+| **Test Data**            | `TD-015` — Existing customer `CUST108`, created specifically for this deletion test.                                                                                                                                                                               |
+| **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the existing customer identifier `CUST108`.<br>3. Send the request.<br>4. Verify the response.<br>5. Send a `GET` request for the deleted customer.<br>6. Verify that the customer is no longer available. |
 | **Expected Status Code** | `204 No Content`                                                                                                                                                                                                                                                               |
-| **Expected Result**      | API accepts the delete request. Customer `CUST105` is removed from the Customer API table, and a subsequent `GET` request does not return the deleted customer.                                                                                                     |
+| **Expected Result**      | API accepts the delete request. Customer `CUST108` is removed from the Customer API table, and a subsequent `GET` request does not return the deleted customer.                                                                                                     |
 | **Actual Status Code**   | `204 No Content`                                                                                                                                                                                                                                                    |
-| **Actual Result**        | API returned `204 No Content` after the DELETE request for customer `CUST105` was submitted. The customer was successfully deleted, and a subsequent `GET` request confirmed that `CUST105` was no longer available.                                                            |
+| **Actual Result**        | API returned `204 No Content` after the DELETE request for customer `CUST108` was submitted. The customer was successfully deleted, and a subsequent `GET` request confirmed that `CUST108` was no longer available.                                                            |
 | **Test Status**          | `PASS`                                                                                                                                                                                                                                                              |
 
 ### Test Execution Evidence
@@ -844,7 +844,7 @@ PATCH /api/v1/customers('CUST001')
 **Request:**
 
 ``` http
-DELETE /api/v1/customers('CUST105')
+DELETE http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('CUST108')
 ```
 
 **Response Status:**
@@ -855,11 +855,11 @@ DELETE /api/v1/customers('CUST105')
 
 **Response Validation:**
 
-- DELETE request was processed successfully for customer CUST105.
+- DELETE request was processed successfully for customer CUST108.
 - Response status was 204 No Content.
-- Customer CUST105 was successfully deleted.
+- Customer CUST108 was successfully deleted.
 - A subsequent GET request was used to verify the deletion.
-- Customer CUST105 was no longer available.
+- Customer CUST108 was no longer available.
 - The actual behavior matched the expected delete behavior.
 
 **Evidence:**
@@ -878,7 +878,7 @@ DELETE /api/v1/customers('CUST105')
 | **Test Objective**       | Verify the API behavior when attempting to delete a customer that does not exist.                                                                                                                                                     |
 | **Preconditions**        | API service is available and customer `C99999` does not exist.                                                                                                                                                                        |
 | **HTTP Method**          | `DELETE`                                                                                                                                                                                                                              |
-| **Endpoint**             | `/api/v1/customers({id})`                                                                                                                                                                                                             |
+| **Endpoint**             | `http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('C99999')`                                                                                                                                                                                                             |
 | **Headers**              | `Accept: application/json`                                                                                                                                                                                                            |
 | **Test Data**            | `TD-016`                                                                                                                                                                                                                              |
 | **Test Steps**           | 1. Send a `DELETE` request to the customer endpoint.<br>2. Provide the non-existing customer identifier `C99999`.<br>3. Send the request.<br>4. Verify the response.<br>5. Verify that existing customer records remain unchanged.    |
@@ -895,7 +895,7 @@ DELETE /api/v1/customers('CUST105')
 **Request:**
 
 ``` http
-DELETE /api/v1/customers('C99999')
+DELETE http://localhost:7148/BC270/api/donut/qa/v1.0/companies(f2f066a8-f293-f011-9c69-00155ddaf077)/customers('C99999')
 ```
 
 **Response Status:**
