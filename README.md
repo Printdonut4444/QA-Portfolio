@@ -38,11 +38,11 @@ A manual testing project on an e-commerce application, covering test planning, t
 **[View Project →](./Projects%20%26%20Skills/E_Commerce)**
 
 
-### GitHubAction Automatic Testing
+### GitHubAction  Automation Testing
 
 A simple UI Automation Testing project using Puppeteer and GitHub Actions to demonstrate automated testing and CI workflow.
 
-**[View Project →](https://github.com/Printdonut4444/GitHubAction_AutoTest)
+**[View Project →](https://github.com/Printdonut4444/GitHubAction_AutoTest)**
 
 <!-- *More projects — including API and SQL-focused testing — coming soon.* -->
 
